@@ -102,3 +102,29 @@ export function dataRange(dates: string[]): {
     to: dates.reduce((max, date) => (date > max ? date : max)),
   };
 }
+
+/*
+ * Intervalos para o selector de período.
+ *
+ * Nota: o conjunto cobre 12 meses, mas não dois anos civis — 2025 só tem
+ * novembro e dezembro, 2026 só tem janeiro a outubro. `yearRange(2025)` é
+ * válido, mas devolve apenas 61 dias com vendas: comparações entre anos têm de
+ * ser normalizadas por dia, nunca por total.
+ */
+
+/** Ano civil completo: `2026` → `2026-01-01` … `2026-12-31`. */
+export function yearRange(year: number): { from: string; to: string } {
+  return { from: `${year}-01-01`, to: `${year}-12-31` };
+}
+
+/** Mês a partir da chave de `revenueByMonth`: `"2026-07"` → `…-01` … `…-31`. */
+export function monthRange(month: string): { from: string; to: string } {
+  const [year, monthIndex] = month.split("-").map(Number);
+  const lastDay = new Date(year, monthIndex, 0);
+  return { from: `${month}-01`, to: toISODate(lastDay) };
+}
+
+/** Um único dia: `"2026-10-14"` → from e to iguais. */
+export function dayRange(date: string): { from: string; to: string } {
+  return { from: date, to: date };
+}
