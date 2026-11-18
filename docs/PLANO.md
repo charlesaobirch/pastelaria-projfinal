@@ -40,9 +40,10 @@ O layout fica para a fase 2 (secção 7), por decisão explícita.
 | Next.js / Tailwind / Biome | ✅ instalado e a compilar | — |
 | Análise dos dados | ✅ `docs/analise/` (27 CSVs, 10 gráficos, relatório) | reutilizar números e conclusões |
 | `public/data/*.json` | ✅ movidos e normalizados | nada — `scripts/preparar_dados.py` valida |
-| `src/app` | ⚠️ scaffold do create-next-app | substituir na fase 1 |
-| Tipos, serviços, `lib/`, store | ❌ não existe | Fase 0 |
-| Zustand, Recharts | ❌ não instalados | `npm i zustand recharts` |
+| `src/app` | ⚠️ página de fumo da fase 0 | substituir pelo layout na fase 1 |
+| Tipos, serviços, `lib/`, store, hooks | ✅ implementados e verificados | — |
+| Zustand | ✅ instalado | — |
+| Recharts | ❌ não instalado | `npm i recharts` na fase 2 |
 | 4 branches (`main`, `Charles`, `Andrey`, `Jonathan`) | ✅ sincronizadas | contratos primeiro, depois paralelo |
 
 > O xlsx não é servido ao browser nem precisa de ir para o repo: o que a app lê
@@ -176,22 +177,36 @@ export interface Venda {
 
 ```ts
 // src/lib — assinaturas combinadas (implementação livre, nomes fixos)
-dates.ts   parseDate(iso): Date · monthKey(d): string · weekdayIndex(d): number
-           monthLabel(key): string · lastNDays(dates, n): [from, to]
-stats.ts   kpis(vendas, produtos) · revenueByMonth(vendas) · revenueByWeekday(vendas)
-           revenueByHour(vendas) · productStats(vendas, produtos) · categoryStats(...)
+dates.ts   parseDate(iso): Date · toISODate(d): string · monthKey(d): string
+           monthLabel(key): string · weekdayIndex(d): number · weekdayLabel(i, short?)
+           lastNDays(dates, n): { from, to } · dataRange(dates): { from, to }
+stats.ts   kpis(vendas, produtos) · revenueByMonth(vendas, produtos)
+           revenueByWeekday(vendas, produtos) · revenueByHour(vendas, produtos)
+           productStats(vendas, produtos) · categoryStats(vendas, produtos)
            paymentStats(vendas) · pareto(productStats)
-filters.ts filterSales(vendas, { from, to, category, payment })
-stock.ts   stockStatus(item): "esgotado" | "baixo" | "ok"
-           stockAlerts(ingredientes) · stockValueBySupplier(ingredientes)
-format.ts  eur(n) · pct(n) · int(n)      // pt-PT, 2 casas, "11 389,70 €"
+filters.ts filterSales(vendas, produtos, filtros) · hasActiveFilters(filtros)
+           filterIngredients(ingredientes, { category, search }) · normalize(text)
+stock.ts   stockStatus(item) · stockCoverage(item) · stockValue(ingredientes)
+           stockAlerts(ingredientes) · stockByLevel(ingredientes)
+           stockValueBySupplier(ingredientes)
+format.ts  eur(n) · pct(n, casas = 1) · int(n)   // pt-PT: "11 389,70 €", "7 643"
 ```
 
 ```ts
 // store
 useDataStore   { produtos, ingredientes, vendas, status, error, load() }
-useFilters     { from, to, category, payment, search, set(...), reset() }
+useFilters     { from, to, category, payment, search, apply(patch), reset() }
 ```
+
+**`filterSales` recebe `produtos`:** a venda só traz `product_id`; categoria e
+pesquisa por nome vivem no catálogo. O `Map` id→produto é construído uma vez por
+chamada, não um `find` por linha.
+
+**Store global, não Context.** A skill `nextjs-zustand` recomenda Context em App
+Router para isolar pedidos, mas a própria tabela da skill abre exceção para
+“static/shared state”. Aqui os dados são ficheiros públicos iguais para todos,
+sem nada por utilizador: não há estado a vazar. Global dispensa um provider no
+`layout.tsx` e mantém os hooks como estão.
 
 `useDataStore.load()` corre **uma vez** (guardado no próprio store); as páginas
 apenas consomem. Navegar entre rotas não repete o fetch.
@@ -237,16 +252,23 @@ Datas reais: 6 dias úteis (18 a 23/11), entrega na manhã de 24/11.
 
 | Fase | Quando | Objetivo | Pronto quando |
 |:--|:--|:--|:--|
-| **0. Fundação** | 18/11 (hoje) | tipos, `services/`, `lib/` base, store, tokens visuais | `npm run dev` mostra 4 KPIs reais do JSON |
+| **0. Fundação** | ✅ 18/11 | tipos, `services/`, `lib/`, store e hooks | ✅ no browser: 11 389,70 € · 8 319,78 € · 73,0 % · 7 643 un |
 | **1. Esqueleto** | 19/11 | App shell + nav + as 5 rotas P0 a renderizar | navegação completa sem erros de consola |
 | **2. Ecrãs core** | 20–21/11 | Visão geral, Produtos (+detalhe), Vendas no tempo | 3 ecrãs completos com gráficos Recharts |
 | **3. Ecrãs de apoio** | 22/11 | Stock, secção de pagamentos, `/sobre` | todos os ecrãs com dados reais |
 | **4. Polimento** | 23/11 | loading/erro/vazio, responsivo, acessibilidade, `biome` + `build` | build limpo, revisão visual feita |
 | **5. Entrega** | 23/11 fim / 24/11 manhã | slides + ensaio + tag/PR | apresentação cronometrada |
 
-**Decisão de layout = Fase 0, não depois.** Sem ela, 3 pessoas desenham 3
-estilos. Escolher uma direção (sidebar vs topo, densidade, paleta) e um
-`design-system` mínimo (tokens de cor/espaço/tipo) antes de codar ecrãs.
+**Fase 0 fechada a 18/11**, em commits pequenos na `Charles`: tipos → serviço →
+`lib` (datas/filtros/formatação) → `lib` (estatísticas/stock) → store e hooks →
+página de fumo. Verificado no browser: 11 389,70 € de receita, 8 319,78 € de
+lucro, 73,0 % de margem, 7 643 unidades, período 2025-11-01→2026-10-31 e 5
+ingredientes abaixo do mínimo (Chocolate negro esgotado) — tudo igual ao
+relatório. `npm run lint` e `npm run build` limpos, zero erros de consola.
+
+**A decisão de layout é o primeiro item da fase 1.** Sem ela, as 3 pessoas
+desenham 3 estilos. Escolher uma direção (sidebar vs topo, densidade, paleta) e
+um `design-system` mínimo (tokens de cor/espaço/tipo) antes de codar ecrãs.
 
 ### Repartição (3 pessoas)
 
@@ -327,8 +349,9 @@ limitações → próximos passos.
 
 ## 11. Decisões em aberto
 
-1. **Layout e identidade visual** — direção, densidade, paleta, navegação. *(explicitamente adiado)*
+1. **Layout e identidade visual** — direção, densidade, paleta, navegação. *(explicitamente adiado; primeiro item da fase 1)*
 2. **Dividir os 3 workstreams** como na secção 7, ou trocar ecrãs entre pessoas.
 
-Resolvido entretanto: JSON prontos e validados (secção 6); equipa de 3 fixada;
-xlsx não vai para o repo — os JSON são a fonte de verdade.
+Resolvido entretanto: **fase 0 implementada e verificada** (secção 5); JSON
+prontos e validados (secção 6); equipa de 3 fixada; xlsx fora do repo — os JSON
+são a fonte de verdade.
