@@ -1,0 +1,191 @@
+[
+  {
+    "id": "1",
+    "name": "Bolo de chocolate",
+    "category": "Bolos",
+    "unit_price": "2.8",
+    "cost_price": "1",
+    "stock": "14",
+    "min_stock": "8"
+  },
+  {
+    "id": "2",
+    "name": "Bolo de cenoura",
+    "category": "Bolos",
+    "unit_price": "2.6",
+    "cost_price": "0.9",
+    "stock": "11",
+    "min_stock": "8"
+  },
+  {
+    "id": "3",
+    "name": "Cheesecake",
+    "category": "Bolos",
+    "unit_price": "3.2",
+    "cost_price": "1.2",
+    "stock": "9",
+    "min_stock": "6"
+  },
+  {
+    "id": "4",
+    "name": "Tarte de maçã",
+    "category": "Bolos",
+    "unit_price": "2.9",
+    "cost_price": "1",
+    "stock": "12",
+    "min_stock": "6"
+  },
+  {
+    "id": "5",
+    "name": "Bolo de laranja",
+    "category": "Bolos",
+    "unit_price": "2.4",
+    "cost_price": "0.8",
+    "stock": "16",
+    "min_stock": "8"
+  },
+  {
+    "id": "6",
+    "name": "Pastel de nata",
+    "category": "Pastéis",
+    "unit_price": "1.4",
+    "cost_price": "0.35",
+    "stock": "60",
+    "min_stock": "40"
+  },
+  {
+    "id": "7",
+    "name": "Pastel de feijão",
+    "category": "Pastéis",
+    "unit_price": "1.6",
+    "cost_price": "0.45",
+    "stock": "25",
+    "min_stock": "20"
+  },
+  {
+    "id": "8",
+    "name": "Queijada",
+    "category": "Pastéis",
+    "unit_price": "1.5",
+    "cost_price": "0.4",
+    "stock": "30",
+    "min_stock": "20"
+  },
+  {
+    "id": "9",
+    "name": "Pastel de Santa Clara",
+    "category": "Pastéis",
+    "unit_price": "1.7",
+    "cost_price": "0.5",
+    "stock": "18",
+    "min_stock": "15"
+  },
+  {
+    "id": "10",
+    "name": "Travesseiro",
+    "category": "Pastéis",
+    "unit_price": "1.9",
+    "cost_price": "0.55",
+    "stock": "22",
+    "min_stock": "15"
+  },
+  {
+    "id": "11",
+    "name": "Pão de forma",
+    "category": "Pão",
+    "unit_price": "2.2",
+    "cost_price": "0.7",
+    "stock": "20",
+    "min_stock": "10"
+  },
+  {
+    "id": "12",
+    "name": "Broa",
+    "category": "Pão",
+    "unit_price": "2.5",
+    "cost_price": "0.8",
+    "stock": "15",
+    "min_stock": "10"
+  },
+  {
+    "id": "13",
+    "name": "Croissant simples",
+    "category": "Pão",
+    "unit_price": "1.2",
+    "cost_price": "0.3",
+    "stock": "45",
+    "min_stock": "30"
+  },
+  {
+    "id": "14",
+    "name": "Croissant misto",
+    "category": "Pão",
+    "unit_price": "2.6",
+    "cost_price": "0.9",
+    "stock": "28",
+    "min_stock": "20"
+  },
+  {
+    "id": "15",
+    "name": "Pão de leite",
+    "category": "Pão",
+    "unit_price": "0.4",
+    "cost_price": "0.1",
+    "stock": "90",
+    "min_stock": "60"
+  },
+  {
+    "id": "16",
+    "name": "Café",
+    "category": "Bebidas",
+    "unit_price": "0.8",
+    "cost_price": "0.12",
+    "stock": "500",
+    "min_stock": "200"
+  },
+  {
+    "id": "17",
+    "name": "Galão",
+    "category": "Bebidas",
+    "unit_price": "1.3",
+    "cost_price": "0.25",
+    "stock": "400",
+    "min_stock": "150"
+  },
+  {
+    "id": "18",
+    "name": "Cappuccino",
+    "category": "Bebidas",
+    "unit_price": "1.8",
+    "cost_price": "0.4",
+    "stock": "300",
+    "min_stock": "100"
+  },
+  {
+    "id": "19",
+    "name": "Sumo de laranja",
+    "category": "Bebidas",
+    "unit_price": "2.5",
+    "cost_price": "0.8",
+    "stock": "40",
+    "min_stock": "25"
+  },
+  {
+    "id": "20",
+    "name": "Chá",
+    "category": "Bebidas",
+    "unit_price": "1.2",
+    "cost_price": "0.15",
+    "stock": "250",
+    "min_stock": "100"
+  },
+  {
+    "id": "21",
+    "name": "Água",
+    "category": "Bebidas",
+    "unit_price": "0.7",
+    "cost_price": "0.2",
+    "stock": "120",
+    "min_stock": "60"
+  }
+]
