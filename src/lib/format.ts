@@ -3,13 +3,18 @@
  * Valores inválidos (NaN/Infinity) aparecem como "—", nunca como "NaN".
  */
 
+// `useGrouping: "always"` porque o pt-PT só agrupa a partir de 5 dígitos por
+// omissão: sem isto, 3069,92 € aparecia como "3069,92 €" e o relatório diz
+// "3 069,92 €".
 const eurFormatter = new Intl.NumberFormat("pt-PT", {
   style: "currency",
   currency: "EUR",
+  useGrouping: "always",
 });
 
 const intFormatter = new Intl.NumberFormat("pt-PT", {
   maximumFractionDigits: 0,
+  useGrouping: "always",
 });
 
 const pctFormatters = new Map<number, Intl.NumberFormat>();
@@ -21,6 +26,7 @@ function pctFormatter(decimals: number): Intl.NumberFormat {
     formatter = new Intl.NumberFormat("pt-PT", {
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
+      useGrouping: "always",
     });
     pctFormatters.set(decimals, formatter);
   }
