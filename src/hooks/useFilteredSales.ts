@@ -26,12 +26,19 @@ export interface UseFilteredSalesResult {
 
 export function useFilteredSales(): UseFilteredSalesResult {
   const { vendas, produtos, status } = useData();
-  const [from, to, category, payment, search] = useFilters(
-    useShallow((state) => [state.from, state.to, state.category, state.payment, state.search]),
+  const { from, to, category, payment, search } = useFilters(
+    useShallow((state) => ({
+      from: state.from,
+      to: state.to,
+      category: state.category,
+      payment: state.payment,
+      search: state.search,
+    })),
   );
 
   const filtradas = useMemo(
-    () => filterSales(vendas, produtos, { from, to, category, payment, search }),
+    () =>
+      filterSales(vendas, produtos, { from, to, category, payment, search }),
     [vendas, produtos, from, to, category, payment, search],
   );
 

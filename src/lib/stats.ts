@@ -10,7 +10,13 @@
  * - `days` de uma série mensal conta dias com vendas, não dias do mês
  */
 
-import { monthKey, monthLabel, parseDate, weekdayIndex, weekdayLabel } from "@/lib/dates";
+import {
+  monthKey,
+  monthLabel,
+  parseDate,
+  weekdayIndex,
+  weekdayLabel,
+} from "@/lib/dates";
 import type {
   CategoryStat,
   HourPoint,
@@ -57,7 +63,15 @@ function accumulate(bucket: Bucket, venda: Venda, costPrice: number): void {
 }
 
 function emptyKpis(): Kpis {
-  return { revenue: 0, cost: 0, profit: 0, margin: 0, units: 0, lines: 0, avgTicket: 0 };
+  return {
+    revenue: 0,
+    cost: 0,
+    profit: 0,
+    margin: 0,
+    units: 0,
+    lines: 0,
+    avgTicket: 0,
+  };
 }
 
 /** Receita, custo, lucro, margem, unidades e ticket médio do conjunto dado. */
@@ -89,7 +103,10 @@ export function kpis(vendas: Venda[], produtos: Produto[]): Kpis {
 }
 
 /** Série mensal, ordenada por mês (Nov/25 → Out/26). */
-export function revenueByMonth(vendas: Venda[], produtos: Produto[]): MonthlyPoint[] {
+export function revenueByMonth(
+  vendas: Venda[],
+  produtos: Produto[],
+): MonthlyPoint[] {
   const byId = indexProducts(produtos);
   const buckets = new Map<string, Bucket>();
 
@@ -120,7 +137,10 @@ export function revenueByMonth(vendas: Venda[], produtos: Produto[]): MonthlyPoi
 }
 
 /** Sempre 7 pontos (segunda a domingo), mesmo que filtrado a um só dia. */
-export function revenueByWeekday(vendas: Venda[], produtos: Produto[]): WeekdayPoint[] {
+export function revenueByWeekday(
+  vendas: Venda[],
+  produtos: Produto[],
+): WeekdayPoint[] {
   const byId = indexProducts(produtos);
   const buckets = Array.from({ length: 7 }, createBucket);
 
@@ -148,7 +168,10 @@ export function revenueByWeekday(vendas: Venda[], produtos: Produto[]): WeekdayP
 }
 
 /** Sempre as 13 horas de funcionamento (7h–19h), mesmo com horas sem vendas. */
-export function revenueByHour(vendas: Venda[], produtos: Produto[]): HourPoint[] {
+export function revenueByHour(
+  vendas: Venda[],
+  produtos: Produto[],
+): HourPoint[] {
   const byId = indexProducts(produtos);
   const buckets = new Map<number, Bucket>();
 
@@ -176,9 +199,15 @@ export function revenueByHour(vendas: Venda[], produtos: Produto[]): HourPoint[]
 }
 
 /** Uma linha por produto vendido, ordenada por lucro. */
-export function productStats(vendas: Venda[], produtos: Produto[]): ProductStat[] {
+export function productStats(
+  vendas: Venda[],
+  produtos: Produto[],
+): ProductStat[] {
   const byId = indexProducts(produtos);
-  const buckets = new Map<number, { name: string; category: string; bucket: Bucket }>();
+  const buckets = new Map<
+    number,
+    { name: string; category: string; bucket: Bucket }
+  >();
 
   for (const venda of vendas) {
     let entry = buckets.get(venda.product_id);
@@ -208,7 +237,8 @@ export function productStats(vendas: Venda[], produtos: Produto[]): ProductStat[
       cost: entry.bucket.cost,
       profit,
       margin: percent(profit, entry.bucket.revenue),
-      avgPrice: entry.bucket.units > 0 ? entry.bucket.revenue / entry.bucket.units : 0,
+      avgPrice:
+        entry.bucket.units > 0 ? entry.bucket.revenue / entry.bucket.units : 0,
       profitShare: 0,
     };
   });
@@ -223,7 +253,10 @@ export function productStats(vendas: Venda[], produtos: Produto[]): ProductStat[
 }
 
 /** Agregação por categoria de produto, ordenada por lucro. */
-export function categoryStats(vendas: Venda[], produtos: Produto[]): CategoryStat[] {
+export function categoryStats(
+  vendas: Venda[],
+  produtos: Produto[],
+): CategoryStat[] {
   const byId = indexProducts(produtos);
   const buckets = new Map<string, Bucket>();
 
@@ -240,19 +273,21 @@ export function categoryStats(vendas: Venda[], produtos: Produto[]): CategorySta
     accumulate(bucket, venda, costOf(byId, venda.product_id));
   }
 
-  const rows: CategoryStat[] = [...buckets.entries()].map(([category, bucket]) => {
-    const profit = bucket.revenue - bucket.cost;
+  const rows: CategoryStat[] = [...buckets.entries()].map(
+    ([category, bucket]) => {
+      const profit = bucket.revenue - bucket.cost;
 
-    return {
-      category,
-      units: bucket.units,
-      revenue: bucket.revenue,
-      cost: bucket.cost,
-      profit,
-      margin: percent(profit, bucket.revenue),
-      profitShare: 0,
-    };
-  });
+      return {
+        category,
+        units: bucket.units,
+        revenue: bucket.revenue,
+        cost: bucket.cost,
+        profit,
+        margin: percent(profit, bucket.revenue),
+        profitShare: 0,
+      };
+    },
+  );
 
   const totalProfit = rows.reduce((sum, row) => sum + row.profit, 0);
 
@@ -274,7 +309,10 @@ export function paymentStats(vendas: Venda[]): PaymentStat[] {
     buckets.set(venda.payment_method, entry);
   }
 
-  const total = vendas.reduce((sum, venda) => sum + venda.unit_price * venda.quantity, 0);
+  const total = vendas.reduce(
+    (sum, venda) => sum + venda.unit_price * venda.quantity,
+    0,
+  );
 
   return [...buckets.entries()]
     .map(([method, entry]) => ({

@@ -40,5 +40,7 @@ export function int(value: number): string {
 
 /** `73.04` → `"73,0 %"` */
 export function pct(value: number, decimals = 1): string {
-  return Number.isFinite(value) ? `${pctFormatter(decimals).format(value)} %` : "—";
+  return Number.isFinite(value)
+    ? `${pctFormatter(decimals).format(value)} %`
+    : "—";
 }

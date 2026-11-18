@@ -20,14 +20,14 @@ export interface UseDataResult {
 
 export function useData(): UseDataResult {
   const { produtos, ingredientes, vendas, status, error, load } = useDataStore(
-    useShallow((state) => [
-      state.produtos,
-      state.ingredientes,
-      state.vendas,
-      state.status,
-      state.error,
-      state.load,
-    ]),
+    useShallow((state) => ({
+      produtos: state.produtos,
+      ingredientes: state.ingredientes,
+      vendas: state.vendas,
+      status: state.status,
+      error: state.error,
+      load: state.load,
+    })),
   );
 
   useEffect(() => {

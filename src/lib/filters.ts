@@ -42,13 +42,15 @@ export function filterSales(
   return vendas.filter((venda) => {
     if (filters.from !== null && venda.date < filters.from) return false;
     if (filters.to !== null && venda.date > filters.to) return false;
-    if (filters.payment !== null && venda.payment_method !== filters.payment) return false;
+    if (filters.payment !== null && venda.payment_method !== filters.payment)
+      return false;
 
     if (!needsProduct) return true;
 
     const produto = byId.get(venda.product_id);
     if (produto === undefined) return false;
-    if (filters.category !== null && produto.category !== filters.category) return false;
+    if (filters.category !== null && produto.category !== filters.category)
+      return false;
     if (term !== "" && !normalize(produto.name).includes(term)) return false;
 
     return true;
@@ -63,8 +65,10 @@ export function filterIngredients(
   const term = normalize(filters.search);
 
   return ingredientes.filter((ingrediente) => {
-    if (filters.category !== null && ingrediente.category !== filters.category) return false;
-    if (term !== "" && !normalize(ingrediente.name).includes(term)) return false;
+    if (filters.category !== null && ingrediente.category !== filters.category)
+      return false;
+    if (term !== "" && !normalize(ingrediente.name).includes(term))
+      return false;
     return true;
   });
 }

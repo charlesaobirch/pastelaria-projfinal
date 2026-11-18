@@ -24,13 +24,17 @@ async function fetchRows(file: string): Promise<Row[]> {
   const response = await fetch(`${DATA_PATH}/${file}.json`);
 
   if (!response.ok) {
-    throw new Error(`Não foi possível ler ${file}.json (HTTP ${response.status}).`);
+    throw new Error(
+      `Não foi possível ler ${file}.json (HTTP ${response.status}).`,
+    );
   }
 
   const data: unknown = await response.json();
 
   if (!Array.isArray(data) || data.length === 0) {
-    throw new Error(`${file}.json devia ser uma lista de registos e veio vazia.`);
+    throw new Error(
+      `${file}.json devia ser uma lista de registos e veio vazia.`,
+    );
   }
 
   return data as Row[];
@@ -41,7 +45,11 @@ async function fetchRows(file: string): Promise<Row[]> {
  * Percorre todas as linhas (4 583 × 7 verificações custa milissegundos) para
  * não deixar passar uma string na linha 2 000.
  */
-function assertShape(file: string, rows: Row[], spec: Record<string, FieldType>): void {
+function assertShape(
+  file: string,
+  rows: Row[],
+  spec: Record<string, FieldType>,
+): void {
   const first = rows[0];
 
   for (const key of Object.keys(spec)) {

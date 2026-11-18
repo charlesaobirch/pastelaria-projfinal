@@ -44,7 +44,9 @@ export const useDataStore = create<DataState>()((set, get) => ({
       set({
         status: "error",
         error:
-          error instanceof Error ? error.message : "Erro desconhecido ao carregar os dados.",
+          error instanceof Error
+            ? error.message
+            : "Erro desconhecido ao carregar os dados.",
       });
     }
   },

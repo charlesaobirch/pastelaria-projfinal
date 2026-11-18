@@ -25,7 +25,15 @@ const MONTHS_SHORT = [
 ];
 
 const WEEKDAYS_SHORT = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
-const WEEKDAYS_LONG = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
+const WEEKDAYS_LONG = [
+  "Segunda",
+  "Terça",
+  "Quarta",
+  "Quinta",
+  "Sexta",
+  "Sábado",
+  "Domingo",
+];
 
 /** `"2025-11-01"` → data local à meia-noite. */
 export function parseDate(iso: string): Date {
@@ -65,7 +73,10 @@ export function weekdayLabel(index: number, short = true): string {
  * recente** e não de hoje — o conjunto de dados termina em 2026-10-31, por isso
  * "últimos 30 dias" a contar de hoje viria vazio.
  */
-export function lastNDays(dates: string[], days: number): Pick<SalesFilters, "from" | "to"> {
+export function lastNDays(
+  dates: string[],
+  days: number,
+): Pick<SalesFilters, "from" | "to"> {
   if (dates.length === 0) {
     return { from: null, to: null };
   }
@@ -78,7 +89,10 @@ export function lastNDays(dates: string[], days: number): Pick<SalesFilters, "fr
 }
 
 /** Data mais antiga e mais recente do conjunto, para mostrar o período. */
-export function dataRange(dates: string[]): { from: string | null; to: string | null } {
+export function dataRange(dates: string[]): {
+  from: string | null;
+  to: string | null;
+} {
   if (dates.length === 0) {
     return { from: null, to: null };
   }
