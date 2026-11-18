@@ -19,6 +19,7 @@ import {
 } from "@/lib/dates";
 import type {
   CategoryStat,
+  DayPoint,
   HourPoint,
   Kpis,
   MonthlyPoint,
@@ -190,6 +191,34 @@ export function revenueByHour(
     .sort(([a], [b]) => a - b)
     .map(([hour, bucket]) => ({
       hour,
+      revenue: bucket.revenue,
+      cost: bucket.cost,
+      profit: bucket.revenue - bucket.cost,
+      units: bucket.units,
+      lines: bucket.lines,
+    }));
+}
+
+/** Série diária, ordenada por data. Uma linha por dia com vendas. */
+export function revenueByDay(vendas: Venda[], produtos: Produto[]): DayPoint[] {
+  const byId = indexProducts(produtos);
+  const buckets = new Map<string, Bucket>();
+
+  for (const venda of vendas) {
+    let bucket = buckets.get(venda.date);
+
+    if (!bucket) {
+      bucket = createBucket();
+      buckets.set(venda.date, bucket);
+    }
+
+    accumulate(bucket, venda, costOf(byId, venda.product_id));
+  }
+
+  return [...buckets.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, bucket]) => ({
+      date,
       revenue: bucket.revenue,
       cost: bucket.cost,
       profit: bucket.revenue - bucket.cost,

@@ -112,6 +112,16 @@ export interface HourPoint {
   lines: number;
 }
 
+export interface DayPoint {
+  /** `"YYYY-MM-DD"` */
+  date: string;
+  revenue: number;
+  cost: number;
+  profit: number;
+  units: number;
+  lines: number;
+}
+
 export interface ProductStat {
   id: number;
   name: string;
