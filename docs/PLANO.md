@@ -180,8 +180,10 @@ export interface Venda {
 dates.ts   parseDate(iso): Date · toISODate(d): string · monthKey(d): string
            monthLabel(key): string · weekdayIndex(d): number · weekdayLabel(i, short?)
            lastNDays(dates, n): { from, to } · dataRange(dates): { from, to }
+           yearRange(2026) · monthRange("2026-07") · dayRange("2026-10-14")
 stats.ts   kpis(vendas, produtos) · revenueByMonth(vendas, produtos)
            revenueByWeekday(vendas, produtos) · revenueByHour(vendas, produtos)
+           revenueByDay(vendas, produtos)
            productStats(vendas, produtos) · categoryStats(vendas, produtos)
            paymentStats(vendas) · pareto(productStats)
 filters.ts filterSales(vendas, produtos, filtros) · hasActiveFilters(filtros)
@@ -253,7 +255,7 @@ Datas reais: 6 dias úteis (18 a 23/11), entrega na manhã de 24/11.
 | Fase | Quando | Objetivo | Pronto quando |
 |:--|:--|:--|:--|
 | **0. Fundação** | ✅ 18/11 | tipos, `services/`, `lib/`, store e hooks | ✅ no browser: 11 389,70 € · 8 319,78 € · 73,0 % · 7 643 un |
-| **1. Esqueleto** | 19/11 | App shell + nav + as 5 rotas P0 a renderizar | navegação completa sem erros de consola |
+| **1. Esqueleto** | 19/11 | App shell + nav + `PeriodPicker` (ano/mês/dia) + as 5 rotas P0 a renderizar | navegação completa sem erros de consola |
 | **2. Ecrãs core** | 20–21/11 | Visão geral, Produtos (+detalhe), Vendas no tempo | 3 ecrãs completos com gráficos Recharts |
 | **3. Ecrãs de apoio** | 22/11 | Stock, secção de pagamentos, `/sobre` | todos os ecrãs com dados reais |
 | **4. Polimento** | 23/11 | loading/erro/vazio, responsivo, acessibilidade, `biome` + `build` | build limpo, revisão visual feita |
@@ -270,13 +272,28 @@ relatório. `npm run lint` e `npm run build` limpos, zero erros de consola.
 desenham 3 estilos. Escolher uma direção (sidebar vs topo, densidade, paleta) e
 um `design-system` mínimo (tokens de cor/espaço/tipo) antes de codar ecrãs.
 
+### Período: ano, mês e dia
+
+A base está fechada: `yearRange`, `monthRange` e `dayRange` produzem os `from/to`
+que `useFilters` já guarda, e `revenueByDay` desenha a série diária. Falta só a
+UI — um `PeriodPicker` em `components/ui` (fase 1) ligado em `/` e `/vendas` —
+e o aviso de não homologia quando o âmbito é um ano.
+
+Regras que o selector tem de respeitar:
+
+- os meses reais são 12 (`Nov/25` … `Out/26`); não existem “Julho 2025” nem
+  “Dezembro 2026”, por isso ano/mês/dia não são filtros independentes;
+- ano 2025 = 61 dias, ano 2026 = 304 dias: comparar totais dá sempre +417 %.
+  Comparar **por dia** (30,24 vs 31,40 €/dia) e mostrar o badge “não homólogo”;
+- `/stock` não recebe filtro temporal — os ingredientes são uma fotografia.
+
 ### Repartição (3 pessoas)
 
 | Workstream | Dono | Ecrãs / ficheiros | Também |
 |:--|:--|:--|:--|
 | **A · Fundação** | Charles | `types`, `services`, `lib/*`, `store`, `components/ui`, `app/layout.tsx`, `/` | capitão de merge; tokens visuais |
 | **B · Produtos** | Andrey | `/produtos`, `/produtos/[id]`, `/stock`, `ProductTable`, `MarginScatter`, `StockTable` | liga `lib/stats` e `lib/stock` |
-| **C · Tempo** | Jonathan | `/vendas`, gráficos temporais, `PaymentSplit`, `/simulador` (P1) | slides + ensaio |
+| **C · Tempo** | Jonathan | `/vendas`, gráficos temporais, `PaymentSplit`, `/simulador` (P1) | liga o `PeriodPicker` em `/vendas`; slides + ensaio |
 
 Cada pessoa tem um ecrã P0 “seu” mais a sua parte da fundação. A é o gargalo
 na fase 0: assim que os contratos estiverem em `main`, B e C arrancam.
