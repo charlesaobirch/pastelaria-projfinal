@@ -2722,7 +2722,7 @@
                   "type": "text",
                   "name": "Filter summary",
                   "fill": "#777773",
-                  "content": "273 dias com vendas · 3 525 linhas",
+                  "content": "273 dias com vendas",
                   "fontFamily": "Inter",
                   "fontSize": 12,
                   "fontWeight": "normal"
@@ -3330,7 +3330,7 @@
                           "type": "text",
                           "name": "Payment Cartão detail",
                           "fill": "#777773",
-                          "content": "4 169,00 € · 1 685 linhas",
+                          "content": "4 169,00 €",
                           "fontFamily": "Inter",
                           "fontSize": 11,
                           "fontWeight": "normal"
@@ -3393,7 +3393,7 @@
                           "type": "text",
                           "name": "Payment Dinheiro detail",
                           "fill": "#777773",
-                          "content": "2 767,50 € · 1 111 linhas",
+                          "content": "2 767,50 €",
                           "fontFamily": "Inter",
                           "fontSize": 11,
                           "fontWeight": "normal"
@@ -3456,7 +3456,7 @@
                           "type": "text",
                           "name": "Payment MB Way detail",
                           "fill": "#777773",
-                          "content": "1 764,70 € · 729 linhas",
+                          "content": "1 764,70 €",
                           "fontFamily": "Inter",
                           "fontSize": 11,
                           "fontWeight": "normal"
@@ -5743,7 +5743,7 @@
                     },
                     {
                       "type": "frame",
-                      "name": "Comparison Ticket por linha",
+                      "name": "Comparison Ticket médio",
                       "width": "fill_container",
                       "stroke": "#E6E6E3",
                       "strokeWidth": {
@@ -5758,9 +5758,9 @@
                       "children": [
                         {
                           "type": "text",
-                          "name": "Comparison Ticket por linha label",
+                          "name": "Comparison Ticket médio label",
                           "fill": "#333333",
-                          "content": "Ticket por linha",
+                          "content": "Ticket médio",
                           "fontFamily": "Inter",
                           "fontSize": 12,
                           "fontWeight": "normal",
@@ -5769,7 +5769,7 @@
                         },
                         {
                           "type": "text",
-                          "name": "Comparison Ticket por linha current",
+                          "name": "Comparison Ticket médio current",
                           "fill": "#565652",
                           "content": "2,47 €",
                           "fontFamily": "Inter",
@@ -5781,7 +5781,7 @@
                         },
                         {
                           "type": "text",
-                          "name": "Comparison Ticket por linha previous",
+                          "name": "Comparison Ticket médio previous",
                           "fill": "#565652",
                           "content": "2,54 €",
                           "fontFamily": "Inter",
@@ -5793,7 +5793,7 @@
                         },
                         {
                           "type": "text",
-                          "name": "Comparison Ticket por linha delta",
+                          "name": "Comparison Ticket médio delta",
                           "fill": "#202020",
                           "content": "−2,9 %",
                           "fontFamily": "Inter",
@@ -5911,7 +5911,7 @@
                           "type": "text",
                           "name": "Comparison Melhor dia previous",
                           "fill": "#565652",
-                          "content": "7 dez  · 56,90 €",
+                          "content": "7 dez · 56,90 €",
                           "fontFamily": "Inter",
                           "fontSize": 12,
                           "fontWeight": "normal",
