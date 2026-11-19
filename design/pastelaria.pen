@@ -1,0 +1,2157 @@
+{
+  "version": "2.22",
+  "children": [
+    {
+      "type": "frame",
+      "id": "yysJb",
+      "x": 0,
+      "y": 0,
+      "name": "Balcao Dashboard Sketch",
+      "clip": true,
+      "width": 1440,
+      "height": 1300,
+      "fill": "#F8F8F6",
+      "children": [
+        {
+          "type": "frame",
+          "id": "lSJ41",
+          "name": "Sidebar",
+          "width": 236,
+          "height": "fill_container",
+          "fill": "#F0F0EE",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            28,
+            20
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "u3pQF",
+              "name": "Product name",
+              "fill": "#202020",
+              "content": "Balcão",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "pwQxp",
+              "name": "Primary navigation",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "YJ5qZ",
+                  "name": "Nav - Visao geral",
+                  "width": "fill_container",
+                  "fill": "#DDDDDA",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "M3LGs",
+                      "name": "Nav label",
+                      "fill": "#202020",
+                      "content": "Visão geral",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "l8q2V",
+                  "name": "Nav - Vendas",
+                  "width": "fill_container",
+                  "fill": "#F0F0EE",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NxHvi",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Vendas",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nnbgi",
+                  "name": "Nav - Produtos",
+                  "width": "fill_container",
+                  "fill": "#F0F0EE",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zdy0N",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Produtos",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ASOQP",
+                  "name": "Nav - Stock",
+                  "width": "fill_container",
+                  "fill": "#F0F0EE",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "z36cm",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Stock",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jK9wD",
+                  "name": "Nav - Sobre",
+                  "width": "fill_container",
+                  "fill": "#F0F0EE",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uF4WS",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Sobre",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "FRyw7",
+              "name": "Data coverage",
+              "fill": "#777773",
+              "content": "Dados de Nov 2025 a Out 2026",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Bk8SC",
+          "name": "Main content",
+          "width": 1204,
+          "height": 1300,
+          "fill": "#F8F8F6",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "oyN19",
+              "x": 40,
+              "y": 36,
+              "name": "Page heading",
+              "width": "fill_container(1124)",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "x0sfRi",
+                  "name": "Heading group",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ReSOf",
+                      "name": "Page title",
+                      "fill": "#202020",
+                      "content": "Visão geral",
+                      "fontFamily": "Inter",
+                      "fontSize": 28,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VPdGd",
+                      "name": "Page description",
+                      "fill": "#646460",
+                      "content": "Receita e produtos que mais contribuem para o negócio",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "hynf7",
+                  "name": "Analysis range value",
+                  "fill": "#333333",
+                  "content": "Nov 2025 – Out 2026",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hsJeo",
+              "x": 40,
+              "y": 119,
+              "name": "Revenue cards",
+              "width": "fill_container(1124)",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Zcy3v",
+                  "name": "Revenue - Receita do dia",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 10,
+                  "stroke": "#D8D8D4",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 18,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "z6DGoi",
+                      "name": "Metric heading",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rnAaH",
+                          "name": "Metric label",
+                          "fill": "#565652",
+                          "content": "Receita do dia",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "z3WZUt",
+                          "name": "Period - Receita do dia",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 6,
+                          "stroke": "#CFCFCB",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            8,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "I5cT8",
+                              "name": "Period - Receita do dia value",
+                              "fill": "#333333",
+                              "content": "31 Out 2026",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "BkJ7k",
+                              "name": "Period - Receita do dia chevron",
+                              "fill": "#777773",
+                              "content": "v",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "H0NnV5",
+                      "name": "Daily revenue",
+                      "fill": "#202020",
+                      "content": "17,30 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 28,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VGMW3",
+                      "name": "Metric supporting data",
+                      "fill": "#777773",
+                      "content": "14 un. · 8 linhas",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I7X7xD",
+                  "name": "Revenue - Receita do mes",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 10,
+                  "stroke": "#D8D8D4",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 18,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "kBgGl",
+                      "name": "Metric heading",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "M460vm",
+                          "name": "Monthly metric label",
+                          "fill": "#565652",
+                          "content": "Receita do mês",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "HGHfv",
+                          "name": "Period - Receita do mes",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 6,
+                          "stroke": "#CFCFCB",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            8,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "eJHUC",
+                              "name": "Period - Receita do mes value",
+                              "fill": "#333333",
+                              "content": "Out 2026",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ve9r9",
+                              "name": "Period - Receita do mes chevron",
+                              "fill": "#777773",
+                              "content": "v",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "fXI1g",
+                      "name": "Monthly revenue",
+                      "fill": "#202020",
+                      "content": "846,20 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 28,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AcOBC",
+                      "name": "Metric supporting data",
+                      "fill": "#777773",
+                      "content": "591 un. · 360 linhas",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "w3P5y",
+                  "name": "Revenue - Receita do ano",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 10,
+                  "stroke": "#D8D8D4",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 18,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "VUYaP",
+                      "name": "Metric heading",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SVNQU",
+                          "name": "Metric label",
+                          "fill": "#565652",
+                          "content": "Receita do ano",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "wIhMg",
+                          "name": "Year period",
+                          "fill": "#333333",
+                          "content": "2026 · Jan–Out",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "tGygX",
+                      "name": "Year revenue",
+                      "fill": "#202020",
+                      "content": "9 544,90 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 28,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "DeaCX",
+                      "name": "Metric supporting data",
+                      "fill": "#777773",
+                      "content": "6 427 un. · 3 855 linhas",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qWOqD",
+              "x": 40,
+              "y": 285,
+              "name": "Year comparison note",
+              "width": "fill_container(1124)",
+              "fill": "#EFEFED",
+              "cornerRadius": 6,
+              "gap": 10,
+              "padding": [
+                12,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "t9o6b",
+                  "name": "Note label",
+                  "fill": "#333333",
+                  "content": "Nota",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "B2AKVz",
+                  "name": "Year comparison copy",
+                  "fill": "#555551",
+                  "content": "2026 é parcial (Jan–Out); 2025 só inclui Nov–Dez. Compare receita por dia, não totais anuais.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "I14LMz",
+              "x": 40,
+              "y": 350,
+              "name": "Top five products",
+              "width": 594,
+              "height": 446,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "yqYGh",
+                  "name": "Top five heading and filters",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "w4zoA7",
+                      "name": "Top five title",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gXi0Y",
+                          "name": "Top five title text",
+                          "fill": "#202020",
+                          "content": "Top 5 produtos por lucro",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "m4QW7Q",
+                          "name": "Top five subtitle",
+                          "fill": "#777773",
+                          "content": "Ranking calculado sobre o período selecionado",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jg0HD",
+                      "name": "Top five filters",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wX2Ro",
+                          "name": "Day or month filter",
+                          "fill": "#EEEEEC",
+                          "cornerRadius": 7,
+                          "gap": 2,
+                          "padding": 3,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "sh3TE",
+                              "name": "Period mode - Dias",
+                              "fill": "#EEEEEC",
+                              "cornerRadius": 5,
+                              "padding": [
+                                7,
+                                10
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "zeDjk",
+                                  "name": "Mode label",
+                                  "fill": "#666662",
+                                  "content": "Dias",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "FJBAJ",
+                              "name": "Period mode - Meses",
+                              "fill": "#FFFFFF",
+                              "cornerRadius": 5,
+                              "padding": [
+                                7,
+                                10
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "H0crcy",
+                                  "name": "Mode label",
+                                  "fill": "#202020",
+                                  "content": "Meses",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 12,
+                                  "fontWeight": "bold"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "X8BRq",
+                          "name": "Top five period",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 6,
+                          "stroke": "#CFCFCB",
+                          "strokeWidth": 1,
+                          "gap": 8,
+                          "padding": [
+                            8,
+                            10
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "eg51s",
+                              "name": "Top five selected period",
+                              "fill": "#333333",
+                              "content": "Últimos 12 meses",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "JA47H",
+                              "name": "Top five period chevron",
+                              "fill": "#777773",
+                              "content": "v",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b82eh",
+                  "name": "Top products list",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QUyAz",
+                      "name": "Top products column labels",
+                      "width": "fill_container",
+                      "fill": "#F5F5F3",
+                      "gap": 14,
+                      "padding": [
+                        9,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "W2rzbi",
+                          "name": "Rank heading",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 24,
+                          "content": "#",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uu6WC",
+                          "name": "Product heading",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Produto",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "EpLlD",
+                          "name": "Units heading",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 76,
+                          "content": "Unidades",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "S645m",
+                          "name": "Profit heading",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 100,
+                          "content": "Lucro bruto",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sFTHp",
+                      "name": "Product row 1",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 14,
+                      "padding": [
+                        12,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "N0oYJY",
+                          "name": "Rank 1",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 24,
+                          "content": "1",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "vOm2R",
+                          "name": "Product name and category",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "JeimB",
+                              "name": "Product 1 name",
+                              "fill": "#333333",
+                              "content": "Café",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "id": "jJQvJ",
+                              "name": "Product 1 category",
+                              "fill": "#777773",
+                              "content": "Bebidas",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "DQ7vW",
+                          "name": "Product 1 units",
+                          "fill": "#555551",
+                          "textGrowth": "fixed-width",
+                          "width": 76,
+                          "content": "1 716",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "stu3K",
+                          "name": "Product 1 profit",
+                          "fill": "#202020",
+                          "textGrowth": "fixed-width",
+                          "width": 100,
+                          "content": "1 166,88 €",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Rm0Wq",
+                      "name": "Product row 2",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 14,
+                      "padding": [
+                        12,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gu0Pv",
+                          "name": "Rank 2",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 24,
+                          "content": "2",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kpuJt",
+                          "name": "Product name and category",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "F1wCQS",
+                              "name": "Product 2 name",
+                              "fill": "#333333",
+                              "content": "Galão",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "id": "jRWgB",
+                              "name": "Product 2 category",
+                              "fill": "#777773",
+                              "content": "Bebidas",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "u29lbK",
+                          "name": "Product 2 units",
+                          "fill": "#555551",
+                          "textGrowth": "fixed-width",
+                          "width": 76,
+                          "content": "804",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "q0nRh",
+                          "name": "Product 2 profit",
+                          "fill": "#202020",
+                          "textGrowth": "fixed-width",
+                          "width": 100,
+                          "content": "844,20 €",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vIEv2",
+                      "name": "Product row 3",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 14,
+                      "padding": [
+                        12,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "HDvxy",
+                          "name": "Rank 3",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 24,
+                          "content": "3",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "f74hoU",
+                          "name": "Product name and category",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "XWC7S",
+                              "name": "Product 3 name",
+                              "fill": "#333333",
+                              "content": "Cappuccino",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "id": "i5skzO",
+                              "name": "Product 3 category",
+                              "fill": "#777773",
+                              "content": "Bebidas",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "ZRRSz",
+                          "name": "Product 3 units",
+                          "fill": "#555551",
+                          "textGrowth": "fixed-width",
+                          "width": 76,
+                          "content": "451",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "n8bghe",
+                          "name": "Product 3 profit",
+                          "fill": "#202020",
+                          "textGrowth": "fixed-width",
+                          "width": 100,
+                          "content": "631,40 €",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Hu6wq",
+                      "name": "Product row 4",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 14,
+                      "padding": [
+                        12,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "VopBn",
+                          "name": "Rank 4",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 24,
+                          "content": "4",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "gfTvy",
+                          "name": "Product name and category",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "i7aklu",
+                              "name": "Product 4 name",
+                              "fill": "#333333",
+                              "content": "Pastel de nata",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "id": "D9Iuj4",
+                              "name": "Product 4 category",
+                              "fill": "#777773",
+                              "content": "Pastéis",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "DIaVf",
+                          "name": "Product 4 units",
+                          "fill": "#555551",
+                          "textGrowth": "fixed-width",
+                          "width": 76,
+                          "content": "597",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Xa9sh",
+                          "name": "Product 4 profit",
+                          "fill": "#202020",
+                          "textGrowth": "fixed-width",
+                          "width": 100,
+                          "content": "626,85 €",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JQA7H",
+                      "name": "Product row 5",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 14,
+                      "padding": [
+                        12,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "LIiOg",
+                          "name": "Rank 5",
+                          "fill": "#777773",
+                          "textGrowth": "fixed-width",
+                          "width": 24,
+                          "content": "5",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "uQ3ej",
+                          "name": "Product name and category",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "u0Gxsc",
+                              "name": "Product 5 name",
+                              "fill": "#333333",
+                              "content": "Croissant misto",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "id": "t193ig",
+                              "name": "Product 5 category",
+                              "fill": "#777773",
+                              "content": "Pão",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ghq7I",
+                          "name": "Product 5 units",
+                          "fill": "#555551",
+                          "textGrowth": "fixed-width",
+                          "width": 76,
+                          "content": "358",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "mfA91",
+                          "name": "Product 5 profit",
+                          "fill": "#202020",
+                          "textGrowth": "fixed-width",
+                          "width": 100,
+                          "content": "608,60 €",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "pqZvC",
+                  "name": "Ranking footnote",
+                  "fill": "#777773",
+                  "content": "Top 5 = 46,6% do lucro bruto do período",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Monthly revenue chart",
+              "x": 650,
+              "y": 350,
+              "width": 514,
+              "height": 446,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Chart heading",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Chart title",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Chart title text",
+                          "fill": "#202020",
+                          "content": "Receita por mês",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Chart subtitle",
+                          "fill": "#777773",
+                          "content": "Ano fiscal 2026 · Fev–Out · 9 meses",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Chart total",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Chart total label",
+                          "fill": "#777773",
+                          "content": "Total do período",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 110,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Chart total value",
+                          "fill": "#202020",
+                          "content": "8 701,20 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 110,
+                          "textAlign": "right"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Monthly revenue plot",
+                  "width": "fill_container",
+                  "height": 312,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Grid 0 €",
+                      "x": 46,
+                      "y": 290,
+                      "width": 426,
+                      "height": 1,
+                      "fill": "#E0E0DC"
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Grid 700 €",
+                      "x": 46,
+                      "y": 145,
+                      "width": 426,
+                      "height": 1,
+                      "fill": "#EDEDEA"
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Grid 1400 €",
+                      "x": 46,
+                      "y": 0,
+                      "width": 426,
+                      "height": 1,
+                      "fill": "#EDEDEA"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Axis 1 400 €",
+                      "fill": "#777773",
+                      "content": "1 400 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal",
+                      "textGrowth": "fixed-width",
+                      "width": 40,
+                      "textAlign": "right",
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "type": "text",
+                      "name": "Axis 700 €",
+                      "fill": "#777773",
+                      "content": "700 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal",
+                      "textGrowth": "fixed-width",
+                      "width": 40,
+                      "textAlign": "right",
+                      "x": 0,
+                      "y": 139
+                    },
+                    {
+                      "type": "text",
+                      "name": "Axis 0 €",
+                      "fill": "#777773",
+                      "content": "0 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal",
+                      "textGrowth": "fixed-width",
+                      "width": 40,
+                      "textAlign": "right",
+                      "x": 0,
+                      "y": 277
+                    },
+                    {
+                      "type": "path",
+                      "name": "Revenue line",
+                      "x": 46,
+                      "y": 0,
+                      "width": 426,
+                      "height": 290,
+                      "viewBox": [
+                        0,
+                        0,
+                        426,
+                        290
+                      ],
+                      "geometry": "M 0 124.02 L 53.25 106.45 L 106.5 82.73 L 159.75 102.62 L 213 92.55 L 266.25 30.43 L 319.5 42.77 L 372.75 111.32 L 426 114.72",
+                      "fill": "#00000000",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Fev",
+                      "x": 42.5,
+                      "y": 120.52,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Mar",
+                      "x": 95.75,
+                      "y": 102.95,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Abr",
+                      "x": 149,
+                      "y": 79.23,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Mai",
+                      "x": 202.25,
+                      "y": 99.12,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Jun",
+                      "x": 255.5,
+                      "y": 89.05,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Jul",
+                      "x": 308.75,
+                      "y": 26.93,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Ago",
+                      "x": 362,
+                      "y": 39.27,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Set",
+                      "x": 415.25,
+                      "y": 107.82,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Point Out",
+                      "x": 468.5,
+                      "y": 111.22,
+                      "width": 7,
+                      "height": 7,
+                      "fill": "#FFFFFF",
+                      "stroke": "#202020",
+                      "strokeWidth": 2
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Month labels",
+                      "x": 46,
+                      "y": 296,
+                      "width": 426,
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Month Fev",
+                          "fill": "#777773",
+                          "content": "Fev",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Mar",
+                          "fill": "#777773",
+                          "content": "Mar",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Abr",
+                          "fill": "#777773",
+                          "content": "Abr",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Mai",
+                          "fill": "#777773",
+                          "content": "Mai",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Jun",
+                          "fill": "#777773",
+                          "content": "Jun",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Jul",
+                          "fill": "#777773",
+                          "content": "Jul",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Ago",
+                          "fill": "#777773",
+                          "content": "Ago",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Set",
+                          "fill": "#777773",
+                          "content": "Set",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Month Out",
+                          "fill": "#777773",
+                          "content": "Out",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "Chart footnote",
+                  "fill": "#777773",
+                  "content": "Pico em julho (1 253,10 €) · média mensal 966,80 €",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Stock alerts",
+              "x": 40,
+              "y": 812,
+              "width": 1124,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Stock heading",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Stock title",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Stock title text",
+                          "fill": "#202020",
+                          "content": "Stock abaixo do mínimo",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Stock subtitle",
+                          "fill": "#777773",
+                          "content": "Produtos e ingredientes a repor, esgotados primeiro",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Stock alert count",
+                      "fill": "#EFEFED",
+                      "cornerRadius": 6,
+                      "padding": [
+                        6,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Stock alert count text",
+                          "fill": "#565652",
+                          "content": "5 ingredientes · 0 produtos",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Stock columns",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Products column",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Produtos heading",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Produtos title",
+                              "fill": "#202020",
+                              "content": "Produtos",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "frame",
+                              "name": "Produtos count",
+                              "fill": "#EFEFED",
+                              "cornerRadius": 4,
+                              "padding": [
+                                3,
+                                7
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "name": "Produtos count text",
+                                  "fill": "#565652",
+                                  "content": "0",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "bold"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Products empty state",
+                          "width": "fill_container",
+                          "fill": "#F7F7F5",
+                          "cornerRadius": 8,
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Products empty title",
+                              "fill": "#565652",
+                              "content": "Nenhum produto abaixo do mínimo",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "name": "Products empty copy",
+                              "fill": "#777773",
+                              "content": "21 produtos com stock igual ou acima do mínimo definido.",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Ingredients column",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Ingredientes heading",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Ingredientes title",
+                              "fill": "#202020",
+                              "content": "Ingredientes",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "frame",
+                              "name": "Ingredientes count",
+                              "fill": "#EFEFED",
+                              "cornerRadius": 4,
+                              "padding": [
+                                3,
+                                7
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "name": "Ingredientes count text",
+                                  "fill": "#565652",
+                                  "content": "5",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "bold"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Ingredients list",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "name": "Ingredient Chocolate negro",
+                              "width": "fill_container",
+                              "stroke": "#E6E6E3",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 12,
+                              "padding": [
+                                9,
+                                0
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient name and meta",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Chocolate negro name",
+                                      "fill": "#333333",
+                                      "content": "Chocolate negro",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 12,
+                                      "fontWeight": "bold"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Chocolate negro meta",
+                                      "fill": "#777773",
+                                      "content": "Doce Norte · 0 / 5 kg",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient Chocolate negro status",
+                                  "fill": "#E4E4E0",
+                                  "cornerRadius": 5,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Chocolate negro status text",
+                                      "fill": "#202020",
+                                      "content": "Esgotado",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "bold"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "name": "Ingredient Copos take-away",
+                              "width": "fill_container",
+                              "stroke": "#E6E6E3",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 12,
+                              "padding": [
+                                9,
+                                0
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient name and meta",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Copos take-away name",
+                                      "fill": "#333333",
+                                      "content": "Copos take-away",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 12,
+                                      "fontWeight": "bold"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Copos take-away meta",
+                                      "fill": "#777773",
+                                      "content": "Embalagens Costa · 150 / 200 un",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient Copos take-away status",
+                                  "fill": "#F0F0EE",
+                                  "cornerRadius": 5,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Copos take-away status text",
+                                      "fill": "#565652",
+                                      "content": "Baixo",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "bold"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "name": "Ingredient Caixas de bolo",
+                              "width": "fill_container",
+                              "stroke": "#E6E6E3",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 12,
+                              "padding": [
+                                9,
+                                0
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient name and meta",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Caixas de bolo name",
+                                      "fill": "#333333",
+                                      "content": "Caixas de bolo",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 12,
+                                      "fontWeight": "bold"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Caixas de bolo meta",
+                                      "fill": "#777773",
+                                      "content": "Embalagens Costa · 18 / 40 un",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient Caixas de bolo status",
+                                  "fill": "#F0F0EE",
+                                  "cornerRadius": 5,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Caixas de bolo status text",
+                                      "fill": "#565652",
+                                      "content": "Baixo",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "bold"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "name": "Ingredient Farinha T55",
+                              "width": "fill_container",
+                              "stroke": "#E6E6E3",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 12,
+                              "padding": [
+                                9,
+                                0
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient name and meta",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Farinha T55 name",
+                                      "fill": "#333333",
+                                      "content": "Farinha T55",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 12,
+                                      "fontWeight": "bold"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Farinha T55 meta",
+                                      "fill": "#777773",
+                                      "content": "Moagem do Vale · 12 / 20 kg",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient Farinha T55 status",
+                                  "fill": "#F0F0EE",
+                                  "cornerRadius": 5,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Farinha T55 status text",
+                                      "fill": "#565652",
+                                      "content": "Baixo",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "bold"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "name": "Ingredient Amêndoa",
+                              "width": "fill_container",
+                              "stroke": "#E6E6E3",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 12,
+                              "padding": [
+                                9,
+                                0
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient name and meta",
+                                  "width": "fill_container",
+                                  "layout": "vertical",
+                                  "gap": 3,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Amêndoa name",
+                                      "fill": "#333333",
+                                      "content": "Amêndoa",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 12,
+                                      "fontWeight": "bold"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Amêndoa meta",
+                                      "fill": "#777773",
+                                      "content": "Especiarias do Sul · 4 / 5 kg",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 11,
+                                      "fontWeight": "normal"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "name": "Ingredient Amêndoa status",
+                                  "fill": "#F0F0EE",
+                                  "cornerRadius": 5,
+                                  "padding": [
+                                    4,
+                                    8
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "name": "Ingredient Amêndoa status text",
+                                      "fill": "#565652",
+                                      "content": "Baixo",
+                                      "fontFamily": "Inter",
+                                      "fontSize": 10,
+                                      "fontWeight": "bold"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "Stock footnote",
+                  "fill": "#777773",
+                  "content": "Fotografia do stock no momento da exportação (31 Out 2026). Não há histórico de consumo.",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fileToken": "5dd952af-5ad8-4670-9650-472775b4be31"
+}
