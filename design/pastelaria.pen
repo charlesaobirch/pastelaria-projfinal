@@ -4,9 +4,9 @@
     {
       "type": "frame",
       "id": "yysJb",
-      "x": 0,
-      "y": 0,
-      "name": "Balcao Dashboard Sketch",
+      "x": 355,
+      "y": -297,
+      "name": "Dashboard Visão Geral",
       "clip": true,
       "width": 1440,
       "height": 1300,
@@ -1220,9 +1220,10 @@
             },
             {
               "type": "frame",
-              "name": "Monthly revenue chart",
+              "id": "p8InL3",
               "x": 650,
               "y": 350,
+              "name": "Monthly revenue chart",
               "width": 514,
               "height": 446,
               "fill": "#FFFFFF",
@@ -1235,19 +1236,21 @@
               "children": [
                 {
                   "type": "frame",
+                  "id": "Fxbgs",
                   "name": "Chart heading",
                   "width": "fill_container",
                   "justifyContent": "space_between",
-                  "alignItems": "start",
                   "children": [
                     {
                       "type": "frame",
+                      "id": "EuH7z",
                       "name": "Chart title",
                       "layout": "vertical",
                       "gap": 5,
                       "children": [
                         {
                           "type": "text",
+                          "id": "S7QnX",
                           "name": "Chart title text",
                           "fill": "#202020",
                           "content": "Receita por mês",
@@ -1257,6 +1260,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "hI9p8",
                           "name": "Chart subtitle",
                           "fill": "#777773",
                           "content": "Ano fiscal 2026 · Fev–Out · 9 meses",
@@ -1268,6 +1272,7 @@
                     },
                     {
                       "type": "frame",
+                      "id": "PxWJo",
                       "name": "Chart total",
                       "layout": "vertical",
                       "gap": 4,
@@ -1275,27 +1280,29 @@
                       "children": [
                         {
                           "type": "text",
+                          "id": "cJOJT",
                           "name": "Chart total label",
                           "fill": "#777773",
-                          "content": "Total do período",
-                          "fontFamily": "Inter",
-                          "fontSize": 11,
-                          "fontWeight": "normal",
                           "textGrowth": "fixed-width",
                           "width": 110,
-                          "textAlign": "right"
+                          "content": "Total do período",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
+                          "id": "H6qEwY",
                           "name": "Chart total value",
                           "fill": "#202020",
-                          "content": "8 701,20 €",
-                          "fontFamily": "Inter",
-                          "fontSize": 16,
-                          "fontWeight": "bold",
                           "textGrowth": "fixed-width",
                           "width": 110,
-                          "textAlign": "right"
+                          "content": "8 701,20 €",
+                          "textAlign": "right",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "bold"
                         }
                       ]
                     }
@@ -1303,6 +1310,7 @@
                 },
                 {
                   "type": "frame",
+                  "id": "RsXa8",
                   "name": "Monthly revenue plot",
                   "width": "fill_container",
                   "height": 312,
@@ -1310,201 +1318,219 @@
                   "children": [
                     {
                       "type": "frame",
-                      "name": "Grid 0 €",
+                      "id": "Vlm7Q",
                       "x": 46,
                       "y": 290,
+                      "name": "Grid 0 €",
                       "width": 426,
                       "height": 1,
                       "fill": "#E0E0DC"
                     },
                     {
                       "type": "frame",
-                      "name": "Grid 700 €",
+                      "id": "Swq5R",
                       "x": 46,
                       "y": 145,
+                      "name": "Grid 700 €",
                       "width": 426,
                       "height": 1,
                       "fill": "#EDEDEA"
                     },
                     {
                       "type": "frame",
-                      "name": "Grid 1400 €",
+                      "id": "xUVXN",
                       "x": 46,
                       "y": 0,
+                      "name": "Grid 1400 €",
                       "width": 426,
                       "height": 1,
                       "fill": "#EDEDEA"
                     },
                     {
                       "type": "text",
+                      "id": "SQScb",
+                      "x": 0,
+                      "y": 0,
                       "name": "Axis 1 400 €",
                       "fill": "#777773",
-                      "content": "1 400 €",
-                      "fontFamily": "Inter",
-                      "fontSize": 10,
-                      "fontWeight": "normal",
                       "textGrowth": "fixed-width",
                       "width": 40,
+                      "content": "1 400 €",
                       "textAlign": "right",
-                      "x": 0,
-                      "y": 0
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
+                      "id": "lfvLD",
+                      "x": 0,
+                      "y": 139,
                       "name": "Axis 700 €",
                       "fill": "#777773",
-                      "content": "700 €",
-                      "fontFamily": "Inter",
-                      "fontSize": 10,
-                      "fontWeight": "normal",
                       "textGrowth": "fixed-width",
                       "width": 40,
+                      "content": "700 €",
                       "textAlign": "right",
-                      "x": 0,
-                      "y": 139
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
+                      "id": "kX0cS",
+                      "x": 0,
+                      "y": 277,
                       "name": "Axis 0 €",
                       "fill": "#777773",
-                      "content": "0 €",
-                      "fontFamily": "Inter",
-                      "fontSize": 10,
-                      "fontWeight": "normal",
                       "textGrowth": "fixed-width",
                       "width": 40,
+                      "content": "0 €",
                       "textAlign": "right",
-                      "x": 0,
-                      "y": 277
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "path",
-                      "name": "Revenue line",
+                      "id": "Lpubg",
                       "x": 46,
                       "y": 0,
-                      "width": 426,
-                      "height": 290,
+                      "name": "Revenue line",
+                      "geometry": "M0 124.02l53.25-17.57 53.25-23.72 53.25 19.89 53.25-10.07 53.25-62.12 53.25 12.34 53.25 68.55 53.25 3.4",
                       "viewBox": [
                         0,
                         0,
                         426,
                         290
                       ],
-                      "geometry": "M 0 124.02 L 53.25 106.45 L 106.5 82.73 L 159.75 102.62 L 213 92.55 L 266.25 30.43 L 319.5 42.77 L 372.75 111.32 L 426 114.72",
                       "fill": "#00000000",
+                      "width": 426,
+                      "height": 290,
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Fev",
+                      "id": "N5gXcr",
                       "x": 42.5,
                       "y": 120.52,
+                      "name": "Point Fev",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Mar",
+                      "id": "JQI9L",
                       "x": 95.75,
                       "y": 102.95,
+                      "name": "Point Mar",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Abr",
+                      "id": "l5csP",
                       "x": 149,
                       "y": 79.23,
+                      "name": "Point Abr",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Mai",
+                      "id": "aAAYm",
                       "x": 202.25,
                       "y": 99.12,
+                      "name": "Point Mai",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Jun",
+                      "id": "KbkZK",
                       "x": 255.5,
                       "y": 89.05,
+                      "name": "Point Jun",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Jul",
+                      "id": "km88n",
                       "x": 308.75,
                       "y": 26.93,
+                      "name": "Point Jul",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Ago",
+                      "id": "qXAsr",
                       "x": 362,
                       "y": 39.27,
+                      "name": "Point Ago",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Set",
+                      "id": "A4ikZ",
                       "x": 415.25,
                       "y": 107.82,
+                      "name": "Point Set",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "ellipse",
-                      "name": "Point Out",
+                      "id": "RMMYZ",
                       "x": 468.5,
                       "y": 111.22,
+                      "name": "Point Out",
+                      "fill": "#FFFFFF",
                       "width": 7,
                       "height": 7,
-                      "fill": "#FFFFFF",
                       "stroke": "#202020",
                       "strokeWidth": 2
                     },
                     {
                       "type": "frame",
-                      "name": "Month labels",
+                      "id": "C5UpUJ",
                       "x": 46,
                       "y": 296,
+                      "name": "Month labels",
                       "width": 426,
                       "justifyContent": "space_between",
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
+                          "id": "cHTx2",
                           "name": "Month Fev",
                           "fill": "#777773",
                           "content": "Fev",
@@ -1514,6 +1540,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "G36Zu",
                           "name": "Month Mar",
                           "fill": "#777773",
                           "content": "Mar",
@@ -1523,6 +1550,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "XaM86",
                           "name": "Month Abr",
                           "fill": "#777773",
                           "content": "Abr",
@@ -1532,6 +1560,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "kdHRT",
                           "name": "Month Mai",
                           "fill": "#777773",
                           "content": "Mai",
@@ -1541,6 +1570,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "UX7RY",
                           "name": "Month Jun",
                           "fill": "#777773",
                           "content": "Jun",
@@ -1550,6 +1580,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "FZVZx",
                           "name": "Month Jul",
                           "fill": "#777773",
                           "content": "Jul",
@@ -1559,6 +1590,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "C0Y6g",
                           "name": "Month Ago",
                           "fill": "#777773",
                           "content": "Ago",
@@ -1568,6 +1600,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "R1Py05",
                           "name": "Month Set",
                           "fill": "#777773",
                           "content": "Set",
@@ -1577,6 +1610,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "U6mCW",
                           "name": "Month Out",
                           "fill": "#777773",
                           "content": "Out",
@@ -1590,6 +1624,7 @@
                 },
                 {
                   "type": "text",
+                  "id": "l8SUf",
                   "name": "Chart footnote",
                   "fill": "#777773",
                   "content": "Pico em julho (1 253,10 €) · média mensal 966,80 €",
@@ -1601,9 +1636,10 @@
             },
             {
               "type": "frame",
-              "name": "Stock alerts",
+              "id": "m22z8T",
               "x": 40,
               "y": 812,
+              "name": "Stock alerts",
               "width": 1124,
               "fill": "#FFFFFF",
               "cornerRadius": 10,
@@ -1615,6 +1651,7 @@
               "children": [
                 {
                   "type": "frame",
+                  "id": "g4IDQL",
                   "name": "Stock heading",
                   "width": "fill_container",
                   "justifyContent": "space_between",
@@ -1622,12 +1659,14 @@
                   "children": [
                     {
                       "type": "frame",
+                      "id": "PtP3j",
                       "name": "Stock title",
                       "layout": "vertical",
                       "gap": 5,
                       "children": [
                         {
                           "type": "text",
+                          "id": "MXzEq",
                           "name": "Stock title text",
                           "fill": "#202020",
                           "content": "Stock abaixo do mínimo",
@@ -1637,6 +1676,7 @@
                         },
                         {
                           "type": "text",
+                          "id": "ZpwTc",
                           "name": "Stock subtitle",
                           "fill": "#777773",
                           "content": "Produtos e ingredientes a repor, esgotados primeiro",
@@ -1648,6 +1688,7 @@
                     },
                     {
                       "type": "frame",
+                      "id": "PqmlN",
                       "name": "Stock alert count",
                       "fill": "#EFEFED",
                       "cornerRadius": 6,
@@ -1658,6 +1699,7 @@
                       "children": [
                         {
                           "type": "text",
+                          "id": "f97D7",
                           "name": "Stock alert count text",
                           "fill": "#565652",
                           "content": "5 ingredientes · 0 produtos",
@@ -1671,13 +1713,14 @@
                 },
                 {
                   "type": "frame",
+                  "id": "KWK52",
                   "name": "Stock columns",
                   "width": "fill_container",
                   "gap": 16,
-                  "alignItems": "start",
                   "children": [
                     {
                       "type": "frame",
+                      "id": "qZNVp",
                       "name": "Products column",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -1685,6 +1728,7 @@
                       "children": [
                         {
                           "type": "frame",
+                          "id": "xj6I1",
                           "name": "Produtos heading",
                           "width": "fill_container",
                           "gap": 8,
@@ -1692,6 +1736,7 @@
                           "children": [
                             {
                               "type": "text",
+                              "id": "e7US9",
                               "name": "Produtos title",
                               "fill": "#202020",
                               "content": "Produtos",
@@ -1701,6 +1746,7 @@
                             },
                             {
                               "type": "frame",
+                              "id": "FPi4K",
                               "name": "Produtos count",
                               "fill": "#EFEFED",
                               "cornerRadius": 4,
@@ -1711,6 +1757,7 @@
                               "children": [
                                 {
                                   "type": "text",
+                                  "id": "MeBCb",
                                   "name": "Produtos count text",
                                   "fill": "#565652",
                                   "content": "0",
@@ -1724,6 +1771,7 @@
                         },
                         {
                           "type": "frame",
+                          "id": "I7uF1K",
                           "name": "Products empty state",
                           "width": "fill_container",
                           "fill": "#F7F7F5",
@@ -1734,6 +1782,7 @@
                           "children": [
                             {
                               "type": "text",
+                              "id": "b830I",
                               "name": "Products empty title",
                               "fill": "#565652",
                               "content": "Nenhum produto abaixo do mínimo",
@@ -1743,6 +1792,7 @@
                             },
                             {
                               "type": "text",
+                              "id": "u1axTL",
                               "name": "Products empty copy",
                               "fill": "#777773",
                               "content": "21 produtos com stock igual ou acima do mínimo definido.",
@@ -1756,6 +1806,7 @@
                     },
                     {
                       "type": "frame",
+                      "id": "C3VRBW",
                       "name": "Ingredients column",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -1763,6 +1814,7 @@
                       "children": [
                         {
                           "type": "frame",
+                          "id": "XES8B",
                           "name": "Ingredientes heading",
                           "width": "fill_container",
                           "gap": 8,
@@ -1770,6 +1822,7 @@
                           "children": [
                             {
                               "type": "text",
+                              "id": "p1nW8H",
                               "name": "Ingredientes title",
                               "fill": "#202020",
                               "content": "Ingredientes",
@@ -1779,6 +1832,7 @@
                             },
                             {
                               "type": "frame",
+                              "id": "CKCRN",
                               "name": "Ingredientes count",
                               "fill": "#EFEFED",
                               "cornerRadius": 4,
@@ -1789,6 +1843,7 @@
                               "children": [
                                 {
                                   "type": "text",
+                                  "id": "BL64W",
                                   "name": "Ingredientes count text",
                                   "fill": "#565652",
                                   "content": "5",
@@ -1802,12 +1857,14 @@
                         },
                         {
                           "type": "frame",
+                          "id": "gPnJV",
                           "name": "Ingredients list",
                           "width": "fill_container",
                           "layout": "vertical",
                           "children": [
                             {
                               "type": "frame",
+                              "id": "x6NHR",
                               "name": "Ingredient Chocolate negro",
                               "width": "fill_container",
                               "stroke": "#E6E6E3",
@@ -1823,6 +1880,7 @@
                               "children": [
                                 {
                                   "type": "frame",
+                                  "id": "qIQGe",
                                   "name": "Ingredient name and meta",
                                   "width": "fill_container",
                                   "layout": "vertical",
@@ -1830,6 +1888,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "ZtZEn",
                                       "name": "Ingredient Chocolate negro name",
                                       "fill": "#333333",
                                       "content": "Chocolate negro",
@@ -1839,6 +1898,7 @@
                                     },
                                     {
                                       "type": "text",
+                                      "id": "WdVqu",
                                       "name": "Ingredient Chocolate negro meta",
                                       "fill": "#777773",
                                       "content": "Doce Norte · 0 / 5 kg",
@@ -1850,6 +1910,7 @@
                                 },
                                 {
                                   "type": "frame",
+                                  "id": "wkXdc",
                                   "name": "Ingredient Chocolate negro status",
                                   "fill": "#E4E4E0",
                                   "cornerRadius": 5,
@@ -1860,6 +1921,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "b0bmk",
                                       "name": "Ingredient Chocolate negro status text",
                                       "fill": "#202020",
                                       "content": "Esgotado",
@@ -1873,6 +1935,7 @@
                             },
                             {
                               "type": "frame",
+                              "id": "ctyxh",
                               "name": "Ingredient Copos take-away",
                               "width": "fill_container",
                               "stroke": "#E6E6E3",
@@ -1888,6 +1951,7 @@
                               "children": [
                                 {
                                   "type": "frame",
+                                  "id": "n6L4yy",
                                   "name": "Ingredient name and meta",
                                   "width": "fill_container",
                                   "layout": "vertical",
@@ -1895,6 +1959,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "pnmfg",
                                       "name": "Ingredient Copos take-away name",
                                       "fill": "#333333",
                                       "content": "Copos take-away",
@@ -1904,6 +1969,7 @@
                                     },
                                     {
                                       "type": "text",
+                                      "id": "d4Y8sO",
                                       "name": "Ingredient Copos take-away meta",
                                       "fill": "#777773",
                                       "content": "Embalagens Costa · 150 / 200 un",
@@ -1915,6 +1981,7 @@
                                 },
                                 {
                                   "type": "frame",
+                                  "id": "yqsYk",
                                   "name": "Ingredient Copos take-away status",
                                   "fill": "#F0F0EE",
                                   "cornerRadius": 5,
@@ -1925,6 +1992,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "uNQRK",
                                       "name": "Ingredient Copos take-away status text",
                                       "fill": "#565652",
                                       "content": "Baixo",
@@ -1938,6 +2006,7 @@
                             },
                             {
                               "type": "frame",
+                              "id": "rd556",
                               "name": "Ingredient Caixas de bolo",
                               "width": "fill_container",
                               "stroke": "#E6E6E3",
@@ -1953,6 +2022,7 @@
                               "children": [
                                 {
                                   "type": "frame",
+                                  "id": "N06i5c",
                                   "name": "Ingredient name and meta",
                                   "width": "fill_container",
                                   "layout": "vertical",
@@ -1960,6 +2030,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "P8EcjE",
                                       "name": "Ingredient Caixas de bolo name",
                                       "fill": "#333333",
                                       "content": "Caixas de bolo",
@@ -1969,6 +2040,7 @@
                                     },
                                     {
                                       "type": "text",
+                                      "id": "R5hgO",
                                       "name": "Ingredient Caixas de bolo meta",
                                       "fill": "#777773",
                                       "content": "Embalagens Costa · 18 / 40 un",
@@ -1980,6 +2052,7 @@
                                 },
                                 {
                                   "type": "frame",
+                                  "id": "Yhewh",
                                   "name": "Ingredient Caixas de bolo status",
                                   "fill": "#F0F0EE",
                                   "cornerRadius": 5,
@@ -1990,6 +2063,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "y3dQzN",
                                       "name": "Ingredient Caixas de bolo status text",
                                       "fill": "#565652",
                                       "content": "Baixo",
@@ -2003,6 +2077,7 @@
                             },
                             {
                               "type": "frame",
+                              "id": "S0e6g",
                               "name": "Ingredient Farinha T55",
                               "width": "fill_container",
                               "stroke": "#E6E6E3",
@@ -2018,6 +2093,7 @@
                               "children": [
                                 {
                                   "type": "frame",
+                                  "id": "G2tJv",
                                   "name": "Ingredient name and meta",
                                   "width": "fill_container",
                                   "layout": "vertical",
@@ -2025,6 +2101,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "gDXC5",
                                       "name": "Ingredient Farinha T55 name",
                                       "fill": "#333333",
                                       "content": "Farinha T55",
@@ -2034,6 +2111,7 @@
                                     },
                                     {
                                       "type": "text",
+                                      "id": "PNJ7n",
                                       "name": "Ingredient Farinha T55 meta",
                                       "fill": "#777773",
                                       "content": "Moagem do Vale · 12 / 20 kg",
@@ -2045,6 +2123,7 @@
                                 },
                                 {
                                   "type": "frame",
+                                  "id": "Zo8Li",
                                   "name": "Ingredient Farinha T55 status",
                                   "fill": "#F0F0EE",
                                   "cornerRadius": 5,
@@ -2055,6 +2134,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "h1tmKz",
                                       "name": "Ingredient Farinha T55 status text",
                                       "fill": "#565652",
                                       "content": "Baixo",
@@ -2068,6 +2148,7 @@
                             },
                             {
                               "type": "frame",
+                              "id": "CpPOt",
                               "name": "Ingredient Amêndoa",
                               "width": "fill_container",
                               "stroke": "#E6E6E3",
@@ -2083,6 +2164,7 @@
                               "children": [
                                 {
                                   "type": "frame",
+                                  "id": "E3W8oE",
                                   "name": "Ingredient name and meta",
                                   "width": "fill_container",
                                   "layout": "vertical",
@@ -2090,6 +2172,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "K9uxL",
                                       "name": "Ingredient Amêndoa name",
                                       "fill": "#333333",
                                       "content": "Amêndoa",
@@ -2099,6 +2182,7 @@
                                     },
                                     {
                                       "type": "text",
+                                      "id": "mhRve",
                                       "name": "Ingredient Amêndoa meta",
                                       "fill": "#777773",
                                       "content": "Especiarias do Sul · 4 / 5 kg",
@@ -2110,6 +2194,7 @@
                                 },
                                 {
                                   "type": "frame",
+                                  "id": "vIJuF",
                                   "name": "Ingredient Amêndoa status",
                                   "fill": "#F0F0EE",
                                   "cornerRadius": 5,
@@ -2120,6 +2205,7 @@
                                   "children": [
                                     {
                                       "type": "text",
+                                      "id": "f7tUf",
                                       "name": "Ingredient Amêndoa status text",
                                       "fill": "#565652",
                                       "content": "Baixo",
@@ -2139,12 +2225,3629 @@
                 },
                 {
                   "type": "text",
+                  "id": "Fpp2u",
                   "name": "Stock footnote",
                   "fill": "#777773",
                   "content": "Fotografia do stock no momento da exportação (31 Out 2026). Não há histórico de consumo.",
                   "fontFamily": "Inter",
                   "fontSize": 11,
                   "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pBKdO",
+      "x": 2358,
+      "y": -297,
+      "name": "Dashboard Vendas",
+      "clip": true,
+      "width": 1440,
+      "height": 1300,
+      "fill": "#F8F8F6",
+      "children": [
+        {
+          "type": "frame",
+          "id": "eMzwP",
+          "name": "Sidebar",
+          "width": 236,
+          "height": "fill_container",
+          "fill": "#F0F0EE",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            28,
+            20
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "MmzVc",
+              "name": "Product name",
+              "fill": "#202020",
+              "content": "Balcão",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "m9y80",
+              "name": "Primary navigation",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ku07Z",
+                  "name": "Nav - Visao geral",
+                  "width": "fill_container",
+                  "fill": "#f0f0ee",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "LznQk",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Visão geral",
+                      "fontFamily": "Inter",
+                      "fontSize": 14
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eORL9",
+                  "name": "Nav - Vendas",
+                  "width": "fill_container",
+                  "fill": "#ddddda",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dsOw9",
+                      "name": "Nav label",
+                      "fill": "#202020",
+                      "content": "Vendas",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UFdtP",
+                  "name": "Nav - Produtos",
+                  "width": "fill_container",
+                  "fill": "#F0F0EE",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MdLhu",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Produtos",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y4aCLQ",
+                  "name": "Nav - Stock",
+                  "width": "fill_container",
+                  "fill": "#F0F0EE",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YZepU",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Stock",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "VbSJQ",
+                  "name": "Nav - Sobre",
+                  "width": "fill_container",
+                  "fill": "#F0F0EE",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qJOKU",
+                      "name": "Nav label",
+                      "fill": "#565652",
+                      "content": "Sobre",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "wBJeY",
+              "name": "Data coverage",
+              "fill": "#777773",
+              "content": "Dados de Nov 2025 a Out 2026",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "M2xG8",
+          "name": "Main content",
+          "width": 1204,
+          "height": 1300,
+          "fill": "#F8F8F6",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZkxpJ",
+              "x": 40,
+              "y": 36,
+              "name": "Page heading",
+              "width": "fill_container(1124)",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zlSUw",
+                  "name": "Heading group",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jB8lN",
+                      "name": "Page title",
+                      "fill": "#202020",
+                      "content": "Vendas",
+                      "fontFamily": "Inter",
+                      "fontSize": 28,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "heN6B",
+                      "name": "Page description",
+                      "fill": "#646460",
+                      "content": "Quando se vende: dias, semanas e horas de maior movimento",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "T4HWen",
+                  "name": "Analysis range value",
+                  "fill": "#333333",
+                  "content": "Nov 2025 – Out 2026",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Sales filters",
+              "x": 40,
+              "y": 119,
+              "width": 1124,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "height": 50,
+              "padding": [
+                10,
+                16
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Filter controls",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Period filter",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 6,
+                      "stroke": "#CFCFCB",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        10
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Period filter value",
+                          "fill": "#333333",
+                          "content": "Últimos 12 meses",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Period filter chevron",
+                          "fill": "#777773",
+                          "content": "v",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Granularity toggle",
+                      "fill": "#EEEEEC",
+                      "cornerRadius": 7,
+                      "gap": 2,
+                      "padding": 3,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Granularity - Dia",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 5,
+                          "padding": [
+                            7,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Granularity Dia label",
+                              "fill": "#202020",
+                              "content": "Dia",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Granularity - Semana",
+                          "fill": "#EEEEEC",
+                          "cornerRadius": 5,
+                          "padding": [
+                            7,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Granularity Semana label",
+                              "fill": "#666662",
+                              "content": "Semana",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Granularity - Mês",
+                          "fill": "#EEEEEC",
+                          "cornerRadius": 5,
+                          "padding": [
+                            7,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Granularity Mes label",
+                              "fill": "#666662",
+                              "content": "Mês",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Payment filter",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 6,
+                      "stroke": "#CFCFCB",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        10
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Payment filter value",
+                          "fill": "#333333",
+                          "content": "Todos os pagamentos",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Payment filter chevron",
+                          "fill": "#777773",
+                          "content": "v",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Category filter",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 6,
+                      "stroke": "#CFCFCB",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        7,
+                        10
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Category filter value",
+                          "fill": "#333333",
+                          "content": "Todas as categorias",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Category filter chevron",
+                          "fill": "#777773",
+                          "content": "v",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "Filter summary",
+                  "fill": "#777773",
+                  "content": "365 dias com vendas · 4 583 linhas",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Sales highlights",
+              "x": 40,
+              "y": 183,
+              "width": 1124,
+              "height": 96,
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Highlight - Receita do período",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 10,
+                  "stroke": "#D8D8D4",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Receita do período label",
+                      "fill": "#565652",
+                      "content": "Receita do período",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Receita do período value",
+                      "fill": "#202020",
+                      "content": "11 389,70 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Receita do período sub",
+                      "fill": "#777773",
+                      "content": "31,20 € por dia",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Highlight - Melhor dia",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 10,
+                  "stroke": "#D8D8D4",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Melhor dia label",
+                      "fill": "#565652",
+                      "content": "Melhor dia",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Melhor dia value",
+                      "fill": "#202020",
+                      "content": "70,00 €",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Melhor dia sub",
+                      "fill": "#777773",
+                      "content": "27 jul 2026 · segunda",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Highlight - Fim de semana",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 10,
+                  "stroke": "#D8D8D4",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Fim de semana label",
+                      "fill": "#565652",
+                      "content": "Fim de semana",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Fim de semana value",
+                      "fill": "#202020",
+                      "content": "+47,6 %",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Fim de semana sub",
+                      "fill": "#777773",
+                      "content": "receita por dia vs dias úteis",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Highlight - Pico horário",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 10,
+                  "stroke": "#D8D8D4",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Pico horário label",
+                      "fill": "#565652",
+                      "content": "Pico horário",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Pico horário value",
+                      "fill": "#202020",
+                      "content": "13h e 16h",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Pico horário sub",
+                      "fill": "#777773",
+                      "content": "8,8 % e 8,6 % da receita",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Daily revenue chart",
+              "x": 40,
+              "y": 295,
+              "width": 740,
+              "height": 320,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Daily heading",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Daily title",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Daily title title",
+                          "fill": "#202020",
+                          "content": "Receita diária",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily title subtitle",
+                          "fill": "#777773",
+                          "content": "Um ponto por dia · Nov 2025 a Out 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Daily peak",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Daily peak label",
+                          "fill": "#777773",
+                          "content": "Melhor dia",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 110,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily peak value",
+                          "fill": "#202020",
+                          "content": "70,00 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 110,
+                          "textAlign": "right"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Daily plot",
+                  "width": "fill_container",
+                  "height": 210,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "name": "Daily area",
+                      "x": 0,
+                      "y": 0,
+                      "width": 700,
+                      "height": 190,
+                      "viewBox": [
+                        0,
+                        0,
+                        700,
+                        190
+                      ],
+                      "geometry": "M 0 124.6 L 1.9 102 L 3.8 152.8 L 5.8 107.9 L 7.7 131 L 9.6 128.4 L 11.5 112.9 L 13.4 75.5 L 15.4 48.4 L 17.3 134.7 L 19.2 145.6 L 21.1 129.7 L 23 139.2 L 25 150.9 L 26.9 99.7 L 28.8 119.9 L 30.7 116.7 L 32.6 106 L 34.6 141.6 L 36.5 124.1 L 38.4 147.8 L 40.3 127.8 L 42.2 100.7 L 44.2 114.8 L 46.1 166.1 L 48 136.3 L 49.9 122.8 L 51.8 107.4 L 53.8 94.9 L 55.7 110.8 L 57.6 98.3 L 59.5 124.1 L 61.5 108.2 L 63.4 84 L 65.3 116.7 L 67.2 76 L 69.1 38.8 L 71.1 134.5 L 73 119.3 L 74.9 95.4 L 76.8 65.9 L 78.7 80 L 80.7 72 L 82.6 57.1 L 84.5 103.1 L 86.4 100.2 L 88.3 124.9 L 90.3 134.5 L 92.2 149.6 L 94.1 41.7 L 96 79.5 L 97.9 72.6 L 99.9 94.1 L 101.8 62.5 L 103.7 110 L 105.6 131.8 L 107.5 118.5 L 109.5 93.8 L 111.4 76.5 L 113.3 149.3 L 115.2 154.1 L 117.1 111.6 L 119.1 143.2 L 121 114 L 122.9 135.5 L 124.8 147.8 L 126.7 123.6 L 128.7 106.6 L 130.6 110.8 L 132.5 119.3 L 134.4 88.2 L 136.3 57.9 L 138.3 130.7 L 140.2 140 L 142.1 136.1 L 144 98.9 L 145.9 127 L 147.9 108.7 L 149.8 113.7 L 151.7 129.7 L 153.6 135.3 L 155.5 95.1 L 157.5 154.9 L 159.4 161 L 161.3 97 L 163.2 74.9 L 165.1 124.1 L 167.1 126 L 169 68.3 L 170.9 146.7 L 172.8 164.8 L 174.8 56.6 L 176.7 93.5 L 178.6 139 L 180.5 143.2 L 182.4 114 L 184.4 102.6 L 186.3 131 L 188.2 108.7 L 190.1 83.2 L 192 127.3 L 194 109.8 L 195.9 119.9 L 197.8 128.6 L 199.7 143 L 201.6 60.3 L 203.6 50.2 L 205.5 111.6 L 207.4 106.8 L 209.3 107.6 L 211.2 129.7 L 213.2 71 L 215.1 82.1 L 217 122 L 218.9 171.4 L 220.8 129.2 L 222.8 128.1 L 224.7 132.6 L 226.6 148.3 L 228.5 96.2 L 230.4 30.6 L 232.4 122.5 L 234.3 143.8 L 236.2 129.7 L 238.1 129.9 L 240 125.7 L 242 60.1 L 243.9 93.8 L 245.8 115.9 L 247.7 128.1 L 249.6 110.3 L 251.6 155.5 L 253.5 142.2 L 255.4 98.3 L 257.3 77.1 L 259.2 133.7 L 261.2 116.4 L 263.1 106.3 L 265 152.8 L 266.9 162.6 L 268.8 114.3 L 270.8 123.6 L 272.7 115.9 L 274.6 116.1 L 276.5 93.5 L 278.4 133.4 L 280.4 79.2 L 282.3 72.6 L 284.2 85 L 286.1 137.4 L 288 129.4 L 290 150.9 L 291.9 141.1 L 293.8 54 L 295.7 74.4 L 297.7 80.5 L 299.6 110.8 L 301.5 141.4 L 303.4 89 L 305.3 95.4 L 307.3 129.4 L 309.2 99.7 L 311.1 101.8 L 313 55.8 L 314.9 80 L 316.9 117.2 L 318.8 131 L 320.7 115.9 L 322.6 53.4 L 324.5 133.7 L 326.5 105 L 328.4 125.2 L 330.3 128.6 L 332.2 133.9 L 334.1 82.1 L 336.1 78.1 L 338 58.5 L 339.9 119.9 L 341.8 85.3 L 343.7 137.7 L 345.7 31.6 L 347.6 122.5 L 349.5 105.8 L 351.4 57.9 L 353.3 115.9 L 355.3 129.4 L 357.2 177.8 L 359.1 123.6 L 361 85.6 L 362.9 62.2 L 364.9 119.9 L 366.8 147.2 L 368.7 157.8 L 370.6 64.3 L 372.5 133.9 L 374.5 129.9 L 376.4 118 L 378.3 115.6 L 380.2 82.1 L 382.1 58.2 L 384.1 110.3 L 386 116.1 L 387.9 131 L 389.8 87.4 L 391.7 83.7 L 393.7 140.3 L 395.6 127.8 L 397.5 108.7 L 399.4 133.9 L 401.3 105.8 L 403.3 115.3 L 405.2 118.3 L 407.1 95.9 L 409 108.4 L 411 138.5 L 412.9 136.1 L 414.8 73.9 L 416.7 83.4 L 418.6 110.3 L 420.6 146.4 L 422.5 106.6 L 424.4 120.6 L 426.3 154.4 L 428.2 78.7 L 430.2 86.1 L 432.1 106.6 L 434 99.1 L 435.9 141.4 L 437.8 106 L 439.8 112.4 L 441.7 102.6 L 443.6 101.8 L 445.5 54 L 447.4 96.5 L 449.4 79.7 L 451.3 118.5 L 453.2 108.2 L 455.1 117.5 L 457 65.6 L 459 85 L 460.9 99.4 L 462.8 133.7 L 464.7 68.3 L 466.6 124.6 L 468.6 134.7 L 470.5 75.5 L 472.4 31.1 L 474.3 81.6 L 476.2 90.1 L 478.2 126.8 L 480.1 37.5 L 482 39.3 L 483.9 48.6 L 485.8 42.3 L 487.8 123.8 L 489.7 89.8 L 491.6 82.1 L 493.5 159.2 L 495.4 83.4 L 497.4 29.5 L 499.3 82.7 L 501.2 62.2 L 503.1 144.8 L 505 116.4 L 507 114.5 L 508.9 69.1 L 510.8 64.3 L 512.7 83.2 L 514.6 4 L 516.6 60.3 L 518.5 87.7 L 520.4 106.3 L 522.3 96.5 L 524.3 77.6 L 526.2 42.5 L 528.1 84 L 530 123.8 L 531.9 82.4 L 533.9 104.2 L 535.8 110.3 L 537.7 32.4 L 539.6 83.7 L 541.5 118.3 L 543.5 58.2 L 545.4 113.7 L 547.3 126.2 L 549.2 134.7 L 551.1 82.7 L 553.1 37.5 L 555 47 L 556.9 78.7 L 558.8 103.4 L 560.7 113.7 L 562.7 61.9 L 564.6 26.6 L 566.5 35.6 L 568.4 147 L 570.3 138.5 L 572.3 116.1 L 574.2 77.3 L 576.1 84.2 L 578 59.8 L 579.9 86.4 L 581.9 130.2 L 583.8 123.8 L 585.7 124.6 L 587.6 100.7 L 589.5 114.3 L 591.5 105.5 L 593.4 53.7 L 595.3 145.9 L 597.2 151.2 L 599.1 138.2 L 601.1 118 L 603 138.7 L 604.9 102.3 L 606.8 42 L 608.7 150.9 L 610.7 154.7 L 612.6 124.4 L 614.5 120.1 L 616.4 80.5 L 618.3 69.9 L 620.3 78.1 L 622.2 87.7 L 624.1 115.3 L 626 131 L 627.9 135.3 L 629.9 148 L 631.8 88.8 L 633.7 69.9 L 635.6 118.3 L 637.5 138.2 L 639.5 137.9 L 641.4 147.5 L 643.3 165 L 645.2 131.8 L 647.2 65.1 L 649.1 161.8 L 651 169 L 652.9 104.2 L 654.8 120.6 L 656.8 122 L 658.7 99.9 L 660.6 26.9 L 662.5 134.2 L 664.4 116.4 L 666.4 135.3 L 668.3 136.3 L 670.2 82.7 L 672.1 93.5 L 674 96.7 L 676 121.2 L 677.9 121.2 L 679.8 141.1 L 681.7 133.7 L 683.6 107.9 L 685.6 83.7 L 687.5 37.5 L 689.4 155.7 L 691.3 109.5 L 693.2 111.1 L 695.2 123 L 697.1 143 L 699 144 L 699 190 L 0 190 Z",
+                      "fill": "#EFEFED"
+                    },
+                    {
+                      "type": "path",
+                      "name": "Daily line",
+                      "x": 0,
+                      "y": 0,
+                      "width": 700,
+                      "height": 190,
+                      "viewBox": [
+                        0,
+                        0,
+                        700,
+                        190
+                      ],
+                      "geometry": "M 0 124.6 L 1.9 102 L 3.8 152.8 L 5.8 107.9 L 7.7 131 L 9.6 128.4 L 11.5 112.9 L 13.4 75.5 L 15.4 48.4 L 17.3 134.7 L 19.2 145.6 L 21.1 129.7 L 23 139.2 L 25 150.9 L 26.9 99.7 L 28.8 119.9 L 30.7 116.7 L 32.6 106 L 34.6 141.6 L 36.5 124.1 L 38.4 147.8 L 40.3 127.8 L 42.2 100.7 L 44.2 114.8 L 46.1 166.1 L 48 136.3 L 49.9 122.8 L 51.8 107.4 L 53.8 94.9 L 55.7 110.8 L 57.6 98.3 L 59.5 124.1 L 61.5 108.2 L 63.4 84 L 65.3 116.7 L 67.2 76 L 69.1 38.8 L 71.1 134.5 L 73 119.3 L 74.9 95.4 L 76.8 65.9 L 78.7 80 L 80.7 72 L 82.6 57.1 L 84.5 103.1 L 86.4 100.2 L 88.3 124.9 L 90.3 134.5 L 92.2 149.6 L 94.1 41.7 L 96 79.5 L 97.9 72.6 L 99.9 94.1 L 101.8 62.5 L 103.7 110 L 105.6 131.8 L 107.5 118.5 L 109.5 93.8 L 111.4 76.5 L 113.3 149.3 L 115.2 154.1 L 117.1 111.6 L 119.1 143.2 L 121 114 L 122.9 135.5 L 124.8 147.8 L 126.7 123.6 L 128.7 106.6 L 130.6 110.8 L 132.5 119.3 L 134.4 88.2 L 136.3 57.9 L 138.3 130.7 L 140.2 140 L 142.1 136.1 L 144 98.9 L 145.9 127 L 147.9 108.7 L 149.8 113.7 L 151.7 129.7 L 153.6 135.3 L 155.5 95.1 L 157.5 154.9 L 159.4 161 L 161.3 97 L 163.2 74.9 L 165.1 124.1 L 167.1 126 L 169 68.3 L 170.9 146.7 L 172.8 164.8 L 174.8 56.6 L 176.7 93.5 L 178.6 139 L 180.5 143.2 L 182.4 114 L 184.4 102.6 L 186.3 131 L 188.2 108.7 L 190.1 83.2 L 192 127.3 L 194 109.8 L 195.9 119.9 L 197.8 128.6 L 199.7 143 L 201.6 60.3 L 203.6 50.2 L 205.5 111.6 L 207.4 106.8 L 209.3 107.6 L 211.2 129.7 L 213.2 71 L 215.1 82.1 L 217 122 L 218.9 171.4 L 220.8 129.2 L 222.8 128.1 L 224.7 132.6 L 226.6 148.3 L 228.5 96.2 L 230.4 30.6 L 232.4 122.5 L 234.3 143.8 L 236.2 129.7 L 238.1 129.9 L 240 125.7 L 242 60.1 L 243.9 93.8 L 245.8 115.9 L 247.7 128.1 L 249.6 110.3 L 251.6 155.5 L 253.5 142.2 L 255.4 98.3 L 257.3 77.1 L 259.2 133.7 L 261.2 116.4 L 263.1 106.3 L 265 152.8 L 266.9 162.6 L 268.8 114.3 L 270.8 123.6 L 272.7 115.9 L 274.6 116.1 L 276.5 93.5 L 278.4 133.4 L 280.4 79.2 L 282.3 72.6 L 284.2 85 L 286.1 137.4 L 288 129.4 L 290 150.9 L 291.9 141.1 L 293.8 54 L 295.7 74.4 L 297.7 80.5 L 299.6 110.8 L 301.5 141.4 L 303.4 89 L 305.3 95.4 L 307.3 129.4 L 309.2 99.7 L 311.1 101.8 L 313 55.8 L 314.9 80 L 316.9 117.2 L 318.8 131 L 320.7 115.9 L 322.6 53.4 L 324.5 133.7 L 326.5 105 L 328.4 125.2 L 330.3 128.6 L 332.2 133.9 L 334.1 82.1 L 336.1 78.1 L 338 58.5 L 339.9 119.9 L 341.8 85.3 L 343.7 137.7 L 345.7 31.6 L 347.6 122.5 L 349.5 105.8 L 351.4 57.9 L 353.3 115.9 L 355.3 129.4 L 357.2 177.8 L 359.1 123.6 L 361 85.6 L 362.9 62.2 L 364.9 119.9 L 366.8 147.2 L 368.7 157.8 L 370.6 64.3 L 372.5 133.9 L 374.5 129.9 L 376.4 118 L 378.3 115.6 L 380.2 82.1 L 382.1 58.2 L 384.1 110.3 L 386 116.1 L 387.9 131 L 389.8 87.4 L 391.7 83.7 L 393.7 140.3 L 395.6 127.8 L 397.5 108.7 L 399.4 133.9 L 401.3 105.8 L 403.3 115.3 L 405.2 118.3 L 407.1 95.9 L 409 108.4 L 411 138.5 L 412.9 136.1 L 414.8 73.9 L 416.7 83.4 L 418.6 110.3 L 420.6 146.4 L 422.5 106.6 L 424.4 120.6 L 426.3 154.4 L 428.2 78.7 L 430.2 86.1 L 432.1 106.6 L 434 99.1 L 435.9 141.4 L 437.8 106 L 439.8 112.4 L 441.7 102.6 L 443.6 101.8 L 445.5 54 L 447.4 96.5 L 449.4 79.7 L 451.3 118.5 L 453.2 108.2 L 455.1 117.5 L 457 65.6 L 459 85 L 460.9 99.4 L 462.8 133.7 L 464.7 68.3 L 466.6 124.6 L 468.6 134.7 L 470.5 75.5 L 472.4 31.1 L 474.3 81.6 L 476.2 90.1 L 478.2 126.8 L 480.1 37.5 L 482 39.3 L 483.9 48.6 L 485.8 42.3 L 487.8 123.8 L 489.7 89.8 L 491.6 82.1 L 493.5 159.2 L 495.4 83.4 L 497.4 29.5 L 499.3 82.7 L 501.2 62.2 L 503.1 144.8 L 505 116.4 L 507 114.5 L 508.9 69.1 L 510.8 64.3 L 512.7 83.2 L 514.6 4 L 516.6 60.3 L 518.5 87.7 L 520.4 106.3 L 522.3 96.5 L 524.3 77.6 L 526.2 42.5 L 528.1 84 L 530 123.8 L 531.9 82.4 L 533.9 104.2 L 535.8 110.3 L 537.7 32.4 L 539.6 83.7 L 541.5 118.3 L 543.5 58.2 L 545.4 113.7 L 547.3 126.2 L 549.2 134.7 L 551.1 82.7 L 553.1 37.5 L 555 47 L 556.9 78.7 L 558.8 103.4 L 560.7 113.7 L 562.7 61.9 L 564.6 26.6 L 566.5 35.6 L 568.4 147 L 570.3 138.5 L 572.3 116.1 L 574.2 77.3 L 576.1 84.2 L 578 59.8 L 579.9 86.4 L 581.9 130.2 L 583.8 123.8 L 585.7 124.6 L 587.6 100.7 L 589.5 114.3 L 591.5 105.5 L 593.4 53.7 L 595.3 145.9 L 597.2 151.2 L 599.1 138.2 L 601.1 118 L 603 138.7 L 604.9 102.3 L 606.8 42 L 608.7 150.9 L 610.7 154.7 L 612.6 124.4 L 614.5 120.1 L 616.4 80.5 L 618.3 69.9 L 620.3 78.1 L 622.2 87.7 L 624.1 115.3 L 626 131 L 627.9 135.3 L 629.9 148 L 631.8 88.8 L 633.7 69.9 L 635.6 118.3 L 637.5 138.2 L 639.5 137.9 L 641.4 147.5 L 643.3 165 L 645.2 131.8 L 647.2 65.1 L 649.1 161.8 L 651 169 L 652.9 104.2 L 654.8 120.6 L 656.8 122 L 658.7 99.9 L 660.6 26.9 L 662.5 134.2 L 664.4 116.4 L 666.4 135.3 L 668.3 136.3 L 670.2 82.7 L 672.1 93.5 L 674 96.7 L 676 121.2 L 677.9 121.2 L 679.8 141.1 L 681.7 133.7 L 683.6 107.9 L 685.6 83.7 L 687.5 37.5 L 689.4 155.7 L 691.3 109.5 L 693.2 111.1 L 695.2 123 L 697.1 143 L 699 144",
+                      "fill": "#00000000",
+                      "stroke": "#202020",
+                      "strokeWidth": 1.5
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Daily month labels",
+                      "x": 0,
+                      "y": 194,
+                      "width": 700,
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Daily month Nov",
+                          "fill": "#777773",
+                          "content": "Nov",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Dez",
+                          "fill": "#777773",
+                          "content": "Dez",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Jan",
+                          "fill": "#777773",
+                          "content": "Jan",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Fev",
+                          "fill": "#777773",
+                          "content": "Fev",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Mar",
+                          "fill": "#777773",
+                          "content": "Mar",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Abr",
+                          "fill": "#777773",
+                          "content": "Abr",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Mai",
+                          "fill": "#777773",
+                          "content": "Mai",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Jun",
+                          "fill": "#777773",
+                          "content": "Jun",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Jul",
+                          "fill": "#777773",
+                          "content": "Jul",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Ago",
+                          "fill": "#777773",
+                          "content": "Ago",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Set",
+                          "fill": "#777773",
+                          "content": "Set",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Daily month Out",
+                          "fill": "#777773",
+                          "content": "Out",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Payments card",
+              "x": 796,
+              "y": 295,
+              "width": 368,
+              "height": 320,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Payments title",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Payments title title",
+                      "fill": "#202020",
+                      "content": "Pagamentos",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Payments title subtitle",
+                      "fill": "#777773",
+                      "content": "Parte da receita · todos os dias",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Payments list",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Payment Cartão",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Payment Cartão heading",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Payment Cartão label",
+                              "fill": "#333333",
+                              "content": "Cartão",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "name": "Payment Cartão share",
+                              "fill": "#202020",
+                              "content": "48,7 %",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Payment Cartão track",
+                          "width": "fill_container",
+                          "height": 6,
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "name": "Payment Cartão bar",
+                              "width": 159.7,
+                              "height": 6,
+                              "fill": "#202020",
+                              "cornerRadius": 3
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Payment Cartão detail",
+                          "fill": "#777773",
+                          "content": "5 550,00 € · 2 218 linhas",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Payment Dinheiro",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Payment Dinheiro heading",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Payment Dinheiro label",
+                              "fill": "#333333",
+                              "content": "Dinheiro",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "name": "Payment Dinheiro share",
+                              "fill": "#202020",
+                              "content": "31,2 %",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Payment Dinheiro track",
+                          "width": "fill_container",
+                          "height": 6,
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "name": "Payment Dinheiro bar",
+                              "width": 102.3,
+                              "height": 6,
+                              "fill": "#BDBDB8",
+                              "cornerRadius": 3
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Payment Dinheiro detail",
+                          "fill": "#777773",
+                          "content": "3 548,60 € · 1 425 linhas",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Payment MB Way",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Payment MB Way heading",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "name": "Payment MB Way label",
+                              "fill": "#333333",
+                              "content": "MB Way",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            },
+                            {
+                              "type": "text",
+                              "name": "Payment MB Way share",
+                              "fill": "#202020",
+                              "content": "20,1 %",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "bold"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Payment MB Way track",
+                          "width": "fill_container",
+                          "height": 6,
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "name": "Payment MB Way bar",
+                              "width": 65.9,
+                              "height": 6,
+                              "fill": "#BDBDB8",
+                              "cornerRadius": 3
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Payment MB Way detail",
+                          "fill": "#777773",
+                          "content": "2 291,10 € · 940 linhas",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "Payments footnote",
+                  "fill": "#777773",
+                  "content": "Estável desde nov 2025 (p = 0,50): sem ação necessária.",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Weekday revenue",
+              "x": 40,
+              "y": 631,
+              "width": 548,
+              "height": 300,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Weekday title",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Weekday title title",
+                      "fill": "#202020",
+                      "content": "Receita por dia da semana",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Weekday title subtitle",
+                      "fill": "#777773",
+                      "content": "Média por dia · 52 semanas",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Weekday bars",
+                  "width": "fill_container",
+                  "height": 169,
+                  "justifyContent": "space_between",
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Weekday Seg",
+                      "width": 44,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Weekday Seg value",
+                          "fill": "#777773",
+                          "content": "28,09 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Weekday Seg bar",
+                          "width": 30,
+                          "height": 90.9,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Weekday Seg label",
+                          "fill": "#777773",
+                          "content": "Seg",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Weekday Ter",
+                      "width": 44,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Weekday Ter value",
+                          "fill": "#777773",
+                          "content": "26,50 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Weekday Ter bar",
+                          "width": 30,
+                          "height": 85.7,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Weekday Ter label",
+                          "fill": "#777773",
+                          "content": "Ter",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Weekday Qua",
+                      "width": 44,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Weekday Qua value",
+                          "fill": "#777773",
+                          "content": "27,99 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Weekday Qua bar",
+                          "width": 30,
+                          "height": 90.5,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Weekday Qua label",
+                          "fill": "#777773",
+                          "content": "Qua",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Weekday Qui",
+                      "width": 44,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Weekday Qui value",
+                          "fill": "#777773",
+                          "content": "26,29 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Weekday Qui bar",
+                          "width": 30,
+                          "height": 85,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Weekday Qui label",
+                          "fill": "#777773",
+                          "content": "Qui",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Weekday Sex",
+                      "width": 44,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Weekday Sex value",
+                          "fill": "#777773",
+                          "content": "28,37 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Weekday Sex bar",
+                          "width": 30,
+                          "height": 91.8,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Weekday Sex label",
+                          "fill": "#777773",
+                          "content": "Sex",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Weekday Sáb",
+                      "width": 44,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Weekday Sáb value",
+                          "fill": "#777773",
+                          "content": "39,30 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Weekday Sáb bar",
+                          "width": 30,
+                          "height": 127.1,
+                          "fill": "#202020",
+                          "cornerRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Weekday Sáb label",
+                          "fill": "#202020",
+                          "content": "Sáb",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Weekday Dom",
+                      "width": 44,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Weekday Dom value",
+                          "fill": "#777773",
+                          "content": "41,74 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Weekday Dom bar",
+                          "width": 30,
+                          "height": 135,
+                          "fill": "#202020",
+                          "cornerRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Weekday Dom label",
+                          "fill": "#202020",
+                          "content": "Dom",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "Weekday footnote",
+                  "fill": "#777773",
+                  "content": "Fim de semana: +47,6 % por dia (p = 0,000)",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Hourly revenue",
+              "x": 604,
+              "y": 631,
+              "width": 560,
+              "height": 300,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Hourly title",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Hourly title title",
+                      "fill": "#202020",
+                      "content": "Receita por hora",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Hourly title subtitle",
+                      "fill": "#777773",
+                      "content": "Parte da receita do dia · 7h às 19h",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Hourly bars",
+                  "width": "fill_container",
+                  "height": 158,
+                  "justifyContent": "space_between",
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Hour 7h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 7h bar",
+                          "width": 20,
+                          "height": 108.2,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 7h label",
+                          "fill": "#777773",
+                          "content": "7",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 8h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 8h bar",
+                          "width": 20,
+                          "height": 130,
+                          "fill": "#202020",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 8h label",
+                          "fill": "#777773",
+                          "content": "8",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 9h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 9h bar",
+                          "width": 20,
+                          "height": 116.9,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 9h label",
+                          "fill": "#777773",
+                          "content": "9",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 10h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 10h bar",
+                          "width": 20,
+                          "height": 90.7,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 10h label",
+                          "fill": "#777773",
+                          "content": "10",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 11h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 11h bar",
+                          "width": 20,
+                          "height": 71,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 11h label",
+                          "fill": "#777773",
+                          "content": "11",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 12h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 12h bar",
+                          "width": 20,
+                          "height": 80.8,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 12h label",
+                          "fill": "#777773",
+                          "content": "12",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 13h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 13h bar",
+                          "width": 20,
+                          "height": 96.1,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 13h label",
+                          "fill": "#777773",
+                          "content": "13",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 14h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 14h bar",
+                          "width": 20,
+                          "height": 79.7,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 14h label",
+                          "fill": "#777773",
+                          "content": "14",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 15h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 15h bar",
+                          "width": 20,
+                          "height": 65.5,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 15h label",
+                          "fill": "#777773",
+                          "content": "15",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 16h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 16h bar",
+                          "width": 20,
+                          "height": 93.9,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 16h label",
+                          "fill": "#777773",
+                          "content": "16",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 17h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 17h bar",
+                          "width": 20,
+                          "height": 75.4,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 17h label",
+                          "fill": "#777773",
+                          "content": "17",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 18h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 18h bar",
+                          "width": 20,
+                          "height": 52.4,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 18h label",
+                          "fill": "#777773",
+                          "content": "18",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Hour 19h",
+                      "width": 26,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Hour 19h bar",
+                          "width": 20,
+                          "height": 32.8,
+                          "fill": "#D9D9D5",
+                          "cornerRadius": [
+                            3,
+                            3,
+                            0,
+                            0
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "Hour 19h label",
+                          "fill": "#777773",
+                          "content": "19",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "Hourly footnote",
+                  "fill": "#777773",
+                  "content": "7–9h = 32,6 % da receita · picos às 13h e 16h",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Top days table",
+              "x": 40,
+              "y": 947,
+              "width": 548,
+              "height": 336,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Top days title",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Top days title title",
+                      "fill": "#202020",
+                      "content": "Top 5 dias de receita",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Top days title subtitle",
+                      "fill": "#777773",
+                      "content": "Receita por dia",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Top days list",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Top days column labels",
+                      "width": "fill_container",
+                      "fill": "#F5F5F3",
+                      "gap": 10,
+                      "padding": [
+                        9,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Day date heading",
+                          "fill": "#777773",
+                          "content": "Data",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 92
+                        },
+                        {
+                          "type": "text",
+                          "name": "Day weekday heading",
+                          "fill": "#777773",
+                          "content": "Dia",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Day units heading",
+                          "fill": "#777773",
+                          "content": "Unidades",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Day ticket heading",
+                          "fill": "#777773",
+                          "content": "Ticket",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Day revenue heading",
+                          "fill": "#777773",
+                          "content": "Receita",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 78,
+                          "textAlign": "right"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Top day 1",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 10,
+                      "padding": [
+                        11,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Top day 1 date",
+                          "fill": "#333333",
+                          "content": "27 jul 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 92
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 1 weekday",
+                          "fill": "#777773",
+                          "content": "Segunda",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 1 units",
+                          "fill": "#565652",
+                          "content": "38",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 1 ticket",
+                          "fill": "#565652",
+                          "content": "3,89 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 1 revenue",
+                          "fill": "#202020",
+                          "content": "70,00 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 78,
+                          "textAlign": "right"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Top day 2",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 10,
+                      "padding": [
+                        11,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Top day 2 date",
+                          "fill": "#333333",
+                          "content": "22 ago 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 92
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 2 weekday",
+                          "fill": "#202020",
+                          "content": "Sábado",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 2 units",
+                          "fill": "#565652",
+                          "content": "42",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 2 ticket",
+                          "fill": "#565652",
+                          "content": "3,24 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 2 revenue",
+                          "fill": "#202020",
+                          "content": "61,50 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 78,
+                          "textAlign": "right"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Top day 3",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 10,
+                      "padding": [
+                        11,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Top day 3 date",
+                          "fill": "#333333",
+                          "content": "11 out 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 92
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 3 weekday",
+                          "fill": "#202020",
+                          "content": "Domingo",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 3 units",
+                          "fill": "#565652",
+                          "content": "36",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 3 ticket",
+                          "fill": "#565652",
+                          "content": "3,61 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 3 revenue",
+                          "fill": "#202020",
+                          "content": "61,40 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 78,
+                          "textAlign": "right"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Top day 4",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 10,
+                      "padding": [
+                        11,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Top day 4 date",
+                          "fill": "#333333",
+                          "content": "18 jul 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 92
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 4 weekday",
+                          "fill": "#202020",
+                          "content": "Sábado",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 4 units",
+                          "fill": "#565652",
+                          "content": "38",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 4 ticket",
+                          "fill": "#565652",
+                          "content": "2,75 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 4 revenue",
+                          "fill": "#202020",
+                          "content": "60,40 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 78,
+                          "textAlign": "right"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Top day 5",
+                      "width": "fill_container",
+                      "stroke": "#E6E6E3",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "gap": 10,
+                      "padding": [
+                        11,
+                        8
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Top day 5 date",
+                          "fill": "#333333",
+                          "content": "01 mar 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 92
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 5 weekday",
+                          "fill": "#202020",
+                          "content": "Domingo",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 5 units",
+                          "fill": "#565652",
+                          "content": "39",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 5 ticket",
+                          "fill": "#565652",
+                          "content": "3,00 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "textGrowth": "fixed-width",
+                          "width": 64,
+                          "textAlign": "right"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Top day 5 revenue",
+                          "fill": "#202020",
+                          "content": "60,00 €",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "bold",
+                          "textGrowth": "fixed-width",
+                          "width": 78,
+                          "textAlign": "right"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "name": "Heatmap day hour",
+              "x": 604,
+              "y": 947,
+              "width": 560,
+              "height": 336,
+              "fill": "#FFFFFF",
+              "cornerRadius": 10,
+              "stroke": "#D8D8D4",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "name": "Heatmap title",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Heatmap title title",
+                      "fill": "#202020",
+                      "content": "Quando se vende",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "name": "Heatmap title subtitle",
+                      "fill": "#777773",
+                      "content": "Receita por dia da semana e hora",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Heatmap grid",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 3,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "name": "Heatmap hour labels",
+                      "width": "fill_container",
+                      "height": 12,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "name": "Heatmap label spacer",
+                          "width": 34,
+                          "height": 12
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 7",
+                          "fill": "#777773",
+                          "content": "7",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 8",
+                          "fill": "#777773",
+                          "content": "8",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 9",
+                          "fill": "#777773",
+                          "content": "9",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 10",
+                          "fill": "#777773",
+                          "content": "10",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 11",
+                          "fill": "#777773",
+                          "content": "11",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 12",
+                          "fill": "#777773",
+                          "content": "12",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 13",
+                          "fill": "#777773",
+                          "content": "13",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 14",
+                          "fill": "#777773",
+                          "content": "14",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 15",
+                          "fill": "#777773",
+                          "content": "15",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 16",
+                          "fill": "#777773",
+                          "content": "16",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 17",
+                          "fill": "#777773",
+                          "content": "17",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 18",
+                          "fill": "#777773",
+                          "content": "18",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "text",
+                          "name": "Heatmap hour 19",
+                          "fill": "#777773",
+                          "content": "19",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                          "width": "fill_container",
+                          "textGrowth": "fixed-width"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap Segunda",
+                      "width": "fill_container",
+                      "height": 26,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Heatmap Segunda label",
+                          "fill": "#777773",
+                          "content": "Seg",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal",
+                          "width": 34,
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 7h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 8h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 9h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 10h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 11h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 12h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 13h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 14h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 15h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 16h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 17h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 18h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Segunda 19h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap Terça",
+                      "width": "fill_container",
+                      "height": 26,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Heatmap Terça label",
+                          "fill": "#777773",
+                          "content": "Ter",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal",
+                          "width": 34,
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 7h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 8h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 9h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 10h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 11h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 12h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 13h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 14h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 15h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 16h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 17h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 18h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Terça 19h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap Quarta",
+                      "width": "fill_container",
+                      "height": 26,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Heatmap Quarta label",
+                          "fill": "#777773",
+                          "content": "Qua",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal",
+                          "width": 34,
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 7h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 8h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 9h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 10h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 11h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 12h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 13h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 14h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 15h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 16h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 17h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 18h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quarta 19h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap Quinta",
+                      "width": "fill_container",
+                      "height": 26,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Heatmap Quinta label",
+                          "fill": "#777773",
+                          "content": "Qui",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal",
+                          "width": 34,
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 7h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 8h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 9h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 10h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 11h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 12h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 13h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 14h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 15h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 16h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 17h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 18h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Quinta 19h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap Sexta",
+                      "width": "fill_container",
+                      "height": 26,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Heatmap Sexta label",
+                          "fill": "#777773",
+                          "content": "Sex",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal",
+                          "width": 34,
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 7h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 8h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 9h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 10h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 11h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 12h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 13h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 14h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 15h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 16h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 17h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 18h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sexta 19h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap Sábado",
+                      "width": "fill_container",
+                      "height": 26,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Heatmap Sábado label",
+                          "fill": "#777773",
+                          "content": "Sáb",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal",
+                          "width": 34,
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 7h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 8h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#202020",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 9h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#202020",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 10h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 11h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 12h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 13h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 14h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 15h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 16h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 17h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 18h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Sábado 19h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap Domingo",
+                      "width": "fill_container",
+                      "height": 26,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "name": "Heatmap Domingo label",
+                          "fill": "#777773",
+                          "content": "Dom",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal",
+                          "width": 34,
+                          "textGrowth": "fixed-width"
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 7h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#202020",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 8h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#202020",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 9h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#202020",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 10h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 11h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 12h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 13h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 14h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 15h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#DEDEDA",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 16h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#8F8F89",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 17h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#C7C7C2",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 18h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "name": "Heatmap Domingo 19h",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#EFEFED",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "name": "Heatmap legend",
+                  "width": "fill_container",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "name": "Heatmap legend min",
+                      "fill": "#777773",
+                      "content": "Menos",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap legend swatch 1",
+                      "width": 14,
+                      "height": 10,
+                      "fill": "#EFEFED",
+                      "cornerRadius": 2
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap legend swatch 2",
+                      "width": 14,
+                      "height": 10,
+                      "fill": "#DEDEDA",
+                      "cornerRadius": 2
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap legend swatch 3",
+                      "width": 14,
+                      "height": 10,
+                      "fill": "#C7C7C2",
+                      "cornerRadius": 2
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap legend swatch 4",
+                      "width": 14,
+                      "height": 10,
+                      "fill": "#8F8F89",
+                      "cornerRadius": 2
+                    },
+                    {
+                      "type": "frame",
+                      "name": "Heatmap legend swatch 5",
+                      "width": 14,
+                      "height": 10,
+                      "fill": "#202020",
+                      "cornerRadius": 2
+                    },
+                    {
+                      "type": "text",
+                      "name": "Heatmap legend max",
+                      "fill": "#777773",
+                      "content": "Mais",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
                 }
               ]
             }
