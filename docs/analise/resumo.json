@@ -1,0 +1,154 @@
+{
+  "fonte": "C:\\Users\\USER\\Desktop\\pastelaria.xlsx",
+  "intervalo": [
+    "2025-11-01",
+    "2026-10-31"
+  ],
+  "dias_cobertos": 365,
+  "linhas_vendas": 4583,
+  "receita_total": 11389.7,
+  "custo_total": 3069.92,
+  "lucro_total": 8319.78,
+  "margem_global_pct": 73.0,
+  "unidades": 7643,
+  "ticket_medio_linha": 2.49,
+  "linhas_por_dia": 12.56,
+  "receita_por_dia": 31.2,
+  "ano_2025": {
+    "dias": 61,
+    "receita": 1844.8,
+    "unidades": 1216,
+    "receita_dia": 30.24
+  },
+  "ano_2026": {
+    "dias": 304,
+    "receita": 9544.9,
+    "unidades": 6427,
+    "receita_dia": 31.4
+  },
+  "top_lucro": [
+    {
+      "produto": "Café",
+      "lucro": 1166.88
+    },
+    {
+      "produto": "Galão",
+      "lucro": 844.2
+    },
+    {
+      "produto": "Cappuccino",
+      "lucro": 631.4
+    },
+    {
+      "produto": "Pastel de nata",
+      "lucro": 626.85
+    },
+    {
+      "produto": "Croissant misto",
+      "lucro": 608.6
+    }
+  ],
+  "top_receita": [
+    {
+      "name": "Café",
+      "receita": 1372.8
+    },
+    {
+      "name": "Galão",
+      "receita": 1045.2
+    },
+    {
+      "name": "Croissant misto",
+      "receita": 930.8
+    },
+    {
+      "name": "Pastel de nata",
+      "receita": 835.8
+    },
+    {
+      "name": "Sumo de laranja",
+      "receita": 820.0
+    }
+  ],
+  "top_unidades": [
+    {
+      "name": "Café",
+      "unidades": 1716
+    },
+    {
+      "name": "Galão",
+      "unidades": 804
+    },
+    {
+      "name": "Pastel de nata",
+      "unidades": 597
+    },
+    {
+      "name": "Pão de leite",
+      "unidades": 477
+    },
+    {
+      "name": "Cappuccino",
+      "unidades": 451
+    }
+  ],
+  "pagamentos": {
+    "Cartão": 48.7,
+    "Dinheiro": 31.2,
+    "MB Way": 20.1
+  },
+  "pares_corr_top": [
+    {
+      "produto_a": "Chá",
+      "produto_b": "Travesseiro",
+      "rho": 0.298
+    },
+    {
+      "produto_a": "Bolo de laranja",
+      "produto_b": "Broa",
+      "rho": 0.278
+    },
+    {
+      "produto_a": "Pastel de Santa Clara",
+      "produto_b": "Pão de forma",
+      "rho": 0.275
+    },
+    {
+      "produto_a": "Broa",
+      "produto_b": "Croissant simples",
+      "rho": 0.244
+    },
+    {
+      "produto_a": "Croissant misto",
+      "produto_b": "Croissant simples",
+      "rho": 0.234
+    }
+  ],
+  "pares_corr_bottom": [
+    {
+      "produto_a": "Broa",
+      "produto_b": "Pastel de Santa Clara",
+      "rho": -0.307
+    },
+    {
+      "produto_a": "Queijada",
+      "produto_b": "Travesseiro",
+      "rho": -0.317
+    },
+    {
+      "produto_a": "Bolo de chocolate",
+      "produto_b": "Café",
+      "rho": -0.347
+    },
+    {
+      "produto_a": "Croissant simples",
+      "produto_b": "Travesseiro",
+      "rho": -0.422
+    },
+    {
+      "produto_a": "Croissant simples",
+      "produto_b": "Pastel de nata",
+      "rho": -0.455
+    }
+  ]
+}

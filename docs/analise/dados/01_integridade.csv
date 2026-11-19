@@ -1,0 +1,18 @@
+﻿verificação,resultado
+Linhas na folha vendas,4.583
+Id de venda duplicado,0
+Células nulas (todas as folhas de vendas),0
+product_id sem correspondência em produtos,0
+Produtos sem nenhuma venda,0
+Preços de venda divergentes da folha produtos,0
+Data mínima,2025-11-01
+Data máxima,2026-10-31
+Dias no intervalo,365
+Dias com vendas,365
+Dias em falta no intervalo,0
+Horas distintas,7h–19h
+Quantidade por linha (min/max),1 / 4
+Meios de pagamento,"Cartão, Dinheiro, MB Way"
+Receita total,"11.389,70 EUR"
+Custo de produção total,"3.069,92 EUR"
+Lucro bruto total,"8.319,78 EUR"
