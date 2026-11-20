@@ -256,24 +256,32 @@ body {
   line-height: 1.55;
 }
 
-.grid-main {
+.dashboard-grid {
   display: grid;
   grid-template-columns: minmax(0, 65fr) minmax(300px, 35fr);
   gap: 1.1rem;
   align-items: start;
 }
 
-.grid-lower {
+.insights-stack {
   display: grid;
-  grid-template-columns: minmax(0, 65fr) minmax(300px, 35fr);
+  min-width: 0;
   gap: 1.1rem;
-  align-items: start;
+  align-content: start;
+}
+
+.seasonality-panel {
   margin-top: 1.1rem;
 }
 
-.stack {
-  display: grid;
-  gap: 1.1rem;
+.seasonality-chart {
+  width: 100%;
+  height: clamp(260px, 28vw, 380px);
+  min-width: 0;
+}
+
+.ingredients-panel {
+  margin-top: 1.1rem;
 }
 
 .card {
@@ -364,8 +372,11 @@ body {
 .pill-bar {
   display: flex;
   gap: 0.4rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 0.15rem;
   overflow-x: auto;
-  padding-bottom: 0.15rem;
+  border: 0;
 }
 
 .pill {
@@ -624,7 +635,7 @@ body {
 
 .rank-row {
   display: grid;
-  grid-template-columns: 1.15rem minmax(0, 1fr) auto;
+  grid-template-columns: 1.15rem minmax(0, 1fr) minmax(0, auto);
   gap: 0.6rem;
   align-items: center;
   padding: 0.62rem 0;
@@ -655,10 +666,12 @@ body {
 }
 
 .rank-value {
+  min-width: 0;
   color: var(--navy);
   font-size: 0.72rem;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
   text-align: right;
 }
 
@@ -735,8 +748,7 @@ body {
 /* ------------------------------------------------------------------ */
 
 @media (max-width: 1100px) {
-  .grid-main,
-  .grid-lower {
+  .dashboard-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -759,8 +771,41 @@ body {
     padding: 0.5rem 1rem 2.5rem;
   }
 
+  .card {
+    padding: 1rem;
+  }
+
+  .card-head {
+    align-items: flex-start;
+  }
+
   .metric-value {
     font-size: 2.5rem;
+  }
+
+  .seasonality-chart {
+    height: 260px;
+  }
+
+  .select {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rank-row {
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 0.2rem 0.5rem;
+  }
+
+  .rank-value {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .rank-bar {
+    grid-column: 2 / -1;
+    margin-top: 0;
   }
 }
 

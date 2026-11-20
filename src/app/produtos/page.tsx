@@ -5,8 +5,9 @@ import {
   CategoryMargins,
   GlobalMarginCard,
 } from "@/components/domain/InsightCards";
+import { ProductSeasonality } from "@/components/domain/ProductSeasonality";
 import { ProductsTable } from "@/components/domain/ProductsTable";
-import { TopProducts } from "@/components/domain/TopProducts";
+import { TrafficProducts } from "@/components/domain/TrafficProducts";
 import { useData } from "@/hooks/useData";
 
 export default function ProdutosPage() {
@@ -33,7 +34,7 @@ export default function ProdutosPage() {
 
       {status === "ready" && (
         <>
-          <div className="grid-main">
+          <div className="dashboard-grid">
             <section className="card" id="produtos" aria-labelledby="produtos-titulo">
               <div className="card-head">
                 <div>
@@ -48,18 +49,17 @@ export default function ProdutosPage() {
               <ProductsTable produtos={produtos} />
             </section>
 
-            <div className="stack">
+            <aside className="insights-stack" aria-label="Indicadores de vendas">
               <GlobalMarginCard vendas={vendas} produtos={produtos} />
+              <TrafficProducts vendas={vendas} produtos={produtos} />
               <CategoryMargins vendas={vendas} produtos={produtos} />
-            </div>
+            </aside>
           </div>
 
-          <div className="grid-lower" id="vendas">
-            <TopProducts vendas={vendas} produtos={produtos} />
-          </div>
+          <ProductSeasonality vendas={vendas} produtos={produtos} />
 
           <section
-            className="card mt-4"
+            className="card ingredients-panel"
             id="ingredientes"
             aria-labelledby="ingredientes-titulo"
           >
