@@ -19,7 +19,7 @@ Relatório de análise exploratória do ficheiro `pastelaria.xlsx`
 4. **O pico diário é o pequeno-almoço.** As horas 7–9 fazem **32,6 % da receita** em 3 das 13 horas de funcionamento; há um segundo pico às 13h e às 16h.
 5. **A pergunta "produtos × ingredientes" não tem resposta nos dados atuais.** Não existe nenhuma tabela de receitas/fichas técnicas que ligue produtos a ingredientes. Uma correlação só será calculável depois de acrescentar essa folha (secção 5).
 6. **Os meios de pagamento não mudaram ao longo do ano.** Cartão ~49 %, Dinheiro ~31 %, MB Way ~20 %, composição estável (χ², p = 0,50) e sem tendência significativa (todos os p ≥ 0,25).
-7. **Não há crescimento demonstrável em 2026.** A receita/dia subiu 3,8 % face à média de 2025, mas a tendência interna de 2026 não é significativa (p = 0,057) e **os dois anos não partilham um único mês**, pelo que uma comparação homóloga é impossível só com estes dados.
+7. **Não há crescimento demonstrável em 2026.** A receita/dia subiu 3,8 % face a novembro–dezembro de 2025, mas a tendência interna de 2026 não é significativa (p = 0,057) e **os dois anos não partilham um único mês**, pelo que uma comparação homóloga é impossível só com estes dados.
 
 ---
 
@@ -76,6 +76,8 @@ Relatório automático da skill (`validate_dataset.py`, folha `vendas`): **97,5/
 
 - 225 linhas (4,9 %) marcadas como *outliers* em `quantity` — é apenas o valor 4, que fica fora do intervalo interquartil por a escala ser discreta (1–4). Não há quantidades absurdas.
 - `id` de venda é sequencial e uniforme (1…4583): serve só como identificador, não tem valor analítico.
+- **43 pares de linhas exatamente iguais** (mesma data, hora, produto, quantidade e pagamento). Se se mantiver só uma cópia de cada par, a receita desce 59,10 € (0,52 %), as unidades 50 e o lucro 45,58 € — dentro do ruído, mas convém confirmar se são compras repetidas legítimas ou erros de registo.
+- **A ordem das linhas não é cronológica dentro do dia**: só 1 dos 365 dias tem as horas por ordem. Agregar por dia/hora não é afetado, mas ler a série pela ordem do ficheiro é enganador.
 
 **Anomalias que vale a pena confirmar:**
 
@@ -356,7 +358,7 @@ A série completa, dia a dia, está em [`dados/04_serie_diaria.csv`](./dados/04_
 
 ![Receita mensal](./graficos/02_receita_mensal.png)
 
-**Julho e agosto são o pico** (40,42 e 38,50 €/dia, ou seja +28,7 % e +22,6 % sobre a média do ano de 31,40 €/dia). Os meses mais fracos são janeiro, outubro e novembro (~26–28 €/dia). O padrão é compatível com sazonalidade de verão, não com crescimento.
+**Julho e agosto são o pico** (40,42 e 38,50 €/dia, ou seja +29,6 % e +23,4 % sobre a média dos 365 dias, 31,20 €/dia). Os meses mais fracos são janeiro, outubro e novembro (~26–28 €/dia). O padrão é compatível com sazonalidade de verão, não com crescimento. (A média de 2026 é 31,40 €/dia, mas esse ano só tem 304 dias; usá-la como média anual inflacionava os picos.)
 
 ### Por ano
 
@@ -475,6 +477,29 @@ A ordem **Cartão > Dinheiro > MB Way** nunca se altera em nenhum dos 12 meses. 
 
 ![Correlação entre produtos](./graficos/09_correlacao_produtos.png)
 
+### Calendário e dias atípicos
+
+Desvio de cada data face à receita média do seu dia da semana (365 dias):
+
+| data | dia | receita | desvio |
+|:--|:--|---:|---:|
+| 24 dez 2025 | Qua | 48,00 € | +71 % |
+| 25 dez 2025 | Qui | 30,10 € | +15 % |
+| 31 dez 2025 | Qua | 13,50 € | −52 % |
+| 1 jan 2026 | Qui | 29,50 € | +12 % |
+| 3 abr 2026 | Sex | 51,20 € | +80 % |
+| 30 abr 2026 | Qui | 59,60 € | +127 % |
+| 2 out 2026 | Sex | 9,40 € | −67 % |
+| 5 out 2026 | Seg | 10,60 € | −62 % |
+| 6 out 2026 | Ter | 7,90 € | −70 % |
+| 27 jul 2026 | Seg | 70,00 € | +149 % |
+
+- A **véspera de Natal** é um dia de compras (+71 %), mas a **passagem de ano** cai para metade (−52 %). O dia de Natal (+15 %) e o 1 de janeiro (+12 %) ficam perto do normal.
+- O **feriado de 5 de outubro** (10,60 €, −62 %) vem rodeado de dias muito fracos: 2 out (−67 %) e 6 out (−70 %). Em contrapartida, a **véspera de 1 de maio** é o 7.º melhor dia do ano (59,60 €, +127 %), embora o próprio feriado seja apenas 25,40 €.
+- Os desvios diários têm **autocorrelação +0,22** (descontado o dia da semana): os bons e maus dias vêm em sequência, o que sugere fatores externos (meteorologia, obras, eventos) que os dados não registam.
+- **Não há efeito de dia de pagamento**: a receita ajustada é 0,96 nos dias 1–5 do mês e 1,03 nos dias 16–20.
+- Estas leituras são descritivas: com um ano de dados assinalam-se os dias fora do padrão, mas não se estima um efeito de calendário.
+
 ---
 
 ## 11. Limitações
@@ -487,6 +512,7 @@ A ordem **Cartão > Dinheiro > MB Way** nunca se altera em nenhum dos 12 meses. 
 6. **Ano incompleto**: 2026 termina em outubro, 2025 começa em novembro.
 7. **IVA e custos fixos ausentes**: a margem de 73,0 % é margem bruta sobre custo de produção declarado; não inclui renda, pessoal, energia nem impostos.
 8. **Amostra pequena para correlações de produto**: 53 semanas, com |ρ| crítico de 0,277; correlações de share têm viés negativo estrutural.
+9. **Duplicados por confirmar**: os totais incluem 43 pares de linhas exatamente iguais; removê-los baixaria a receita em 59,10 € (0,52 %), pelo que os valores estão ligeiramente sobrestimados.
 
 ---
 
@@ -508,7 +534,7 @@ A ordem **Cartão > Dinheiro > MB Way** nunca se altera em nenhum dos 12 meses. 
 
 7. **Reforçar stock e pessoal ao fim de semana** (40,51 €/dia vs 27,45 €/dia) e nas horas 7–9, 13 e 16.
 8. **Proteger o Café** — 14 % do lucro num único produto com 85 % de margem e custo de 0,12 €. É o produto mais exposto a qualquer rutura de stock.
-9. **Revisitar preço dos Bolos** (margem 64,7 %, a mais baixa): Cheesecake, Bolo de chocolate e Croissant misto concentram o custo. Um ajuste de 0,10–0,20 € nos bolos tem mais efeito na margem do que qualquer ação nas bebidas.
+9. **Rever o preço dos Bolos com cuidado** (margem 64,7 %, a mais baixa): Cheesecake, Bolo de chocolate e Croissant misto concentram o custo. Um ajuste de 0,20 € em todos os bolos vale 152,40 €/ano; +0,10 € no Café vale 171,60 €/ano, mais em euros absolutos. Subir os bolos melhora a **margem percentual**; subir o Café rende mais **por unidade vendida**. Como os dados não têm variação de preço nem elasticidade, isto é uma comparação de cenários, não uma conclusão: a escolha exige um teste real de procura.
 10. **Resolver os 5 alertas de stock de ingredientes**, com destaque para o Chocolate negro a zero e para as Embalagens Costa (2 artigos abaixo do mínimo, ambos necessários ao take-away).
 
 ---
