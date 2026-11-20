@@ -286,6 +286,7 @@ body {
 
 .card-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 0.75rem;
@@ -304,6 +305,11 @@ body {
   margin: 0.25rem 0 0;
   color: var(--muted);
   font-size: 0.7rem;
+}
+
+.card-sub strong {
+  color: var(--navy);
+  font-weight: 650;
 }
 
 .card-meta {
@@ -393,6 +399,27 @@ body {
   justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 1.1rem;
+}
+
+.select-wrap {
+  flex: 0 0 auto;
+}
+
+.select {
+  max-width: 190px;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 550;
+}
+
+.select:hover {
+  border-color: var(--blue-gray);
 }
 
 /* ------------------------------------------------------------------ */

@@ -299,6 +299,33 @@ export interface HourCategoryPoint {
   porCategoria: Record<string, number>;
 }
 
+export interface MonthlyUnitsPoint {
+  /** Chave ISO do mês, ex. `"2026-08"`. */
+  month: string;
+  units: number;
+}
+
+/** Unidades de um produto em cada mês, incluindo meses sem vendas. */
+export function monthlyUnitsByProduct(
+  vendas: Venda[],
+  productId: number,
+  meses: string[],
+): MonthlyUnitsPoint[] {
+  const permitidos = new Set(meses);
+  const contagem = new Map(meses.map((mes) => [mes, 0]));
+
+  for (const venda of vendas) {
+    if (venda.product_id !== productId) continue;
+
+    const mes = venda.date.slice(0, 7);
+    if (!permitidos.has(mes)) continue;
+
+    contagem.set(mes, (contagem.get(mes) ?? 0) + venda.quantity);
+  }
+
+  return meses.map((month) => ({ month, units: contagem.get(month) ?? 0 }));
+}
+
 /** Unidades por hora e categoria: dados prontos para barras empilhadas. */
 export function unitsByHourAndCategory(
   vendas: Venda[],
