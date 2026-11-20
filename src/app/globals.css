@@ -477,6 +477,31 @@ body {
   font-weight: 650;
 }
 
+.data-table tbody tr.group-start td,
+.data-table tbody tr.group-start th {
+  border-top: 1px solid var(--line);
+}
+
+.data-table td[rowspan] {
+  background: var(--surface);
+}
+
+.supplier-name {
+  display: block;
+  color: var(--navy);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.supplier-cell .card-meta {
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.supplier-contact {
+  white-space: nowrap;
+}
+
 .data-table tfoot td {
   padding: 0.8rem 0.7rem 0;
   border-top: 1px solid var(--line);

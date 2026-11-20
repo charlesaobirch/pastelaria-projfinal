@@ -10,6 +10,11 @@ import { Estado } from "./ProductsTable";
 
 const TUDO = "tudo";
 
+interface GrupoFornecedor {
+  supplier: string;
+  itens: Ingrediente[];
+}
+
 export function IngredientsTable({
   ingredientes,
 }: {
@@ -38,6 +43,25 @@ export function IngredientsTable({
     );
   }, [ingredientes, categoria, query]);
 
+  const grupos = useMemo<GrupoFornecedor[]>(() => {
+    const mapa = new Map<string, Ingrediente[]>();
+
+    for (const item of linhas) {
+      const itens = mapa.get(item.supplier) ?? [];
+      itens.push(item);
+      mapa.set(item.supplier, itens);
+    }
+
+    return [...mapa.entries()]
+      .sort(([a], [b]) => a.localeCompare(b, "pt-PT"))
+      .map(([supplier, itens]) => ({
+        supplier,
+        itens: [...itens].sort((a, b) =>
+          a.name.localeCompare(b.name, "pt-PT"),
+        ),
+      }));
+  }, [linhas]);
+
   return (
     <div>
       <div className="filters">
@@ -48,7 +72,9 @@ export function IngredientsTable({
           onChange={setCategoria}
         />
         <span className="card-meta">
-          {int(linhas.length)} de {int(ingredientes.length)}
+          {int(linhas.length)} de {int(ingredientes.length)} artigos ·{" "}
+          {int(grupos.length)}{" "}
+          {grupos.length === 1 ? "fornecedor" : "fornecedores"}
         </span>
       </div>
 
@@ -60,8 +86,8 @@ export function IngredientsTable({
       <div className="table-scroll">
         <table className="data-table">
           <caption className="sr-only">
-            Ingredientes e embalagens com unidade, stock, mínimo, estado e
-            fornecedor.
+            Ingredientes e embalagens agrupados por fornecedor, com unidade,
+            stock, mínimo e estado.
           </caption>
           <thead>
             <tr>
@@ -88,37 +114,59 @@ export function IngredientsTable({
                 </td>
               </tr>
             )}
-            {linhas.map((item) => {
-              const assunto = encodeURIComponent(`Contacto ${item.supplier}`);
 
-              return (
-                <tr key={item.id}>
-                  <th scope="row" className="strong">
-                    {item.name}
-                  </th>
-                  <td className="card-meta">{item.unit}</td>
-                  <td className="num">
-                    {int(item.stock)} {item.unit}
-                  </td>
-                  <td className="num card-meta">
-                    {int(item.min_stock)} {item.unit}
-                  </td>
-                  <td>
-                    <Estado valor={stockDisplayStatus(item)} />
-                  </td>
-                  <td>{item.supplier}</td>
-                  <td className="num">
-                    <a
-                      className="link-btn"
-                      href={`mailto:?subject=${assunto}`}
-                      aria-label={`Entrar em contacto com ${item.supplier}`}
-                    >
-                      Entrar em contacto
-                    </a>
-                  </td>
-                </tr>
-              );
-            })}
+            {grupos.map((grupo, indiceGrupo) =>
+              grupo.itens.map((item, indiceItem) => {
+                const assunto = encodeURIComponent(`Contacto ${grupo.supplier}`);
+                const inicioGrupo = indiceItem === 0;
+
+                return (
+                  <tr
+                    key={item.id}
+                    className={
+                      inicioGrupo && indiceGrupo > 0 ? "group-start" : undefined
+                    }
+                  >
+                    <th scope="row" className="strong">
+                      {item.name}
+                    </th>
+                    <td className="card-meta">{item.unit}</td>
+                    <td className="num">
+                      {int(item.stock)} {item.unit}
+                    </td>
+                    <td className="num card-meta">
+                      {int(item.min_stock)} {item.unit}
+                    </td>
+                    <td>
+                      <Estado valor={stockDisplayStatus(item)} />
+                    </td>
+                    {inicioGrupo && (
+                      <>
+                        <td className="supplier-cell" rowSpan={grupo.itens.length}>
+                          <span className="supplier-name">{grupo.supplier}</span>
+                          <span className="card-meta">
+                            {int(grupo.itens.length)}{" "}
+                            {grupo.itens.length === 1 ? "artigo" : "artigos"}
+                          </span>
+                        </td>
+                        <td
+                          className="num supplier-contact"
+                          rowSpan={grupo.itens.length}
+                        >
+                          <a
+                            className="link-btn"
+                            href={`mailto:?subject=${assunto}`}
+                            aria-label={`Entrar em contacto com ${grupo.supplier}`}
+                          >
+                            Entrar em contacto
+                          </a>
+                        </td>
+                      </>
+                    )}
+                  </tr>
+                );
+              }),
+            )}
           </tbody>
           <tfoot>
             <tr>
