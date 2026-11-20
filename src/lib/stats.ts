@@ -281,6 +281,57 @@ export function productStats(
   return rows.sort((a, b) => b.profit - a.profit);
 }
 
+/** Dez produtos mais vendidos por unidades (desempate por receita). */
+export function topProductsByUnits(
+  vendas: Venda[],
+  produtos: Produto[],
+  limit = 10,
+): ProductStat[] {
+  return [...productStats(vendas, produtos)]
+    .sort((a, b) => b.units - a.units || b.revenue - a.revenue)
+    .slice(0, limit);
+}
+
+export interface HourCategoryPoint {
+  hour: number;
+  total: number;
+  /** Unidades por categoria de produto nessa hora. */
+  porCategoria: Record<string, number>;
+}
+
+/** Unidades por hora e categoria: dados prontos para barras empilhadas. */
+export function unitsByHourAndCategory(
+  vendas: Venda[],
+  produtos: Produto[],
+): { categorias: string[]; horas: HourCategoryPoint[] } {
+  const byId = indexProducts(produtos);
+  const buckets = new Map<number, HourCategoryPoint>();
+
+  for (const venda of vendas) {
+    let ponto = buckets.get(venda.hour);
+
+    if (!ponto) {
+      ponto = { hour: venda.hour, total: 0, porCategoria: {} };
+      buckets.set(venda.hour, ponto);
+    }
+
+    const categoria = byId.get(venda.product_id)?.category ?? "Sem categoria";
+    ponto.total += venda.quantity;
+    ponto.porCategoria[categoria] =
+      (ponto.porCategoria[categoria] ?? 0) + venda.quantity;
+  }
+
+  const horas = [...buckets.values()].sort((a, b) => a.hour - b.hour);
+  const categorias = [
+    ...new Set([
+      ...produtos.map((produto) => produto.category),
+      ...horas.flatMap((ponto) => Object.keys(ponto.porCategoria)),
+    ]),
+  ].sort((a, b) => a.localeCompare(b, "pt-PT"));
+
+  return { categorias, horas };
+}
+
 /** Agregação por categoria de produto, ordenada por lucro. */
 export function categoryStats(
   vendas: Venda[],

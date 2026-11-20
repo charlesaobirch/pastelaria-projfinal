@@ -21,6 +21,19 @@ export function stockStatus(
   return "ok";
 }
 
+/**
+ * Estado para as tabelas: no mínimo conta como "baixo", não como "ok".
+ * `stockStatus` mantém a regra estrita da análise (< mínimo) para não alterar
+ * os alertas e relatórios já publicados.
+ */
+export function stockDisplayStatus(
+  item: Pick<Ingrediente, "stock" | "min_stock">,
+): StockLevel {
+  if (item.stock <= 0) return "esgotado";
+  if (item.stock <= item.min_stock) return "baixo";
+  return "ok";
+}
+
 /** Stock atual em percentagem do mínimo (100 % = exatamente no mínimo). */
 export function stockCoverage(
   item: Pick<Ingrediente, "stock" | "min_stock">,
