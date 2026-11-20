@@ -92,7 +92,7 @@ export function TopProducts({
         <div className="card-head">
           <div>
             <h3 className="card-title" id="sazonalidade-titulo">
-              Sazonalidade
+              Sazonalidade de um produto
             </h3>
             <p className="card-sub">Unidades por categoria e hora do dia.</p>
           </div>
