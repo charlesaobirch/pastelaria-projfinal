@@ -4,7 +4,9 @@ import { useMemo, useState } from "react";
 import { SegmentedFilter } from "@/components/ui/SegmentedFilter";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus, stockValue } from "@/lib/stock";
+import { useSearch } from "@/store/useSearch";
 import type { Ingrediente } from "@/types";
+import { Estado } from "./ProductsTable";
 
 const TUDO = "tudo";
 
@@ -14,6 +16,7 @@ export function IngredientsTable({
   ingredientes: Ingrediente[];
 }) {
   const [categoria, setCategoria] = useState(TUDO);
+  const query = useSearch((state) => state.query);
 
   const opcoes = useMemo(
     () => [
@@ -25,26 +28,28 @@ export function IngredientsTable({
     [ingredientes],
   );
 
-  const linhas = useMemo(
-    () =>
-      categoria === TUDO
-        ? ingredientes
-        : ingredientes.filter((item) => item.category === categoria),
-    [ingredientes, categoria],
-  );
+  const linhas = useMemo(() => {
+    const termo = query.trim().toLocaleLowerCase("pt-PT");
+
+    return ingredientes.filter(
+      (item) =>
+        (categoria === TUDO || item.category === categoria) &&
+        (termo === "" || item.name.toLocaleLowerCase("pt-PT").includes(termo)),
+    );
+  }, [ingredientes, categoria, query]);
 
   return (
-    <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+    <div>
+      <div className="filters">
         <SegmentedFilter
           label="Filtrar ingredientes por categoria"
           options={opcoes}
           value={categoria}
           onChange={setCategoria}
         />
-        <p className="text-xs text-[var(--muted)]">
-          {int(linhas.length)} de {int(ingredientes.length)} artigos
-        </p>
+        <span className="card-meta">
+          {int(linhas.length)} de {int(ingredientes.length)}
+        </span>
       </div>
 
       <p className="notice">
@@ -52,7 +57,7 @@ export function IngredientsTable({
         rascunho de email com o nome do fornecedor no assunto.
       </p>
 
-      <div className="table-wrap">
+      <div className="table-scroll">
         <table className="data-table">
           <caption className="sr-only">
             Ingredientes e embalagens com unidade, stock, mínimo, estado e
@@ -61,7 +66,6 @@ export function IngredientsTable({
           <thead>
             <tr>
               <th scope="col">Artigo</th>
-              <th scope="col">Categoria</th>
               <th scope="col">Unidade</th>
               <th scope="col" className="num">
                 Stock
@@ -79,43 +83,33 @@ export function IngredientsTable({
           <tbody>
             {linhas.length === 0 && (
               <tr>
-                <td colSpan={8} className="py-8 text-center text-[var(--muted)]">
-                  Não há artigos nesta categoria.
+                <td colSpan={7} className="empty">
+                  Sem resultados para esta pesquisa.
                 </td>
               </tr>
             )}
             {linhas.map((item) => {
-              const estado = stockDisplayStatus(item);
               const assunto = encodeURIComponent(`Contacto ${item.supplier}`);
 
               return (
                 <tr key={item.id}>
-                  <th scope="row" className="font-medium">
+                  <th scope="row" className="strong">
                     {item.name}
                   </th>
-                  <td className="text-[var(--muted)]">{item.category}</td>
-                  <td className="text-[var(--muted)]">{item.unit}</td>
+                  <td className="card-meta">{item.unit}</td>
                   <td className="num">
                     {int(item.stock)} {item.unit}
                   </td>
-                  <td className="num text-[var(--muted)]">
+                  <td className="num card-meta">
                     {int(item.min_stock)} {item.unit}
                   </td>
                   <td>
-                    {estado === "esgotado" ? (
-                      <span className="badge badge--out">Esgotado</span>
-                    ) : estado === "baixo" ? (
-                      <span className="badge badge--low">Baixo</span>
-                    ) : (
-                      <span className="text-[var(--muted)]" title="Stock acima do mínimo">
-                        —
-                      </span>
-                    )}
+                    <Estado valor={stockDisplayStatus(item)} />
                   </td>
                   <td>{item.supplier}</td>
                   <td className="num">
                     <a
-                      className="btn"
+                      className="link-btn"
                       href={`mailto:?subject=${assunto}`}
                       aria-label={`Entrar em contacto com ${item.supplier}`}
                     >
@@ -128,8 +122,8 @@ export function IngredientsTable({
           </tbody>
           <tfoot>
             <tr>
-              <td colSpan={4}>Valor em stock a custo</td>
-              <td colSpan={4} className="num">
+              <td colSpan={3}>Valor em stock a custo</td>
+              <td colSpan={4} className="num strong">
                 {eur(stockValue(linhas))}
               </td>
             </tr>

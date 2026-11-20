@@ -4,12 +4,14 @@ import { useMemo, useState } from "react";
 import { SegmentedFilter } from "@/components/ui/SegmentedFilter";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus } from "@/lib/stock";
+import { useSearch } from "@/store/useSearch";
 import type { Produto } from "@/types";
 
 const TUDO = "tudo";
 
 export function ProductsTable({ produtos }: { produtos: Produto[] }) {
   const [categoria, setCategoria] = useState(TUDO);
+  const query = useSearch((state) => state.query);
 
   const opcoes = useMemo(
     () => [
@@ -21,29 +23,31 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
     [produtos],
   );
 
-  const linhas = useMemo(
-    () =>
-      categoria === TUDO
-        ? produtos
-        : produtos.filter((produto) => produto.category === categoria),
-    [produtos, categoria],
-  );
+  const linhas = useMemo(() => {
+    const termo = query.trim().toLocaleLowerCase("pt-PT");
+
+    return produtos.filter(
+      (produto) =>
+        (categoria === TUDO || produto.category === categoria) &&
+        (termo === "" || produto.name.toLocaleLowerCase("pt-PT").includes(termo)),
+    );
+  }, [produtos, categoria, query]);
 
   return (
-    <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+    <div>
+      <div className="filters">
         <SegmentedFilter
           label="Filtrar produtos por categoria"
           options={opcoes}
           value={categoria}
           onChange={setCategoria}
         />
-        <p className="text-xs text-[var(--muted)]">
-          {int(linhas.length)} de {int(produtos.length)} produtos
-        </p>
+        <span className="card-meta">
+          {int(linhas.length)} de {int(produtos.length)}
+        </span>
       </div>
 
-      <div className="table-wrap">
+      <div className="table-scroll">
         <table className="data-table">
           <caption className="sr-only">
             Produtos com preço, custo, stock, mínimo e estado.
@@ -70,8 +74,8 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
           <tbody>
             {linhas.length === 0 && (
               <tr>
-                <td colSpan={7} className="py-8 text-center text-[var(--muted)]">
-                  Não há produtos nesta categoria.
+                <td colSpan={7} className="empty">
+                  Sem resultados para esta pesquisa.
                 </td>
               </tr>
             )}
@@ -80,28 +84,16 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
 
               return (
                 <tr key={produto.id}>
-                  <th scope="row" className="font-medium">
+                  <th scope="row" className="strong">
                     {produto.name}
                   </th>
-                  <td className="text-[var(--muted)]">{produto.category}</td>
-                  <td className="num">{eur(produto.unit_price)}</td>
-                  <td className="num text-[var(--muted)]">
-                    {eur(produto.cost_price)}
-                  </td>
+                  <td className="card-meta">{produto.category}</td>
+                  <td className="num strong">{eur(produto.unit_price)}</td>
+                  <td className="num card-meta">{eur(produto.cost_price)}</td>
                   <td className="num">{int(produto.stock)}</td>
-                  <td className="num text-[var(--muted)]">
-                    {int(produto.min_stock)}
-                  </td>
+                  <td className="num card-meta">{int(produto.min_stock)}</td>
                   <td>
-                    {estado === "esgotado" ? (
-                      <span className="badge badge--out">Esgotado</span>
-                    ) : estado === "baixo" ? (
-                      <span className="badge badge--low">Baixo</span>
-                    ) : (
-                      <span className="text-[var(--muted)]" title="Stock acima do mínimo">
-                        —
-                      </span>
-                    )}
+                    <Estado valor={estado} />
                   </td>
                 </tr>
               );
@@ -111,4 +103,26 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
       </div>
     </div>
   );
+}
+
+export function Estado({ valor }: { valor: "ok" | "baixo" | "esgotado" }) {
+  if (valor === "esgotado") {
+    return (
+      <span className="status status--out">
+        <i className="dot dot--out" aria-hidden="true" />
+        Esgotado
+      </span>
+    );
+  }
+
+  if (valor === "baixo") {
+    return (
+      <span className="status status--low">
+        <i className="dot dot--warn" aria-hidden="true" />
+        Baixo
+      </span>
+    );
+  }
+
+  return <span className="status status--ok">—</span>;
 }

@@ -19,13 +19,13 @@ export function SegmentedFilter<T extends string>({
   label,
 }: SegmentedFilterProps<T>) {
   return (
-    <fieldset className="tabs" aria-label={label}>
+    <fieldset className="pill-bar">
       <legend className="sr-only">{label}</legend>
       {options.map((opcao) => (
         <button
           key={opcao.value}
           type="button"
-          className="tab"
+          className="pill"
           aria-pressed={value === opcao.value}
           onClick={() => onChange(opcao.value)}
         >
