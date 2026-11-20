@@ -101,8 +101,8 @@ export function IngredientsTable({
               </th>
               <th scope="col">Estado</th>
               <th scope="col">Fornecedor</th>
-              <th scope="col">
-                <span className="sr-only">Contacto</span>
+              <th scope="col" className="num">
+                Contacto
               </th>
             </tr>
           </thead>
