@@ -21,6 +21,8 @@ export interface Produto {
   cost_price: number;
   stock: number;
   min_stock: number;
+  /** Estado escolhido nos novos registos; quando ausente, é derivado do stock. */
+  estado?: StockLevel;
 }
 
 export interface Ingrediente {
@@ -32,6 +34,8 @@ export interface Ingrediente {
   stock: number;
   min_stock: number;
   supplier: string;
+  /** Estado escolhido nos novos registos; quando ausente, é derivado do stock. */
+  estado?: StockLevel;
 }
 
 export interface Venda {

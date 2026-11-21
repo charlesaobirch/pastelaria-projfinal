@@ -623,6 +623,146 @@ body {
 }
 
 /* ------------------------------------------------------------------ */
+/* Formulários das tabelas                                             */
+/* ------------------------------------------------------------------ */
+
+.filters-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-edit {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--navy);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--navy);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.btn-edit:hover {
+  background: var(--pale-blue);
+}
+
+.edit-form {
+  margin: 0 0 1.1rem;
+  padding: 0.95rem 1rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+
+.form-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.form-title {
+  margin: 0;
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.form-close {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+}
+
+.form-close:hover {
+  color: var(--navy);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.7rem 0.85rem;
+}
+
+.form-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-field > span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 1px;
+}
+
+.form-error {
+  margin: 0.75rem 0 0;
+  color: var(--coral);
+  font-size: 0.72rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.btn-soft,
+.btn-primary {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.btn-soft {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn-primary {
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.12);
+}
+
+/* ------------------------------------------------------------------ */
 /* Barras e listas                                                     */
 /* ------------------------------------------------------------------ */
 
@@ -832,6 +972,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
   .rank-row {
     grid-template-columns: 1rem minmax(0, 1fr);
     gap: 0.2rem 0.5rem;
@@ -850,7 +994,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .side-item,
-  .pill {
+  .pill,
+  .btn-edit {
     transition: none;
   }
 }
