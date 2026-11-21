@@ -34,7 +34,7 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
   }, [produtos, categoria, query]);
 
   return (
-    <div>
+    <div className="products-body">
       <div className="filters">
         <SegmentedFilter
           label="Filtrar produtos por categoria"

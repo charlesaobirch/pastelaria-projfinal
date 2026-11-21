@@ -284,6 +284,45 @@ body {
   margin-top: 1.1rem;
 }
 
+/* height:0 + min-height:100%: a coluna lateral define a altura da linha. */
+@media (min-width: 1101px) {
+  .dashboard-grid {
+    align-items: stretch;
+  }
+
+  .products-panel {
+    display: flex;
+    height: 0;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .products-body {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
+  .products-body .filters {
+    flex: 0 0 auto;
+  }
+
+  .products-body .table-scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+
+  .products-panel .data-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--surface);
+  }
+}
+
 .card {
   min-width: 0;
   padding: 1.25rem 1.35rem;

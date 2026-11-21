@@ -35,7 +35,11 @@ export default function ProdutosPage() {
       {status === "ready" && (
         <>
           <div className="dashboard-grid">
-            <section className="card" id="produtos" aria-labelledby="produtos-titulo">
+            <section
+              className="card products-panel"
+              id="produtos"
+              aria-labelledby="produtos-titulo"
+            >
               <div className="card-head">
                 <div>
                   <h2 className="card-title" id="produtos-titulo">
