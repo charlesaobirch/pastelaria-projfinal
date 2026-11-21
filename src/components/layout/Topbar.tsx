@@ -1,7 +1,7 @@
 "use client";
 
 import { BellIcon } from "@solar-icons/react/linear/bell";
-import { MagnifierIcon } from "@solar-icons/react/linear/magnifier";
+import { UserRoundedIcon } from "@solar-icons/react/linear/user-rounded";
 import Link from "next/link";
 import { useData } from "@/hooks/useData";
 import { stockDisplayStatus } from "@/lib/stock";
@@ -19,31 +19,44 @@ export function Topbar() {
   return (
     <header className="topbar">
       <div className="search-box">
-        <MagnifierIcon size={16} aria-hidden="true" />
+        <svg
+          className="search-icon"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
         <label className="sr-only" htmlFor="pesquisa-global">
-          Pesquisar produtos e ingredientes
+          Pesquisar vendas, produtos ou stock
         </label>
         <input
           id="pesquisa-global"
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Pesquisar produtos e ingredientes…"
+          placeholder="Pesquisar vendas, produtos ou stock…"
         />
       </div>
 
       <div className="topbar-actions">
         <Link
-          href="/produtos#produtos"
+          href="/stock"
           className="icon-btn"
           aria-label={`${alertas} artigos com stock em atenção`}
         >
-          <BellIcon size={17} aria-hidden="true" />
+          <BellIcon size={18} aria-hidden="true" />
           {alertas > 0 && <span className="alert-dot">{alertas}</span>}
         </Link>
-        <div className="avatar" role="img" aria-label="Conta: André">
-          A
-        </div>
+        <Link href="/login" className="icon-btn" aria-label="Conta: André">
+          <UserRoundedIcon size={18} aria-hidden="true" />
+        </Link>
       </div>
     </header>
   );

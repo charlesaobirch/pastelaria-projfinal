@@ -1,32 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {
-  Bar,
-  BarChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-import {
-  dataRange,
-  monthKeysBetween,
-  monthLabel,
-} from "@/lib/dates";
+import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import { dataRange, monthKeysBetween, monthLabel } from "@/lib/dates";
 import { int } from "@/lib/format";
-import {
-  type MonthlyUnitsPoint,
-  monthlyUnitsByProduct,
-} from "@/lib/stats";
+import { type MonthlyUnitsPoint, monthlyUnitsByProduct } from "@/lib/stats";
 import type { Produto, Venda } from "@/types";
-
-function estacaoDoMes(mes: number): string {
-  if ([6, 7, 8].includes(mes)) return "no verão";
-  if ([12, 1, 2].includes(mes)) return "no inverno";
-  if ([3, 4, 5].includes(mes)) return "na primavera";
-  return "no outono";
-}
 
 export function ProductSeasonality({
   vendas,
@@ -37,34 +16,27 @@ export function ProductSeasonality({
 }) {
   const [produtoId, setProdutoId] = useState<number | null>(null);
 
-  const limite = useMemo(
-    () => dataRange(vendas.map((venda) => venda.date)),
-    [vendas],
-  );
+  const meses = useMemo(() => {
+    const limite = dataRange(vendas.map((venda) => venda.date));
+    return limite.from === null || limite.to === null
+      ? []
+      : monthKeysBetween(limite.from, limite.to);
+  }, [vendas]);
 
-  const meses = useMemo(
-    () =>
-      limite.from === null || limite.to === null
-        ? []
-        : monthKeysBetween(limite.from, limite.to),
-    [limite.from, limite.to],
-  );
-
-  const produtoSelecionadoId =
+  const selecionadoId =
     produtoId ??
-    produtos.find((produto) => produto.name === "Cappuccino")?.id ??
+    produtos.find((produto) => produto.name === "Bolo de laranja")?.id ??
     produtos[0]?.id ??
     null;
-
-  const produtoSelecionado =
-    produtos.find((produto) => produto.id === produtoSelecionadoId) ?? null;
+  const selecionado =
+    produtos.find((produto) => produto.id === selecionadoId) ?? null;
 
   const serie = useMemo(
     () =>
-      produtoSelecionadoId === null
+      selecionadoId === null
         ? []
-        : monthlyUnitsByProduct(vendas, produtoSelecionadoId, meses),
-    [vendas, produtoSelecionadoId, meses],
+        : monthlyUnitsByProduct(vendas, selecionadoId, meses),
+    [vendas, selecionadoId, meses],
   );
 
   const pico = useMemo(
@@ -76,45 +48,38 @@ export function ProductSeasonality({
       ),
     [serie],
   );
-
-  const totalUnidades = useMemo(
-    () => serie.reduce((soma, ponto) => soma + ponto.units, 0),
+  const minimo = useMemo(
+    () =>
+      serie.reduce<MonthlyUnitsPoint | null>(
+        (menor, ponto) =>
+          menor === null || ponto.units < menor.units ? ponto : menor,
+        null,
+      ),
     [serie],
   );
 
-  const dadosSazonalidade = useMemo(
-    () =>
-      serie.map((ponto) => ({
-        mes: monthLabel(ponto.month),
-        unidades: ponto.units,
-        normal: ponto.month === pico?.month ? 0 : ponto.units,
-        destaque: ponto.month === pico?.month ? ponto.units : 0,
-      })),
-    [serie, pico],
-  );
+  const dados = serie.map((ponto) => ({
+    mes: monthLabel(ponto.month),
+    unidades: ponto.units,
+    normal: ponto.month === pico?.month ? 0 : ponto.units,
+    destaque: ponto.month === pico?.month ? ponto.units : 0,
+  }));
 
   return (
-    <section
-      className="card seasonality-panel"
-      id="vendas"
-      aria-labelledby="sazonalidade-titulo"
-    >
-      <div className="card-head">
-        <div>
-          <h3 className="card-title" id="sazonalidade-titulo">
+    <section className="panel" aria-labelledby="sazonalidade-titulo">
+      <div className="panel-head">
+        <div className="panel-title-block">
+          <h3 className="panel-title" id="sazonalidade-titulo">
             Sazonalidade de um produto
           </h3>
-          <p className="card-sub">
-            {meses.length > 0
-              ? `Unidades vendidas por mês · ${monthLabel(meses[0])} a ${monthLabel(meses[meses.length - 1])}`
-              : "Unidades vendidas por mês"}
+          <p className="panel-sub">
+            {selecionado?.name ?? "Produto"} · unidades por mês
           </p>
         </div>
-        <label className="select-wrap">
+        <label className="select-pill">
           <span className="sr-only">Escolher produto</span>
           <select
-            className="select"
-            value={produtoSelecionadoId ?? ""}
+            value={selecionadoId ?? ""}
             onChange={(event) => setProdutoId(Number(event.target.value))}
           >
             {produtos.map((produto) => (
@@ -127,75 +92,65 @@ export function ProductSeasonality({
       </div>
 
       <div
-        className="seasonality-chart"
+        className="line-chart"
         role="img"
-        aria-label={`Barras mensais das unidades vendidas de ${produtoSelecionado?.name ?? "produto"}`}
+        aria-label={`Unidades mensais de ${selecionado?.name ?? "produto"}`}
       >
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height={170}>
           <BarChart
-            data={dadosSazonalidade}
+            data={dados}
             barCategoryGap="28%"
-            margin={{ top: 10, right: 4, bottom: 0, left: -20 }}
+            margin={{ top: 12, right: 4, bottom: 0, left: -22 }}
           >
             <XAxis
               dataKey="mes"
-              interval="preserveStartEnd"
-              minTickGap={8}
+              interval={0}
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#89939d", fontSize: 10 }}
-            />
-            <YAxis
-              allowDecimals={false}
-              axisLine={false}
-              tickLine={false}
-              tick={{ fill: "#89939d", fontSize: 10 }}
+              tick={{ fill: "#5e6a76", fontSize: 9 }}
+              height={22}
             />
             <Tooltip
-              cursor={{ fill: "#f1f2f3" }}
-              content={({ active, payload }) => {
-                if (!active || !payload?.length) return null;
-
-                const mes = String(payload[0]?.payload?.mes ?? "");
-                const unidades = Number(payload[0]?.payload?.unidades ?? 0);
-
-                return (
-                  <div className="chart-tooltip">
-                    <strong>{mes}</strong>
-                    <div>{int(unidades)} un</div>
-                  </div>
-                );
+              cursor={{ fill: "#f1f4f7" }}
+              formatter={(value) => [`${int(Number(value))} un`, "Unidades"]}
+              contentStyle={{
+                border: "1px solid #e1e6ea",
+                borderRadius: 10,
+                background: "#ffffff",
+                fontSize: 11,
               }}
             />
             <Bar
               dataKey="normal"
               stackId="meses"
-              fill="#b9c8d5"
+              fill="#c3ced8"
               radius={[4, 4, 0, 0]}
-              maxBarSize={30}
+              maxBarSize={26}
+              isAnimationActive={false}
             />
             <Bar
               dataKey="destaque"
               stackId="meses"
-              fill="#d95345"
+              fill="#122435"
               radius={[4, 4, 0, 0]}
-              maxBarSize={30}
+              maxBarSize={26}
+              isAnimationActive={false}
             />
           </BarChart>
         </ResponsiveContainer>
       </div>
 
-      <p className="card-sub">
-        {pico && produtoSelecionado ? (
+      <p className="panel-sub panel-sub--indigo">
+        {pico && minimo ? (
           <>
-            Pico {estacaoDoMes(Number(pico.month.slice(5)))}:{" "}
-            <strong>{monthLabel(pico.month)}</strong> · {int(pico.units)} un.
-            Total: {int(totalUnidades)} un.
+            {int(pico.units)} un em {monthLabel(pico.month)} contra{" "}
+            {int(minimo.units)} em {monthLabel(minimo.month)}.
           </>
         ) : (
           "Sem vendas no período."
         )}
       </p>
+      <p className="panel-note">Nov–Dez 2025 · Jan–Out 2026</p>
     </section>
   );
 }

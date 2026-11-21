@@ -1,26 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { SegmentedFilter } from "@/components/ui/SegmentedFilter";
-import {
-  dataRange,
-  dayRange,
-  monthRange,
-  yearRange,
-} from "@/lib/dates";
 import { eur, int } from "@/lib/format";
 import { topProductsByUnits } from "@/lib/stats";
 import type { Produto, Venda } from "@/types";
 
-type Periodo = "tudo" | "dia" | "mes" | "ano";
-
-const OPCOES: ReadonlyArray<{ value: Periodo; label: string }> = [
-  { value: "tudo", label: "Tudo" },
-  { value: "dia", label: "Dia" },
-  { value: "mes", label: "Mês" },
-  { value: "ano", label: "Ano" },
-];
-
+/** Produtos com muito volume e pouco lucro por unidade. */
 export function TrafficProducts({
   vendas,
   produtos,
@@ -28,78 +12,42 @@ export function TrafficProducts({
   vendas: Venda[];
   produtos: Produto[];
 }) {
-  const [periodo, setPeriodo] = useState<Periodo>("tudo");
-
-  const limite = useMemo(
-    () => dataRange(vendas.map((venda) => venda.date)),
-    [vendas],
-  );
-
-  const intervalo = useMemo(() => {
-    if (periodo === "tudo" || limite.to === null) return null;
-    if (periodo === "dia") return dayRange(limite.to);
-    if (periodo === "mes") return monthRange(limite.to.slice(0, 7));
-    return yearRange(Number(limite.to.slice(0, 4)));
-  }, [periodo, limite.to]);
-
-  const filtradas = useMemo(
-    () =>
-      intervalo === null
-        ? vendas
-        : vendas.filter(
-            (venda) =>
-              venda.date >= intervalo.from && venda.date <= intervalo.to,
-          ),
-    [vendas, intervalo],
-  );
-
-  const top = useMemo(
-    () => topProductsByUnits(filtradas, produtos, 10),
-    [filtradas, produtos],
-  );
-
-  const maximo = top.length > 0 ? top[0].units : 0;
+  const trafego = topProductsByUnits(vendas, produtos, 10)
+    .map((produto) => ({
+      ...produto,
+      profitPerUnit: produto.units > 0 ? produto.profit / produto.units : 0,
+    }))
+    .sort((a, b) => a.profitPerUnit - b.profitPerUnit)
+    .slice(0, 2);
+  const maxUnidades = Math.max(...trafego.map((produto) => produto.units), 1);
 
   return (
-    <section className="card" id="trafego" aria-labelledby="trafego-titulo">
-      <div className="card-head">
-        <div>
-          <h3 className="card-title" id="trafego-titulo">
+    <section className="panel" aria-labelledby="trafego-titulo">
+      <div className="panel-head">
+        <div className="panel-title-block">
+          <h3 className="panel-title" id="trafego-titulo">
             Produtos de tráfego
           </h3>
-          <p className="card-sub">
-            Dez mais vendidos por unidades.
-            {top[0] ? ` Líder: ${top[0].name} (${int(top[0].units)} un).` : ""}
-          </p>
+          <p className="panel-sub">Volume alto, margem baixa</p>
         </div>
-        <SegmentedFilter
-          label="Filtrar vendas por período"
-          options={OPCOES}
-          value={periodo}
-          onChange={setPeriodo}
-        />
       </div>
 
-      {top.length === 0 && <p className="empty">Sem vendas no período.</p>}
-
-      {top.map((produto, index) => (
-        <div className="rank-row" key={produto.id}>
-          <span className="rank-index">{index + 1}</span>
-          <span className="rank-name">
-            {produto.name} <span>· {produto.category}</span>
-          </span>
-          <span className="rank-value">
-            {int(produto.units)} un · {eur(produto.revenue)}
-          </span>
-          <span
-            className="rank-bar"
-            role="img"
-            aria-label={`${produto.name}: ${int(produto.units)} unidades`}
-          >
+      {trafego.map((produto) => (
+        <div className="traffic-item" key={produto.id}>
+          <div className="traffic-top">
+            <span className="traffic-name">{produto.name}</span>
+            <span className="traffic-units">{int(produto.units)} un</span>
+          </div>
+          <div className="traffic-bottom">
+            <span className="traffic-profit">{eur(produto.profit)}</span>
+            <span className="traffic-unit">
+              {eur(produto.profitPerUnit)} / un
+            </span>
+          </div>
+          <span className="traffic-track" aria-hidden="true">
             <span
-              style={{
-                width: `${maximo > 0 ? (produto.units / maximo) * 100 : 0}%`,
-              }}
+              className="traffic-bar"
+              style={{ width: `${(produto.units / maxUnidades) * 100}%` }}
             />
           </span>
         </div>

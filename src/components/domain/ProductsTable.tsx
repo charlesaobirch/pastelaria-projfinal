@@ -1,7 +1,6 @@
 "use client";
 
 import { type FormEvent, useMemo, useState } from "react";
-import { SegmentedFilter } from "@/components/ui/SegmentedFilter";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus } from "@/lib/stock";
 import { useDataStore } from "@/store/useDataStore";
@@ -71,20 +70,32 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
     return produtos.filter(
       (produto) =>
         (categoria === TUDO || produto.category === categoria) &&
-        (termo === "" || produto.name.toLocaleLowerCase("pt-PT").includes(termo)),
+        (termo === "" ||
+          produto.name.toLocaleLowerCase("pt-PT").includes(termo)),
     );
   }, [produtos, categoria, query]);
 
   return (
-    <div className="products-body">
-      <div className="filters">
-        <SegmentedFilter
-          label="Filtrar produtos por categoria"
-          options={opcoes}
-          value={categoria}
-          onChange={setCategoria}
-        />
-        <div className="filters-actions">
+    <div>
+      <div className="filter-bar">
+        <fieldset className="filter-group">
+          <legend className="sr-only">Filtrar produtos por categoria</legend>
+          {opcoes.map((opcao) => (
+            <button
+              key={opcao.value}
+              type="button"
+              className="pill"
+              aria-pressed={categoria === opcao.value}
+              onClick={() => setCategoria(opcao.value)}
+            >
+              {opcao.label}
+            </button>
+          ))}
+        </fieldset>
+        <div className="filter-group">
+          <span className="filter-count">
+            {int(linhas.length)} de {int(produtos.length)}
+          </span>
           <button
             type="button"
             className="btn-edit"
@@ -94,9 +105,6 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
           >
             Editar
           </button>
-          <span className="card-meta">
-            {int(linhas.length)} de {int(produtos.length)}
-          </span>
         </div>
       </div>
 
@@ -198,10 +206,10 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
         </form>
       )}
 
-      <div className="table-scroll">
-        <table className="data-table">
+      <div className="dtable-wrap">
+        <table className="dtable">
           <caption className="sr-only">
-            Produtos com preço, custo, stock, mínimo e estado.
+            Produtos com categoria, preço, stock, mínimo e estado.
           </caption>
           <thead>
             <tr>
@@ -209,9 +217,6 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
               <th scope="col">Categoria</th>
               <th scope="col" className="num">
                 Preço
-              </th>
-              <th scope="col" className="num">
-                Custo
               </th>
               <th scope="col" className="num">
                 Stock
@@ -225,7 +230,7 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
           <tbody>
             {linhas.length === 0 && (
               <tr>
-                <td colSpan={7} className="empty">
+                <td colSpan={6} className="notice">
                   Sem resultados para esta pesquisa.
                 </td>
               </tr>
@@ -235,14 +240,13 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
 
               return (
                 <tr key={produto.id}>
-                  <th scope="row" className="strong">
+                  <th scope="row" className="cell-name">
                     {produto.name}
                   </th>
-                  <td className="card-meta">{produto.category}</td>
-                  <td className="num strong">{eur(produto.unit_price)}</td>
-                  <td className="num card-meta">{eur(produto.cost_price)}</td>
-                  <td className="num">{int(produto.stock)}</td>
-                  <td className="num card-meta">{int(produto.min_stock)}</td>
+                  <td className="cell-soft">{produto.category}</td>
+                  <td className="num cell-bold">{eur(produto.unit_price)}</td>
+                  <td className="num cell-indigo">{int(produto.stock)}</td>
+                  <td className="num cell-soft">{int(produto.min_stock)}</td>
                   <td>
                     <Estado valor={estado} />
                   </td>
@@ -258,22 +262,12 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
 
 export function Estado({ valor }: { valor: "ok" | "baixo" | "esgotado" }) {
   if (valor === "esgotado") {
-    return (
-      <span className="status status--out">
-        <i className="dot dot--out" aria-hidden="true" />
-        Esgotado
-      </span>
-    );
+    return <span className="status-pill status-pill--out">Esgotado</span>;
   }
 
   if (valor === "baixo") {
-    return (
-      <span className="status status--low">
-        <i className="dot dot--warn" aria-hidden="true" />
-        Baixo
-      </span>
-    );
+    return <span className="status-pill">Baixo</span>;
   }
 
-  return <span className="status status--ok">—</span>;
+  return <span className="cell-soft">—</span>;
 }

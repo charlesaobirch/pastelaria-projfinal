@@ -1,7 +1,6 @@
 "use client";
 
 import { type FormEvent, useMemo, useState } from "react";
-import { SegmentedFilter } from "@/components/ui/SegmentedFilter";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus, stockValue } from "@/lib/stock";
 import { useDataStore } from "@/store/useDataStore";
@@ -10,11 +9,6 @@ import type { Ingrediente, StockLevel } from "@/types";
 import { Estado } from "./ProductsTable";
 
 const TUDO = "tudo";
-
-interface GrupoFornecedor {
-  supplier: string;
-  itens: Ingrediente[];
-}
 
 export function IngredientsTable({
   ingredientes,
@@ -87,23 +81,19 @@ export function IngredientsTable({
     );
   }, [ingredientes, categoria, query]);
 
-  const grupos = useMemo<GrupoFornecedor[]>(() => {
-    const mapa = new Map<string, Ingrediente[]>();
+  const grupos = useMemo(() => {
+    const agrupados = new Map<string, Ingrediente[]>();
 
     for (const item of linhas) {
-      const itens = mapa.get(item.supplier) ?? [];
+      const itens = agrupados.get(item.supplier) ?? [];
       itens.push(item);
-      mapa.set(item.supplier, itens);
+      agrupados.set(item.supplier, itens);
     }
 
-    return [...mapa.entries()]
-      .sort(([a], [b]) => a.localeCompare(b, "pt-PT"))
-      .map(([supplier, itens]) => ({
-        supplier,
-        itens: [...itens].sort((a, b) =>
-          a.name.localeCompare(b.name, "pt-PT"),
-        ),
-      }));
+    return [...agrupados.entries()].map(([supplier, itens]) => ({
+      supplier,
+      itens,
+    }));
   }, [linhas]);
 
   const fornecedores = useMemo(
@@ -113,14 +103,27 @@ export function IngredientsTable({
 
   return (
     <div>
-      <div className="filters">
-        <SegmentedFilter
-          label="Filtrar ingredientes por categoria"
-          options={opcoes}
-          value={categoria}
-          onChange={setCategoria}
-        />
-        <div className="filters-actions">
+      <div className="filter-bar">
+        <fieldset className="filter-group">
+          <legend className="sr-only">
+            Filtrar ingredientes por categoria
+          </legend>
+          {opcoes.map((opcao) => (
+            <button
+              key={opcao.value}
+              type="button"
+              className="pill"
+              aria-pressed={categoria === opcao.value}
+              onClick={() => setCategoria(opcao.value)}
+            >
+              {opcao.label}
+            </button>
+          ))}
+        </fieldset>
+        <div className="filter-group">
+          <span className="filter-count">
+            {int(linhas.length)} de {int(ingredientes.length)}
+          </span>
           <button
             type="button"
             className="btn-edit"
@@ -130,11 +133,6 @@ export function IngredientsTable({
           >
             Editar
           </button>
-          <span className="card-meta">
-            {int(linhas.length)} de {int(ingredientes.length)} artigos ·{" "}
-            {int(grupos.length)}{" "}
-            {grupos.length === 1 ? "fornecedor" : "fornecedores"}
-          </span>
         </div>
       </div>
 
@@ -162,11 +160,7 @@ export function IngredientsTable({
           <div className="form-grid">
             <label className="form-field">
               <span>Nome do artigo</span>
-              <input
-                name="name"
-                required
-                placeholder="Ex.: Farinha T55"
-              />
+              <input name="name" required placeholder="Ex.: Farinha T55" />
             </label>
             <label className="form-field">
               <span>Unidade</span>
@@ -223,11 +217,11 @@ export function IngredientsTable({
         rascunho de email com o nome do fornecedor no assunto.
       </p>
 
-      <div className="table-scroll">
-        <table className="data-table">
+      <div className="dtable-wrap">
+        <table className="dtable">
           <caption className="sr-only">
-            Ingredientes e embalagens agrupados por fornecedor, com unidade,
-            stock, mínimo e estado.
+            Ingredientes e embalagens com unidade, stock, mínimo, estado,
+            fornecedor e contacto.
           </caption>
           <thead>
             <tr>
@@ -241,68 +235,74 @@ export function IngredientsTable({
               </th>
               <th scope="col">Estado</th>
               <th scope="col">Fornecedor</th>
-              <th scope="col" className="num">
-                Contacto
-              </th>
+              <th scope="col">Contacto</th>
             </tr>
           </thead>
           <tbody>
             {linhas.length === 0 && (
               <tr>
-                <td colSpan={7} className="empty">
+                <td colSpan={7} className="notice">
                   Sem resultados para esta pesquisa.
                 </td>
               </tr>
             )}
-
-            {grupos.map((grupo, indiceGrupo) =>
-              grupo.itens.map((item, indiceItem) => {
-                const assunto = encodeURIComponent(`Contacto ${grupo.supplier}`);
-                const inicioGrupo = indiceItem === 0;
+            {grupos.flatMap((grupo, grupoIndex) =>
+              grupo.itens.map((item, itemIndex) => {
+                const estado = item.estado ?? stockDisplayStatus(item);
+                const primeiro = itemIndex === 0;
+                const ultimo =
+                  itemIndex === grupo.itens.length - 1 &&
+                  grupoIndex < grupos.length - 1;
+                const assunto = encodeURIComponent(
+                  `Contacto ${grupo.supplier}`,
+                );
+                const alerta =
+                  estado === "esgotado"
+                    ? "alert"
+                    : estado === "baixo"
+                      ? "amber"
+                      : "";
+                const classes = [
+                  primeiro ? "supplier-group-start" : "",
+                  ultimo ? "supplier-group-end" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ");
 
                 return (
-                  <tr
-                    key={item.id}
-                    className={
-                      inicioGrupo && indiceGrupo > 0 ? "group-start" : undefined
-                    }
-                  >
-                    <th scope="row" className="strong">
+                  <tr key={item.id} className={classes || undefined}>
+                    <th
+                      scope="row"
+                      className={`cell-name${alerta ? ` cell-name--${alerta}` : ""}`}
+                    >
                       {item.name}
                     </th>
-                    <td className="card-meta">{item.unit}</td>
-                    <td className="num">
+                    <td className="cell-soft">{item.unit}</td>
+                    <td
+                      className={`num${alerta ? ` cell-${alerta}` : " cell-indigo"}`}
+                    >
                       {int(item.stock)} {item.unit}
                     </td>
-                    <td className="num card-meta">
+                    <td className="num cell-soft">
                       {int(item.min_stock)} {item.unit}
                     </td>
                     <td>
-                      <Estado valor={item.estado ?? stockDisplayStatus(item)} />
+                      <Estado valor={estado} />
                     </td>
-                    {inicioGrupo && (
-                      <>
-                        <td className="supplier-cell" rowSpan={grupo.itens.length}>
-                          <span className="supplier-name">{grupo.supplier}</span>
-                          <span className="card-meta">
-                            {int(grupo.itens.length)}{" "}
-                            {grupo.itens.length === 1 ? "artigo" : "artigos"}
-                          </span>
-                        </td>
-                        <td
-                          className="num supplier-contact"
-                          rowSpan={grupo.itens.length}
+                    <td className="cell-bold">
+                      {primeiro ? item.supplier : ""}
+                    </td>
+                    <td>
+                      {primeiro && (
+                        <a
+                          className="contact-btn"
+                          href={`mailto:?subject=${assunto}`}
+                          aria-label={`Entrar em contacto com ${grupo.supplier}`}
                         >
-                          <a
-                            className="link-btn"
-                            href={`mailto:?subject=${assunto}`}
-                            aria-label={`Entrar em contacto com ${grupo.supplier}`}
-                          >
-                            Entrar em contacto
-                          </a>
-                        </td>
-                      </>
-                    )}
+                          Entrar em contacto
+                        </a>
+                      )}
+                    </td>
                   </tr>
                 );
               }),
@@ -310,8 +310,14 @@ export function IngredientsTable({
           </tbody>
           <tfoot>
             <tr>
-              <td colSpan={3}>Valor em stock a custo</td>
-              <td colSpan={4} className="num strong">
+              <td colSpan={3} className="cell-soft">
+                Valor em stock a custo
+              </td>
+              <td
+                colSpan={4}
+                className="num cell-bold"
+                style={{ paddingTop: 10 }}
+              >
                 {eur(stockValue(linhas))}
               </td>
             </tr>
