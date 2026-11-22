@@ -756,7 +756,7 @@
                         {
                           "type": "text",
                           "name": "Timeline average value",
-                          "content": "27,67 €",
+                          "content": "27,30 €",
                           "fill": "#122435",
                           "fontFamily": "Inter",
                           "fontSize": 18,
@@ -861,8 +861,17 @@
                   "children": [
                     {
                       "type": "rectangle",
-                      "name": "Daily revenue plot stem 2 out",
+                      "name": "Daily revenue plot stem 1 out",
                       "x": 4,
+                      "y": 107.4,
+                      "width": 2,
+                      "height": 28.6,
+                      "fill": "#C3CED8"
+                    },
+                    {
+                      "type": "rectangle",
+                      "name": "Daily revenue plot stem 2 out",
+                      "x": 26.9,
                       "y": 119.2,
                       "width": 2,
                       "height": 16.8,
@@ -871,7 +880,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 3 out",
-                      "x": 27.7,
+                      "x": 49.7,
                       "y": 96.8,
                       "width": 2,
                       "height": 39.2,
@@ -880,7 +889,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 4 out",
-                      "x": 51.3,
+                      "x": 72.6,
                       "y": 52,
                       "width": 2,
                       "height": 84,
@@ -889,7 +898,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 5 out",
-                      "x": 75,
+                      "x": 95.5,
                       "y": 117,
                       "width": 2,
                       "height": 19,
@@ -898,7 +907,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 6 out",
-                      "x": 98.6,
+                      "x": 118.3,
                       "y": 121.9,
                       "width": 2,
                       "height": 14.1,
@@ -907,7 +916,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 7 out",
-                      "x": 122.3,
+                      "x": 141.2,
                       "y": 78.3,
                       "width": 2,
                       "height": 57.7,
@@ -916,7 +925,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 8 out",
-                      "x": 145.9,
+                      "x": 164.1,
                       "y": 89.3,
                       "width": 2,
                       "height": 46.7,
@@ -925,7 +934,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 9 out",
-                      "x": 169.6,
+                      "x": 186.9,
                       "y": 90.2,
                       "width": 2,
                       "height": 45.8,
@@ -934,7 +943,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 10 out",
-                      "x": 193.2,
+                      "x": 209.8,
                       "y": 75.4,
                       "width": 2,
                       "height": 60.6,
@@ -943,7 +952,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 11 out",
-                      "x": 216.9,
+                      "x": 232.7,
                       "y": 26.2,
                       "width": 2,
                       "height": 109.8,
@@ -952,7 +961,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 12 out",
-                      "x": 240.6,
+                      "x": 255.5,
                       "y": 98.5,
                       "width": 2,
                       "height": 37.5,
@@ -961,7 +970,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 13 out",
-                      "x": 264.2,
+                      "x": 278.4,
                       "y": 86.5,
                       "width": 2,
                       "height": 49.5,
@@ -970,7 +979,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 14 out",
-                      "x": 287.9,
+                      "x": 301.3,
                       "y": 99.2,
                       "width": 2,
                       "height": 36.8,
@@ -979,7 +988,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 15 out",
-                      "x": 311.5,
+                      "x": 324.1,
                       "y": 99.9,
                       "width": 2,
                       "height": 36.1,
@@ -988,7 +997,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 16 out",
-                      "x": 335.2,
+                      "x": 347,
                       "y": 63.8,
                       "width": 2,
                       "height": 72.2,
@@ -997,7 +1006,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 17 out",
-                      "x": 358.8,
+                      "x": 369.9,
                       "y": 71.1,
                       "width": 2,
                       "height": 64.9,
@@ -1006,7 +1015,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 18 out",
-                      "x": 382.5,
+                      "x": 392.7,
                       "y": 73.2,
                       "width": 2,
                       "height": 62.8,
@@ -1015,7 +1024,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 19 out",
-                      "x": 406.1,
+                      "x": 415.6,
                       "y": 89.7,
                       "width": 2,
                       "height": 46.3,
@@ -1024,7 +1033,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 20 out",
-                      "x": 429.8,
+                      "x": 438.5,
                       "y": 89.7,
                       "width": 2,
                       "height": 46.3,
@@ -1033,7 +1042,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 21 out",
-                      "x": 453.4,
+                      "x": 461.3,
                       "y": 103.1,
                       "width": 2,
                       "height": 32.9,
@@ -1042,7 +1051,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 22 out",
-                      "x": 477.1,
+                      "x": 484.2,
                       "y": 98.1,
                       "width": 2,
                       "height": 37.9,
@@ -1051,7 +1060,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 23 out",
-                      "x": 500.8,
+                      "x": 507.1,
                       "y": 80.8,
                       "width": 2,
                       "height": 55.2,
@@ -1060,7 +1069,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 24 out",
-                      "x": 524.4,
+                      "x": 529.9,
                       "y": 64.5,
                       "width": 2,
                       "height": 71.5,
@@ -1069,7 +1078,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 25 out",
-                      "x": 548.1,
+                      "x": 552.8,
                       "y": 33.4,
                       "width": 2,
                       "height": 102.6,
@@ -1078,7 +1087,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 26 out",
-                      "x": 571.7,
+                      "x": 575.7,
                       "y": 112.9,
                       "width": 2,
                       "height": 23.1,
@@ -1087,7 +1096,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 27 out",
-                      "x": 595.4,
+                      "x": 598.5,
                       "y": 81.8,
                       "width": 2,
                       "height": 54.2,
@@ -1096,7 +1105,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 28 out",
-                      "x": 619,
+                      "x": 621.4,
                       "y": 82.9,
                       "width": 2,
                       "height": 53.1,
@@ -1105,7 +1114,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 29 out",
-                      "x": 642.7,
+                      "x": 644.3,
                       "y": 90.9,
                       "width": 2,
                       "height": 45.1,
@@ -1114,7 +1123,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot stem 30 out",
-                      "x": 666.3,
+                      "x": 667.1,
                       "y": 104.4,
                       "width": 2,
                       "height": 31.6,
@@ -1131,8 +1140,17 @@
                     },
                     {
                       "type": "ellipse",
-                      "name": "Daily revenue plot dot 2 out",
+                      "name": "Daily revenue plot dot 1 out",
                       "x": 2,
+                      "y": 104.4,
+                      "width": 6,
+                      "height": 6,
+                      "fill": "#224766"
+                    },
+                    {
+                      "type": "ellipse",
+                      "name": "Daily revenue plot dot 2 out",
+                      "x": 24.9,
                       "y": 116.2,
                       "width": 6,
                       "height": 6,
@@ -1141,7 +1159,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 3 out",
-                      "x": 25.7,
+                      "x": 47.7,
                       "y": 93.8,
                       "width": 6,
                       "height": 6,
@@ -1150,7 +1168,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 4 out",
-                      "x": 49.3,
+                      "x": 70.6,
                       "y": 49,
                       "width": 6,
                       "height": 6,
@@ -1159,7 +1177,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 5 out",
-                      "x": 73,
+                      "x": 93.5,
                       "y": 114,
                       "width": 6,
                       "height": 6,
@@ -1168,7 +1186,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 6 out",
-                      "x": 96.6,
+                      "x": 116.3,
                       "y": 118.9,
                       "width": 6,
                       "height": 6,
@@ -1177,7 +1195,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 7 out",
-                      "x": 120.3,
+                      "x": 139.2,
                       "y": 75.3,
                       "width": 6,
                       "height": 6,
@@ -1186,7 +1204,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 8 out",
-                      "x": 143.9,
+                      "x": 162.1,
                       "y": 86.3,
                       "width": 6,
                       "height": 6,
@@ -1195,7 +1213,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 9 out",
-                      "x": 167.6,
+                      "x": 184.9,
                       "y": 87.2,
                       "width": 6,
                       "height": 6,
@@ -1204,7 +1222,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 10 out",
-                      "x": 191.2,
+                      "x": 207.8,
                       "y": 72.4,
                       "width": 6,
                       "height": 6,
@@ -1213,7 +1231,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 11 out",
-                      "x": 213.4,
+                      "x": 229.2,
                       "y": 21.7,
                       "width": 9,
                       "height": 9,
@@ -1222,7 +1240,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 12 out",
-                      "x": 238.6,
+                      "x": 253.5,
                       "y": 95.5,
                       "width": 6,
                       "height": 6,
@@ -1231,7 +1249,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 13 out",
-                      "x": 262.2,
+                      "x": 276.4,
                       "y": 83.5,
                       "width": 6,
                       "height": 6,
@@ -1240,7 +1258,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 14 out",
-                      "x": 285.9,
+                      "x": 299.3,
                       "y": 96.2,
                       "width": 6,
                       "height": 6,
@@ -1249,7 +1267,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 15 out",
-                      "x": 309.5,
+                      "x": 322.1,
                       "y": 96.9,
                       "width": 6,
                       "height": 6,
@@ -1258,7 +1276,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 16 out",
-                      "x": 333.2,
+                      "x": 345,
                       "y": 60.8,
                       "width": 6,
                       "height": 6,
@@ -1267,7 +1285,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 17 out",
-                      "x": 356.8,
+                      "x": 367.9,
                       "y": 68.1,
                       "width": 6,
                       "height": 6,
@@ -1276,7 +1294,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 18 out",
-                      "x": 380.5,
+                      "x": 390.7,
                       "y": 70.2,
                       "width": 6,
                       "height": 6,
@@ -1285,7 +1303,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 19 out",
-                      "x": 404.1,
+                      "x": 413.6,
                       "y": 86.7,
                       "width": 6,
                       "height": 6,
@@ -1294,7 +1312,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 20 out",
-                      "x": 427.8,
+                      "x": 436.5,
                       "y": 86.7,
                       "width": 6,
                       "height": 6,
@@ -1303,7 +1321,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 21 out",
-                      "x": 451.4,
+                      "x": 459.3,
                       "y": 100.1,
                       "width": 6,
                       "height": 6,
@@ -1312,7 +1330,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 22 out",
-                      "x": 475.1,
+                      "x": 482.2,
                       "y": 95.1,
                       "width": 6,
                       "height": 6,
@@ -1321,7 +1339,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 23 out",
-                      "x": 498.8,
+                      "x": 505.1,
                       "y": 77.8,
                       "width": 6,
                       "height": 6,
@@ -1330,7 +1348,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 24 out",
-                      "x": 522.4,
+                      "x": 527.9,
                       "y": 61.5,
                       "width": 6,
                       "height": 6,
@@ -1339,7 +1357,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 25 out",
-                      "x": 546.1,
+                      "x": 550.8,
                       "y": 30.4,
                       "width": 6,
                       "height": 6,
@@ -1348,7 +1366,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 26 out",
-                      "x": 569.7,
+                      "x": 573.7,
                       "y": 109.9,
                       "width": 6,
                       "height": 6,
@@ -1357,7 +1375,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 27 out",
-                      "x": 593.4,
+                      "x": 596.5,
                       "y": 78.8,
                       "width": 6,
                       "height": 6,
@@ -1366,7 +1384,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 28 out",
-                      "x": 617,
+                      "x": 619.4,
                       "y": 79.9,
                       "width": 6,
                       "height": 6,
@@ -1375,7 +1393,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 29 out",
-                      "x": 640.7,
+                      "x": 642.3,
                       "y": 87.9,
                       "width": 6,
                       "height": 6,
@@ -1384,7 +1402,7 @@
                     {
                       "type": "ellipse",
                       "name": "Daily revenue plot dot 30 out",
-                      "x": 664.3,
+                      "x": 665.1,
                       "y": 101.4,
                       "width": 6,
                       "height": 6,
@@ -1411,7 +1429,7 @@
                     {
                       "type": "frame",
                       "name": "Daily revenue plot peak pill",
-                      "x": 179.9,
+                      "x": 195.7,
                       "y": 0,
                       "width": 76,
                       "height": 24,
@@ -1436,7 +1454,7 @@
                     {
                       "type": "rectangle",
                       "name": "Daily revenue plot peak connector",
-                      "x": 217.4,
+                      "x": 233.2,
                       "y": 16.2,
                       "width": 1,
                       "height": 10,
@@ -1444,8 +1462,8 @@
                     },
                     {
                       "type": "text",
-                      "name": "Daily revenue plot label 2 out",
-                      "content": "2 out",
+                      "name": "Daily revenue plot label 1 out",
+                      "content": "1 out",
                       "fill": "#5E6A76",
                       "fontFamily": "Inter",
                       "fontSize": 9,
@@ -1459,14 +1477,14 @@
                     },
                     {
                       "type": "text",
-                      "name": "Daily revenue plot label 7 out",
-                      "content": "7 out",
+                      "name": "Daily revenue plot label 6 out",
+                      "content": "6 out",
                       "fill": "#5E6A76",
                       "fontFamily": "Inter",
                       "fontSize": 9,
                       "fontWeight": "normal",
                       "lineHeight": 1,
-                      "x": 93.3,
+                      "x": 89.3,
                       "y": 143,
                       "width": 60,
                       "textGrowth": "fixed-width",
@@ -1474,14 +1492,14 @@
                     },
                     {
                       "type": "text",
-                      "name": "Daily revenue plot label 13 out",
-                      "content": "13 out",
+                      "name": "Daily revenue plot label 12 out",
+                      "content": "12 out",
                       "fill": "#5E6A76",
                       "fontFamily": "Inter",
                       "fontSize": 9,
                       "fontWeight": "normal",
                       "lineHeight": 1,
-                      "x": 235.2,
+                      "x": 226.5,
                       "y": 143,
                       "width": 60,
                       "textGrowth": "fixed-width",
@@ -1489,14 +1507,14 @@
                     },
                     {
                       "type": "text",
-                      "name": "Daily revenue plot label 19 out",
-                      "content": "19 out",
+                      "name": "Daily revenue plot label 18 out",
+                      "content": "18 out",
                       "fill": "#5E6A76",
                       "fontFamily": "Inter",
                       "fontSize": 9,
                       "fontWeight": "normal",
                       "lineHeight": 1,
-                      "x": 377.1,
+                      "x": 363.7,
                       "y": 143,
                       "width": 60,
                       "textGrowth": "fixed-width",
@@ -1504,14 +1522,14 @@
                     },
                     {
                       "type": "text",
-                      "name": "Daily revenue plot label 25 out",
-                      "content": "25 out",
+                      "name": "Daily revenue plot label 24 out",
+                      "content": "24 out",
                       "fill": "#5E6A76",
                       "fontFamily": "Inter",
                       "fontSize": 9,
                       "fontWeight": "normal",
                       "lineHeight": 1,
-                      "x": 519.1,
+                      "x": 500.9,
                       "y": 143,
                       "width": 60,
                       "textGrowth": "fixed-width",
@@ -1519,14 +1537,14 @@
                     },
                     {
                       "type": "text",
-                      "name": "Daily revenue plot label 31 out",
-                      "content": "31 out",
+                      "name": "Daily revenue plot label 30 out",
+                      "content": "30 out",
                       "fill": "#5E6A76",
                       "fontFamily": "Inter",
                       "fontSize": 9,
                       "fontWeight": "normal",
                       "lineHeight": 1,
-                      "x": 661,
+                      "x": 638.1,
                       "y": 143,
                       "width": 60,
                       "textGrowth": "fixed-width",
@@ -1537,7 +1555,7 @@
                 {
                   "type": "text",
                   "name": "Timeline footnote",
-                  "content": "Pico a 11 out · 830,20 € no mês",
+                  "content": "Pico a 11 out · 846,20 € no mês",
                   "fill": "#8A99A8",
                   "fontFamily": "Inter",
                   "fontSize": 10,
@@ -1659,7 +1677,7 @@
                       "type": "text",
                       "name": "Hero number",
                       "content": "73,1 %",
-                      "fill": "#122435",
+                      "fill": "#2F7D5F",
                       "fontFamily": "Inter",
                       "fontSize": 62,
                       "fontWeight": "bold",
