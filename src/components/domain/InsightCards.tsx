@@ -36,7 +36,10 @@ export function TopFiveShare({ stats }: { stats: ProductStat[] }) {
       : 0;
 
   return (
-    <section className="panel panel--hero" aria-labelledby="top-partilha-titulo">
+    <section
+      className="panel panel--hero"
+      aria-labelledby="top-partilha-titulo"
+    >
       <h3 className="sr-only" id="top-partilha-titulo">
         Concentração do lucro
       </h3>
@@ -46,9 +49,7 @@ export function TopFiveShare({ stats }: { stats: ProductStat[] }) {
       </div>
 
       <div className="hero-big hero-big--green">{pct(share)}</div>
-      <p className="hero-copy">
-        {top.map((item) => item.name).join(", ")}.
-      </p>
+      <p className="hero-copy">{top.map((item) => item.name).join(", ")}.</p>
 
       <div
         className="hero-bar"
@@ -103,8 +104,8 @@ export function CategoryMargins({
   const maior = linhas.length > 0 ? linhas[0].category : null;
   const cores: Record<string, string> = {
     Bebidas: "var(--prussian)",
-    Pastéis: "var(--indigo)",
-    Pão: "#c3ced8",
+    Pastéis: "var(--heat-3)",
+    Pão: "var(--grid)",
     Bolos: "var(--sinopia)",
   };
 
@@ -123,32 +124,44 @@ export function CategoryMargins({
         <p className="panel-note">Sem vendas no período.</p>
       )}
 
-      {linhas.map((linha) => (
-        <div className="bar-line" key={linha.category}>
-          <span className="bar-line-label">{linha.category}</span>
-          <div
-            className="bar-line-track"
-            role="img"
-            aria-label={`${linha.category}: margem de ${pct(linha.margin)}`}
-          >
-            <div
-              className="bar-line-fill"
-              style={{
-                width: `${Math.max(0, Math.min(100, linha.margin))}%`,
-                background:
-                  cores[linha.category] ??
-                  (linha.category === menor ? "var(--sinopia)" : "var(--indigo)"),
-              }}
-            />
-          </div>
-          <span className="bar-line-value">{pct(linha.margin)}</span>
+      {linhas.length > 0 && (
+        <div className="category-rows">
+          {linhas.map((linha) => (
+            <div className="bar-line" key={linha.category}>
+              <span className="bar-line-label">{linha.category}</span>
+              <div
+                className="bar-line-track"
+                role="img"
+                aria-label={`${linha.category}: margem de ${pct(linha.margin)}`}
+              >
+                <div
+                  className="bar-line-fill"
+                  style={{
+                    width: `${Math.max(0, Math.min(100, linha.margin))}%`,
+                    background:
+                      cores[linha.category] ??
+                      (linha.category === menor
+                        ? "var(--sinopia)"
+                        : "var(--indigo)"),
+                  }}
+                />
+              </div>
+              <span className="bar-line-value">{pct(linha.margin)}</span>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
 
-      <p className="panel-note">
-        {menor && maior ? `${menor} com a margem mais baixa; ${maior} com a mais alta. ` : ""}
-        Margem = (preço − custo) ÷ receita.
-      </p>
+      {linhas.length > 0 && (
+        <>
+          <p className="panel-note product-card-note">
+            A margem mais baixa é de {menor}; a mais alta, de {maior}.
+          </p>
+          <p className="panel-note product-card-note">
+            Margem = (preço − custo) ÷ receita.
+          </p>
+        </>
+      )}
     </section>
   );
 }

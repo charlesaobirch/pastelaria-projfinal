@@ -57,9 +57,6 @@ export default function ProdutosPage() {
               produtos, face ao mínimo.
             </p>
           </div>
-          <span className="meta-pill meta-pill--tint">
-            {int(produtos.length - produtosEmFalta)} acima do mínimo
-          </span>
         </div>
 
         <ProductsTable produtos={produtos} />

@@ -42,8 +42,11 @@ export function TrafficProducts({
         </div>
       </div>
 
-      {trafego.map((produto) => (
-        <div className="traffic-item" key={produto.id}>
+      {trafego.map((produto, index) => (
+        <div
+          className={`traffic-item${index > 0 ? " traffic-item--secondary" : ""}`}
+          key={produto.id}
+        >
           <div className="traffic-top">
             <span className="traffic-name">{produto.name}</span>
             <span className="traffic-units">{int(produto.units)} un</span>
@@ -63,13 +66,13 @@ export function TrafficProducts({
         </div>
       ))}
 
-      <p className="panel-note">
+      <p className="panel-note product-card-note">
         Servem para acompanhar o café, não para rentabilizar sozinhos.
       </p>
       {principal && (
-        <p className="panel-note">
-          {principal.name} é o {lugarUnidades}.º em unidades e o {lugarReceita}.º
-          em receita.
+        <p className="panel-note product-card-note">
+          {principal.name} é o {lugarUnidades}.º em unidades e o {lugarReceita}
+          .º em receita.
         </p>
       )}
     </section>

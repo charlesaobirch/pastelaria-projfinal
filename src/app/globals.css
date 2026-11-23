@@ -130,14 +130,7 @@ body {
   place-items: center;
   border-radius: 10px;
   background: var(--prussian);
-}
-
-.brand-glyph {
-  width: 12px;
-  height: 12px;
-  border: 2px solid #fff;
-  border-radius: 3px;
-  transform: rotate(45deg);
+  color: #fff;
 }
 
 .brand-word {
@@ -180,26 +173,6 @@ body {
   border-color: transparent;
   background: var(--prussian);
   color: #fff;
-}
-
-.side-data {
-  display: grid;
-  gap: 5px;
-  margin-top: 22px;
-  padding: 0 2px;
-}
-
-.side-data-label {
-  color: var(--text-meta);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
-.side-data-value {
-  color: var(--indigo);
-  font-size: 12px;
 }
 
 .app-main {
@@ -454,6 +427,10 @@ body {
   font-size: 9.5px;
 }
 
+.product-card-note {
+  margin: 0;
+}
+
 .panel-note--green {
   color: var(--verde);
 }
@@ -507,13 +484,6 @@ body {
   color: var(--text-soft);
   font-size: 10px;
   font-weight: 500;
-}
-
-.stat-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--indigo);
 }
 
 .stat-value {
@@ -895,10 +865,15 @@ body {
   text-align: right;
 }
 
+.category-rows {
+  display: grid;
+}
+
 .bar-line {
   display: flex;
+  min-height: 38px;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
 }
 
 .bar-line-track {
@@ -916,7 +891,7 @@ body {
 }
 
 .bar-line-value {
-  min-width: 58px;
+  min-width: 46px;
   color: var(--prussian);
   font-size: 10.5px;
   font-weight: 700;
@@ -925,7 +900,7 @@ body {
 }
 
 .bar-line-label {
-  min-width: 66px;
+  min-width: 62px;
   color: var(--prussian);
   font-size: 10.5px;
 }
@@ -1529,7 +1504,7 @@ fieldset.filter-group {
 
 .traffic-item {
   display: grid;
-  gap: 5px;
+  gap: 6px;
   padding: 8px 0;
   border-bottom: 1px solid var(--border-row);
 }
@@ -1558,6 +1533,10 @@ fieldset.filter-group {
   font-size: 10px;
 }
 
+.traffic-unit {
+  font-size: 9.5px;
+}
+
 .traffic-profit {
   color: var(--prussian);
   font-size: 18px;
@@ -1566,10 +1545,10 @@ fieldset.filter-group {
 
 .traffic-track {
   display: block;
-  height: 6px;
+  height: 5px;
   margin-top: 3px;
   border-radius: 999px;
-  background: var(--surface-soft);
+  background: #e9ecef;
   overflow: hidden;
 }
 
@@ -1580,7 +1559,7 @@ fieldset.filter-group {
   background: var(--heat-3);
 }
 
-.traffic-item:nth-of-type(2) .traffic-bar {
+.traffic-item--secondary .traffic-bar {
   background: var(--grid);
 }
 
@@ -1646,7 +1625,7 @@ fieldset.filter-group {
   display: grid;
   gap: 20px;
   padding: 32px;
-  border: 1px solid #dde3e8;
+  border: 1px solid var(--border-soft);
   border-radius: 14px;
   background: var(--surface-card);
 }
@@ -1726,7 +1705,7 @@ fieldset.filter-group {
   height: 48px;
   place-items: center;
   border-radius: 14px;
-  background: var(--surface-tint);
+  background: #e4edf3;
   color: var(--indigo);
 }
 

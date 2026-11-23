@@ -74,10 +74,6 @@ export default function StockPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Ingredientes em falta</span>
-            <span
-              className="stat-dot"
-              style={{ background: "var(--sinopia)" }}
-            />
           </div>
           <span className="stat-value stat-value--alert">
             {int(alertas.length)}
@@ -89,10 +85,6 @@ export default function StockPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Produtos em falta</span>
-            <span
-              className="stat-dot"
-              style={{ background: "var(--verde)" }}
-            />
           </div>
           <span className="stat-value">{int(produtosEmFalta)}</span>
           <span className="stat-sub">
@@ -102,7 +94,6 @@ export default function StockPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Valor de stock</span>
-            <span className="stat-dot" />
           </div>
           <span className="stat-value">{eur(valor)}</span>
           <span className="stat-sub">ingredientes</span>
@@ -110,7 +101,6 @@ export default function StockPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Concentração</span>
-            <span className="stat-dot" />
           </div>
           <span className="stat-value">{pct(fornecedores[0]?.share ?? 0)}</span>
           <span className="stat-sub">{fornecedores[0]?.supplier ?? "—"}</span>

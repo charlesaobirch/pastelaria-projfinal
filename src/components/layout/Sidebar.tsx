@@ -1,17 +1,20 @@
 "use client";
 
-import { BoxIcon } from "@solar-icons/react/linear/box";
-import { BoxMinimalisticIcon } from "@solar-icons/react/linear/box-minimalistic";
-import { ChartIcon } from "@solar-icons/react/linear/chart";
-import { Grid2x2Icon } from "@solar-icons/react/linear/grid-2x2";
+import {
+  Boxes,
+  ChartNoAxesCombined,
+  Croissant,
+  LayoutGrid,
+  Package,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const ITENS = [
-  { href: "/", label: "Visão geral", Icon: Grid2x2Icon },
-  { href: "/vendas", label: "Vendas", Icon: ChartIcon },
-  { href: "/produtos", label: "Produtos", Icon: BoxIcon },
-  { href: "/stock", label: "Stock", Icon: BoxMinimalisticIcon },
+  { href: "/visao-geral", label: "Visão geral", Icon: LayoutGrid },
+  { href: "/vendas", label: "Vendas", Icon: ChartNoAxesCombined },
+  { href: "/produtos", label: "Produtos", Icon: Package },
+  { href: "/stock", label: "Stock", Icon: Boxes },
 ];
 
 export function Sidebar() {
@@ -19,9 +22,9 @@ export function Sidebar() {
 
   return (
     <aside className="sidebar">
-      <Link href="/" className="brand" aria-label="Balcão da Praça">
+      <Link href="/visao-geral" className="brand" aria-label="Balcão da Praça">
         <span className="brand-mark" aria-hidden="true">
-          <span className="brand-glyph" />
+          <Croissant size={17} />
         </span>
         <span className="brand-word">Balcão da Praça</span>
       </Link>
@@ -43,11 +46,6 @@ export function Sidebar() {
           );
         })}
       </nav>
-
-      <div className="side-data">
-        <span className="side-data-label">Dados</span>
-        <span className="side-data-value">Nov 2025 – Out 2026</span>
-      </div>
     </aside>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { RefreshIcon } from "@solar-icons/react/linear/refresh";
+import { WifiOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { AuthBrand } from "@/components/ui/AuthBrand";
 
@@ -12,23 +12,23 @@ export default function ErroPage() {
       <div className="auth-content error-content">
         <AuthBrand />
 
-        <div className="auth-panel error-message">
+        <div className="error-message">
           <span className="error-icon" aria-hidden="true">
-            <RefreshIcon size={22} />
+            <WifiOff size={22} />
           </span>
           <h1 className="error-title">Sem ligação</h1>
           <p className="error-copy">
             Não foi possível carregar os dados. Verifique a sua ligação à
             internet e tente novamente.
           </p>
-          <button
-            className="auth-button"
-            type="button"
-            onClick={() => router.refresh()}
-          >
-            Tentar novamente
-          </button>
         </div>
+        <button
+          className="auth-button"
+          type="button"
+          onClick={() => router.refresh()}
+        >
+          Tentar novamente
+        </button>
 
         <p className="auth-footer">© Balcão da Praça</p>
       </div>
