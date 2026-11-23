@@ -1,19 +1,19 @@
 "use client";
 
 import { type FormEvent, useMemo, useState } from "react";
+import { SearchField } from "@/components/ui/SearchField";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus } from "@/lib/stock";
 import { useDataStore } from "@/store/useDataStore";
-import { useSearch } from "@/store/useSearch";
 import type { Produto, StockLevel } from "@/types";
 
 const TUDO = "tudo";
 
 export function ProductsTable({ produtos }: { produtos: Produto[] }) {
   const [categoria, setCategoria] = useState(TUDO);
+  const [query, setQuery] = useState("");
   const [formularioAberto, setFormularioAberto] = useState(false);
   const [erro, setErro] = useState("");
-  const query = useSearch((state) => state.query);
   const adicionarProduto = useDataStore((state) => state.addProduto);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -92,6 +92,12 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
             </button>
           ))}
         </fieldset>
+        <SearchField
+          label="Pesquisar produtos"
+          placeholder="Pesquisar produtos…"
+          value={query}
+          onChange={setQuery}
+        />
         <div className="filter-group">
           <span className="filter-count">
             {int(linhas.length)} de {int(produtos.length)}

@@ -189,7 +189,7 @@ body {
   padding: 24px 6px;
 }
 
-.search-box {
+.search-field {
   display: flex;
   width: 560px;
   height: 48px;
@@ -207,7 +207,7 @@ body {
   flex: 0 0 auto;
 }
 
-.search-box input {
+.search-field input {
   width: 100%;
   min-width: 0;
   border: 0;
@@ -218,7 +218,7 @@ body {
   outline: 0;
 }
 
-.search-box input::placeholder {
+.search-field input::placeholder {
   color: #8a99a8;
 }
 
@@ -1850,7 +1850,7 @@ fieldset.filter-group {
     width: 100%;
   }
 
-  .search-box {
+  .search-field {
     width: 420px;
   }
 
@@ -1914,7 +1914,7 @@ fieldset.filter-group {
     padding: 16px 12px;
   }
 
-  .search-box {
+  .search-field {
     width: 100%;
   }
 
@@ -1959,7 +1959,7 @@ fieldset.filter-group {
     flex-direction: column;
   }
 
-  .topbar-actions {
+  .topbar {
     display: none;
   }
 }

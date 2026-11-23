@@ -1,10 +1,10 @@
 "use client";
 
 import { type FormEvent, useMemo, useState } from "react";
+import { SearchField } from "@/components/ui/SearchField";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus, stockValue } from "@/lib/stock";
 import { useDataStore } from "@/store/useDataStore";
-import { useSearch } from "@/store/useSearch";
 import type { Ingrediente, StockLevel } from "@/types";
 import { Estado } from "./ProductsTable";
 
@@ -16,9 +16,9 @@ export function IngredientsTable({
   ingredientes: Ingrediente[];
 }) {
   const [categoria, setCategoria] = useState(TUDO);
+  const [query, setQuery] = useState("");
   const [formularioAberto, setFormularioAberto] = useState(false);
   const [erro, setErro] = useState("");
-  const query = useSearch((state) => state.query);
   const adicionarIngrediente = useDataStore((state) => state.addIngrediente);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -120,6 +120,12 @@ export function IngredientsTable({
             </button>
           ))}
         </fieldset>
+        <SearchField
+          label="Pesquisar ingredientes e embalagens"
+          placeholder="Pesquisar ingredientes ou embalagens…"
+          value={query}
+          onChange={setQuery}
+        />
         <div className="filter-group">
           <span className="filter-count">
             {int(linhas.length)} de {int(ingredientes.length)}
