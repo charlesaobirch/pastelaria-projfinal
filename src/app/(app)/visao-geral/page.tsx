@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { DailyStems, RevenueLine } from "@/components/domain/Charts";
+import { ArticleIcon } from "@/components/ui/ArticleIcon";
 import { PageFooter } from "@/components/ui/PageFooter";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useData } from "@/hooks/useData";
@@ -262,6 +263,7 @@ export default function OverviewPage() {
                 >
                   {index + 1}
                 </span>
+                <ArticleIcon name={produto.name} category={produto.category} />
                 <span className="list-name">
                   <strong>{produto.name}</strong>
                   <span>{produto.category}</span>

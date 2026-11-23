@@ -17,7 +17,7 @@ export default function LoginPage() {
       <div className="auth-content">
         <AuthBrand />
 
-        <form className="auth-panel" onSubmit={handleSubmit}>
+        <form className="auth-panel" onSubmit={handleSubmit} noValidate>
           <h1 className="auth-title">Entrar no Balcão da Praça</h1>
 
           <label className="field">
@@ -28,7 +28,6 @@ export default function LoginPage() {
               name="email"
               autoComplete="email"
               placeholder="nome@pastelaria.pt"
-              required
             />
           </label>
 
@@ -40,7 +39,6 @@ export default function LoginPage() {
               name="password"
               autoComplete="current-password"
               placeholder="••••••••••"
-              required
             />
           </label>
 

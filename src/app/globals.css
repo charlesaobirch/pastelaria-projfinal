@@ -246,6 +246,69 @@ body {
   background: var(--surface-tint);
 }
 
+.notification-menu {
+  position: relative;
+}
+
+.notification-menu > .icon-btn {
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.notification-popover {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 300px;
+  max-width: calc(100vw - 24px);
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgb(18 36 53 / 16%);
+  color: var(--prussian);
+}
+
+.notification-popover[hidden] {
+  display: none;
+}
+
+.notification-title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.notification-list {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notification-link {
+  display: block;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.notification-link:hover {
+  background: var(--surface-tint);
+  color: var(--indigo);
+}
+
+.notification-empty {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 11px;
+}
+
 .alert-dot {
   position: absolute;
   top: 4px;

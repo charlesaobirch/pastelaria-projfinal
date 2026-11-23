@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Heatmap, RevenueLine, ValueBars } from "@/components/domain/Charts";
+import { ArticleIcon } from "@/components/ui/ArticleIcon";
 import { PageFooter } from "@/components/ui/PageFooter";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useData } from "@/hooks/useData";
@@ -654,7 +655,13 @@ export default function VendasPage() {
                   {linhas.map((produto) => (
                     <tr key={produto.id}>
                       <th scope="row" className="cell-name">
-                        {produto.name}
+                        <span className="article-name">
+                          <ArticleIcon
+                            name={produto.name}
+                            category={produto.category}
+                          />
+                          <span>{produto.name}</span>
+                        </span>
                       </th>
                       <td className="num">{int(produto.units)}</td>
                       <td className="num cell-bold">{eur(produto.profit)}</td>
