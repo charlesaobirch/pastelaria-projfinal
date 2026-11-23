@@ -36,19 +36,19 @@ export function TopFiveShare({ stats }: { stats: ProductStat[] }) {
       : 0;
 
   return (
-    <section className="panel" aria-labelledby="top-partilha-titulo">
-      <div className="panel-head">
-        <div className="panel-title-block">
-          <h3 className="panel-title" id="top-partilha-titulo">
-            Concentração do lucro
-          </h3>
-          <p className="panel-sub">Top 5 por lucro bruto · ano fiscal</p>
-        </div>
+    <section className="panel panel--hero" aria-labelledby="top-partilha-titulo">
+      <h3 className="sr-only" id="top-partilha-titulo">
+        Concentração do lucro
+      </h3>
+      <div className="hero-top">
         <span className="hero-chip">Top 5</span>
+        <span className="hero-note">do lucro bruto</span>
       </div>
 
-      <div className="hero-big">{pct(share)}</div>
-      <p className="hero-label">do lucro bruto</p>
+      <div className="hero-big hero-big--green">{pct(share)}</div>
+      <p className="hero-copy">
+        {top.map((item) => item.name).join(", ")}.
+      </p>
 
       <div
         className="hero-bar"
@@ -64,8 +64,8 @@ export function TopFiveShare({ stats }: { stats: ProductStat[] }) {
                 "#122435",
                 "#224766",
                 "#4e7295",
-                "#9fb6c9",
-                "#d3dfea",
+                "#c3ced8",
+                "#b3b3b3",
               ][index],
             }}
           />
@@ -74,10 +74,9 @@ export function TopFiveShare({ stats }: { stats: ProductStat[] }) {
       </div>
 
       <div className="hero-legend">
-        {top.map((item, index) => (
+        {top.slice(0, 3).map((item) => (
           <span key={item.id}>
             <strong>{item.name}</strong> {pct(item.profitShare)}
-            {index === 0 ? " · principal" : ""}
           </span>
         ))}
       </div>
@@ -101,6 +100,13 @@ export function CategoryMargins({
     (a, b) => b.margin - a.margin,
   );
   const menor = linhas.length > 0 ? linhas[linhas.length - 1].category : null;
+  const maior = linhas.length > 0 ? linhas[0].category : null;
+  const cores: Record<string, string> = {
+    Bebidas: "var(--prussian)",
+    Pastéis: "var(--indigo)",
+    Pão: "#c3ced8",
+    Bolos: "var(--sinopia)",
+  };
 
   return (
     <section className="panel" aria-labelledby="margem-categoria-titulo">
@@ -130,9 +136,8 @@ export function CategoryMargins({
               style={{
                 width: `${Math.max(0, Math.min(100, linha.margin))}%`,
                 background:
-                  linha.category === menor
-                    ? "var(--sinopia)"
-                    : "var(--prussian)",
+                  cores[linha.category] ??
+                  (linha.category === menor ? "var(--sinopia)" : "var(--indigo)"),
               }}
             />
           </div>
@@ -141,8 +146,8 @@ export function CategoryMargins({
       ))}
 
       <p className="panel-note">
-        {menor ? `${menor} tem a margem mais baixa. ` : ""}
-        Margem = (preço − custo) ÷ preço.
+        {menor && maior ? `${menor} com a margem mais baixa; ${maior} com a mais alta. ` : ""}
+        Margem = (preço − custo) ÷ receita.
       </p>
     </section>
   );

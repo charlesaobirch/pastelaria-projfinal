@@ -1,7 +1,7 @@
 "use client";
 
 import { eur, int } from "@/lib/format";
-import { topProductsByUnits } from "@/lib/stats";
+import { productStats, topProductsByUnits } from "@/lib/stats";
 import type { Produto, Venda } from "@/types";
 
 /** Produtos com muito volume e pouco lucro por unidade. */
@@ -20,6 +20,16 @@ export function TrafficProducts({
     .sort((a, b) => a.profitPerUnit - b.profitPerUnit)
     .slice(0, 2);
   const maxUnidades = Math.max(...trafego.map((produto) => produto.units), 1);
+  const todos = productStats(vendas, produtos);
+  const porUnidades = [...todos].sort((a, b) => b.units - a.units);
+  const porReceita = [...todos].sort((a, b) => b.revenue - a.revenue);
+  const principal = trafego[0];
+  const lugarUnidades = principal
+    ? porUnidades.findIndex((item) => item.id === principal.id) + 1
+    : 0;
+  const lugarReceita = principal
+    ? porReceita.findIndex((item) => item.id === principal.id) + 1
+    : 0;
 
   return (
     <section className="panel" aria-labelledby="trafego-titulo">
@@ -52,6 +62,16 @@ export function TrafficProducts({
           </span>
         </div>
       ))}
+
+      <p className="panel-note">
+        Servem para acompanhar o café, não para rentabilizar sozinhos.
+      </p>
+      {principal && (
+        <p className="panel-note">
+          {principal.name} é o {lugarUnidades}.º em unidades e o {lugarReceita}.º
+          em receita.
+        </p>
+      )}
     </section>
   );
 }

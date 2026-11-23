@@ -28,7 +28,7 @@ export function RevenueLine({
       <ResponsiveContainer width="100%" height={height}>
         <AreaChart
           data={data}
-          margin={{ top: 12, right: 8, bottom: 0, left: 8 }}
+          margin={{ top: 12, right: 8, bottom: 0, left: 14 }}
         >
           <defs>
             <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">

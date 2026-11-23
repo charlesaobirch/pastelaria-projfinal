@@ -182,6 +182,26 @@ body {
   color: #fff;
 }
 
+.side-data {
+  display: grid;
+  gap: 5px;
+  margin-top: 22px;
+  padding: 0 2px;
+}
+
+.side-data-label {
+  color: var(--text-meta);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.side-data-value {
+  color: var(--indigo);
+  font-size: 12px;
+}
+
 .app-main {
   min-width: 0;
 }
@@ -913,6 +933,7 @@ body {
 .dtable-wrap {
   width: 100%;
   min-width: 0;
+  margin-top: 12px;
   overflow-x: auto;
 }
 
@@ -958,6 +979,28 @@ body {
 .dtable tbody tr.supplier-group-end td {
   padding-bottom: 10px;
   border-bottom-color: var(--grid);
+}
+
+.dtable--grouped tbody td,
+.dtable--grouped tbody th {
+  border-bottom: 0;
+}
+
+.dtable--grouped tbody tr:not(.supplier-group-end) > :nth-child(-n + 5) {
+  border-bottom: 1px solid var(--border-row);
+}
+
+.dtable--grouped tbody tr.supplier-group-start:not(:first-child) > * {
+  border-top: 1px solid var(--grid);
+}
+
+.dtable--grouped tbody tr.supplier-group-end > * {
+  padding-bottom: 10px;
+  border-bottom: 0;
+}
+
+.dtable--grouped tbody tr:last-child > :nth-child(-n + 5) {
+  border-bottom: 0;
 }
 
 .dtable .cell-name {
@@ -1033,6 +1076,19 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+}
+
+.filter-panel {
+  display: block;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  background: var(--surface-card);
+}
+
+.filter-panel .filter-bar {
+  margin-bottom: 0;
 }
 
 fieldset.filter-group,
@@ -1698,6 +1754,104 @@ fieldset.filter-group {
   gap: 14px;
 }
 
+/* Duas tabelas lado a lado (produtos em Vendas) */
+.dtable-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.dtable-grid .dtable-wrap {
+  margin-top: 0;
+}
+
+.dtable-grid .dtable {
+  min-width: 420px;
+}
+
+/* Pagamentos */
+.pay-row {
+  display: grid;
+  gap: 6px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border-row);
+}
+
+.pay-row:last-child {
+  border-bottom: 0;
+}
+
+.pay-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pay-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--prussian);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.pay-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+}
+
+.pay-share {
+  color: var(--prussian);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.pay-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #e9ecef;
+}
+
+.pay-track span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.pay-value {
+  color: var(--text-soft);
+  font-size: 9.5px;
+}
+
+/* Cartão hero com etiquetas */
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.hero-note {
+  color: var(--indigo);
+  font-size: 9.5px;
+}
+
+.hero-big--green {
+  color: var(--verde);
+}
+
+.hero-copy {
+  margin: 0;
+  color: var(--indigo);
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
 /* ------------------------------------------------------------------ */
 /* Responsivo                                                          */
 /* ------------------------------------------------------------------ */
@@ -1725,6 +1879,10 @@ fieldset.filter-group {
 
   .grid-row--four {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dtable-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .split-panel {

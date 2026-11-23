@@ -116,6 +116,12 @@ export default function VendasPage() {
     [filtradas, produtos],
   );
 
+  const metadeProdutos = Math.ceil(produtosStats.length / 2);
+  const blocosProdutos = [
+    produtosStats.slice(0, metadeProdutos),
+    produtosStats.slice(metadeProdutos),
+  ];
+
   const k26 = useMemo(() => kpis(fy26, produtos), [fy26, produtos]);
   const k25 = useMemo(() => kpis(fy25, produtos), [fy25, produtos]);
   const dias26 = useMemo(
@@ -170,12 +176,12 @@ export default function VendasPage() {
   const dadosGrafico =
     granularidade === "mes"
       ? mensal.map((mes) => ({
-          label: mes.label.replace("/", " "),
+          label: mes.label.split("/")[0],
           value: mes.revenue,
         }))
       : granularidade === "semana"
         ? mensal.map((mes) => ({
-            label: mes.label.replace("/", " "),
+            label: mes.label.split("/")[0],
             value: mes.revenue,
           }))
         : diario.slice(-31).map((dia) => ({
@@ -197,80 +203,91 @@ export default function VendasPage() {
         </p>
       )}
 
-      <div className="filter-bar" style={{ marginBottom: 16 }}>
-        <div className="filter-group">
-          <fieldset className="segmented">
-            <legend className="sr-only">Ano fiscal</legend>
-            {(["2026", "2025"] as Ano[]).map((opcao) => (
-              <button
-                key={opcao}
-                type="button"
-                aria-pressed={ano === opcao}
-                onClick={() => setAno(opcao)}
-              >
-                {opcao === "2026" ? FY2026.label : FY2025.label}
-              </button>
-            ))}
-          </fieldset>
-          <fieldset className="segmented">
-            <legend className="sr-only">Granularidade</legend>
-            {(["dia", "semana", "mes"] as Granularidade[]).map((opcao) => (
-              <button
-                key={opcao}
-                type="button"
-                aria-pressed={granularidade === opcao}
-                onClick={() => setGranularidade(opcao)}
-              >
-                {opcao === "dia"
-                  ? "Dia"
-                  : opcao === "semana"
-                    ? "Semana"
-                    : "Mês"}
-              </button>
-            ))}
-          </fieldset>
-          <select
-            className="select-pill"
-            aria-label="Filtrar por pagamento"
-            value={pagamento}
-            onChange={(event) => setPagamento(event.target.value)}
-          >
-            <option value="todos">Todos os pagamentos</option>
-            {metodos.map((metodo) => (
-              <option key={metodo} value={metodo}>
-                {metodo}
-              </option>
-            ))}
-          </select>
-          <select
-            className="select-pill"
-            aria-label="Filtrar por categoria"
-            value={categoria}
-            onChange={(event) => setCategoria(event.target.value)}
-          >
-            <option value="todas">Todas as categorias</option>
-            {categorias.map((opcao) => (
-              <option key={opcao} value={opcao}>
-                {opcao}
-              </option>
-            ))}
-          </select>
+      <div className="filter-panel">
+        <div className="filter-bar">
+          <div className="filter-group">
+            <fieldset className="segmented">
+              <legend className="sr-only">Ano fiscal</legend>
+              {(["2026", "2025"] as Ano[]).map((opcao) => (
+                <button
+                  key={opcao}
+                  type="button"
+                  aria-pressed={ano === opcao}
+                  onClick={() => setAno(opcao)}
+                >
+                  {opcao === "2026" ? FY2026.label : FY2025.label}
+                </button>
+              ))}
+            </fieldset>
+            <fieldset className="segmented">
+              <legend className="sr-only">Granularidade</legend>
+              {(["dia", "semana", "mes"] as Granularidade[]).map((opcao) => (
+                <button
+                  key={opcao}
+                  type="button"
+                  aria-pressed={granularidade === opcao}
+                  onClick={() => setGranularidade(opcao)}
+                >
+                  {opcao === "dia"
+                    ? "Dia"
+                    : opcao === "semana"
+                      ? "Semana"
+                      : "Mês"}
+                </button>
+              ))}
+            </fieldset>
+            <select
+              className="select-pill"
+              aria-label="Filtrar por pagamento"
+              value={pagamento}
+              onChange={(event) => setPagamento(event.target.value)}
+            >
+              <option value="todos">Todos os pagamentos</option>
+              {metodos.map((metodo) => (
+                <option key={metodo} value={metodo}>
+                  {metodo}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select-pill"
+              aria-label="Filtrar por categoria"
+              value={categoria}
+              onChange={(event) => setCategoria(event.target.value)}
+            >
+              <option value="todas">Todas as categorias</option>
+              {categorias.map((opcao) => (
+                <option key={opcao} value={opcao}>
+                  {opcao}
+                </option>
+              ))}
+            </select>
+          </div>
+          <span className="filter-count">
+            {int(diasFiltrados)} dias com vendas
+          </span>
         </div>
-        <span className="filter-count">
-          {int(diasFiltrados)} dias com vendas
-        </span>
       </div>
 
       <div className="grid-row grid-row--four">
         <section className="panel">
-          <span className="stat-label">Receita do período</span>
+          <div className="stat-top">
+            <span className="stat-label">Receita do período</span>
+            <span className="stat-dot" />
+          </div>
           <span className="stat-value">{eur(resumo.revenue)}</span>
           <span className="stat-sub">
             {eur(resumo.revenue / Math.max(diasFiltrados, 1))} por dia
           </span>
         </section>
         <section className="panel">
-          <span className="stat-label">Melhor dia</span>
+          <div className="stat-top">
+            <span className="stat-label">Melhor dia</span>
+            <span
+              className="stat-dot"
+              style={{ background: "var(--verde)" }}
+            />
+          </div>
           <span className="stat-value">
             {melhorDia ? eur(melhorDia.revenue) : "—"}
           </span>
@@ -281,14 +298,23 @@ export default function VendasPage() {
           </span>
         </section>
         <section className="panel">
-          <span className="stat-label">Fim de semana</span>
+          <div className="stat-top">
+            <span className="stat-label">Fim de semana</span>
+            <span
+              className="stat-dot"
+              style={{ background: "var(--verde)" }}
+            />
+          </div>
           <span className="stat-value" style={{ color: "var(--verde)" }}>
             +{pct(upliftFimDeSemana(filtradas, produtos), 1)}
           </span>
           <span className="stat-sub">por dia vs dias úteis</span>
         </section>
         <section className="panel">
-          <span className="stat-label">Pico horário</span>
+          <div className="stat-top">
+            <span className="stat-label">Pico horário</span>
+            <span className="stat-dot" />
+          </div>
           <span className="stat-value">{picoHorasLabel || "—"}</span>
           <span className="stat-sub">{picoHorasShare} da receita</span>
         </section>
@@ -320,11 +346,14 @@ export default function VendasPage() {
           </p>
         </section>
 
-        <section className="panel" aria-labelledby="comparacao-titulo">
+        <section className="panel panel--hero" aria-labelledby="comparacao-titulo">
+          <h2 className="sr-only" id="comparacao-titulo">
+            Comparação anual
+          </h2>
           <div className="panel-head">
-            <h2 className="panel-title" id="comparacao-titulo">
-              Comparação anual
-            </h2>
+            <span className="meta-pill meta-pill--alert">
+              <span className="meta-dot" /> Não homólogo
+            </span>
             <span className="meta-pill">FY2026 vs FY2025</span>
           </div>
 
@@ -430,16 +459,36 @@ export default function VendasPage() {
               <p className="panel-sub">Parte da receita · FY{ano}</p>
             </div>
           </div>
-          <div className="list-rows">
-            {pagamentos.map((metodo) => (
-              <div className="list-row" key={metodo.method}>
-                <span className="list-name">
-                  <strong>{metodo.method}</strong>
-                </span>
-                <span className="list-meta">{eur(metodo.revenue)}</span>
-                <span className="list-value">{pct(metodo.share)}</span>
-              </div>
-            ))}
+          <div className="pay-list">
+            {pagamentos.map((metodo, index) => {
+              const cor = ["var(--prussian)", "var(--indigo)", "var(--grid)"][
+                index % 3
+              ];
+
+              return (
+                <div className="pay-row" key={metodo.method}>
+                  <div className="pay-top">
+                    <span className="pay-name">
+                      <span
+                        className="pay-dot"
+                        style={{ background: cor }}
+                      />
+                      {metodo.method}
+                    </span>
+                    <span className="pay-share">{pct(metodo.share)}</span>
+                  </div>
+                  <div className="pay-track">
+                    <span
+                      style={{
+                        width: `${Math.max(0, Math.min(100, metodo.share))}%`,
+                        background: cor,
+                      }}
+                    />
+                  </div>
+                  <span className="pay-value">{eur(metodo.revenue)}</span>
+                </div>
+              );
+            })}
           </div>
           <p className="panel-note">
             Cartão domina, mas a divisão é estável todo o ano.
@@ -545,48 +594,52 @@ export default function VendasPage() {
           </span>
         </div>
 
-        <div className="dtable-wrap">
-          <table className="dtable">
-            <caption className="sr-only">
-              Produtos vendidos ordenados por lucro bruto.
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Produto</th>
-                <th scope="col" className="num">
-                  Unid.
-                </th>
-                <th scope="col" className="num">
-                  Lucro
-                </th>
-                <th scope="col" className="num">
-                  Margem
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {produtosStats.map((produto) => (
-                <tr key={produto.id}>
-                  <th scope="row" className="cell-name">
-                    {produto.name}
-                  </th>
-                  <td className="num">{int(produto.units)}</td>
-                  <td className="num cell-bold">{eur(produto.profit)}</td>
-                  <td
-                    className="num"
-                    style={{
-                      color:
-                        produto.margin < 70
-                          ? "var(--sinopia)"
-                          : "var(--indigo)",
-                    }}
-                  >
-                    {pct(produto.margin)}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="dtable-grid">
+          {blocosProdutos.map((linhas, bloco) => (
+            <div className="dtable-wrap" key={bloco}>
+              <table className="dtable">
+                <caption className="sr-only">
+                  Produtos vendidos ordenados por lucro bruto.
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col" className="num">
+                      Unid.
+                    </th>
+                    <th scope="col" className="num">
+                      Lucro
+                    </th>
+                    <th scope="col" className="num">
+                      Margem
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {linhas.map((produto) => (
+                    <tr key={produto.id}>
+                      <th scope="row" className="cell-name">
+                        {produto.name}
+                      </th>
+                      <td className="num">{int(produto.units)}</td>
+                      <td className="num cell-bold">{eur(produto.profit)}</td>
+                      <td
+                        className="num"
+                        style={{
+                          color:
+                            produto.margin < 70
+                              ? "var(--sinopia)"
+                              : "var(--indigo)",
+                        }}
+                      >
+                        {pct(produto.margin)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
         </div>
         <p className="panel-note">
           {produtosStats

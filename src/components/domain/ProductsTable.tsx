@@ -209,7 +209,7 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
       <div className="dtable-wrap">
         <table className="dtable">
           <caption className="sr-only">
-            Produtos com categoria, preço, stock, mínimo e estado.
+            Produtos com categoria, preço, custo, stock, mínimo e estado.
           </caption>
           <thead>
             <tr>
@@ -217,6 +217,9 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
               <th scope="col">Categoria</th>
               <th scope="col" className="num">
                 Preço
+              </th>
+              <th scope="col" className="num">
+                Custo
               </th>
               <th scope="col" className="num">
                 Stock
@@ -230,7 +233,7 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
           <tbody>
             {linhas.length === 0 && (
               <tr>
-                <td colSpan={6} className="notice">
+                <td colSpan={7} className="notice">
                   Sem resultados para esta pesquisa.
                 </td>
               </tr>
@@ -245,6 +248,7 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
                   </th>
                   <td className="cell-soft">{produto.category}</td>
                   <td className="num cell-bold">{eur(produto.unit_price)}</td>
+                  <td className="num cell-soft">{eur(produto.cost_price)}</td>
                   <td className="num cell-indigo">{int(produto.stock)}</td>
                   <td className="num cell-soft">{int(produto.min_stock)}</td>
                   <td>

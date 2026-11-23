@@ -212,13 +212,8 @@ export function IngredientsTable({
         </form>
       )}
 
-      <p className="notice">
-        O ficheiro não traz emails nem telefones: «Entrar em contacto» abre um
-        rascunho de email com o nome do fornecedor no assunto.
-      </p>
-
       <div className="dtable-wrap">
-        <table className="dtable">
+        <table className="dtable dtable--grouped">
           <caption className="sr-only">
             Ingredientes e embalagens com unidade, stock, mínimo, estado,
             fornecedor e contacto.

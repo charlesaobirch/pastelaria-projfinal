@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import { Bar, BarChart, LabelList, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import { dataRange, monthKeysBetween, monthLabel } from "@/lib/dates";
 import { int } from "@/lib/format";
 import { type MonthlyUnitsPoint, monthlyUnitsByProduct } from "@/lib/stats";
@@ -127,7 +127,16 @@ export function ProductSeasonality({
               radius={[4, 4, 0, 0]}
               maxBarSize={26}
               isAnimationActive={false}
-            />
+            >
+              <LabelList
+                dataKey="normal"
+                position="top"
+                formatter={(value) =>
+                  Number(value) > 0 ? int(Number(value)) : ""
+                }
+                style={{ fill: "#224766", fontSize: 9, fontWeight: 700 }}
+              />
+            </Bar>
             <Bar
               dataKey="destaque"
               stackId="meses"
@@ -135,7 +144,16 @@ export function ProductSeasonality({
               radius={[4, 4, 0, 0]}
               maxBarSize={26}
               isAnimationActive={false}
-            />
+            >
+              <LabelList
+                dataKey="destaque"
+                position="top"
+                formatter={(value) =>
+                  Number(value) > 0 ? int(Number(value)) : ""
+                }
+                style={{ fill: "#224766", fontSize: 9, fontWeight: 700 }}
+              />
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>

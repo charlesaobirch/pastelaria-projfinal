@@ -36,7 +36,7 @@ export default function ProdutosPage() {
     <main className="page">
       <PageHeader
         title="Produtos"
-        description="Catálogo, preço e stock de cada produto"
+        description="Catálogo, preço, custo e stock de cada produto"
         range={limite.to ? shortDateLabel(limite.to) : "—"}
       />
 
@@ -53,8 +53,8 @@ export default function ProdutosPage() {
               Produtos
             </h2>
             <p className="panel-sub">
-              Catálogo, preço e stock dos {int(produtos.length)} produtos, face
-              ao mínimo.
+              Catálogo, preço, custo e stock dos {int(produtos.length)}{" "}
+              produtos, face ao mínimo.
             </p>
           </div>
           <span className="meta-pill meta-pill--tint">
@@ -68,7 +68,8 @@ export default function ProdutosPage() {
           {produtosEmFalta === 0
             ? "Nenhum produto abaixo do mínimo"
             : `${int(produtosEmFalta)} produtos abaixo do mínimo`}{" "}
-          a {limite.to ? shortDateLabel(limite.to) : "—"} · preço por unidade.
+          a {limite.to ? shortDateLabel(limite.to) : "—"} · preço e custo por
+          unidade.
         </p>
       </section>
 

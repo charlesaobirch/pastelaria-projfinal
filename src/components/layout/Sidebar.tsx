@@ -43,6 +43,11 @@ export function Sidebar() {
           );
         })}
       </nav>
+
+      <div className="side-data">
+        <span className="side-data-label">Dados</span>
+        <span className="side-data-value">Nov 2025 – Out 2026</span>
+      </div>
     </aside>
   );
 }
