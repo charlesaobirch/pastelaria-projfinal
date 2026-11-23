@@ -1967,6 +1967,15 @@ fieldset.filter-group {
 }
 
 @media (max-width: 480px) {
+  .panel--seasonality .panel-head {
+    flex-wrap: wrap;
+  }
+
+  .panel--seasonality .select-pill,
+  .panel--seasonality .select-pill select {
+    max-width: 100%;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }

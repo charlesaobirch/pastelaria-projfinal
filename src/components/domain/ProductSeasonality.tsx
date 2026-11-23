@@ -73,7 +73,10 @@ export function ProductSeasonality({
   }));
 
   return (
-    <section className="panel" aria-labelledby="sazonalidade-titulo">
+    <section
+      className="panel panel--seasonality"
+      aria-labelledby="sazonalidade-titulo"
+    >
       <div className="panel-head">
         <div className="panel-title-block">
           <h3 className="panel-title" id="sazonalidade-titulo">
