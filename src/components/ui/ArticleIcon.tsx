@@ -1,16 +1,25 @@
-import { AppleIcon } from "@solar-icons/react/linear/apple";
 import { BagIcon } from "@solar-icons/react/linear/bag";
-import { BottleIcon } from "@solar-icons/react/linear/bottle";
 import { BoxIcon } from "@solar-icons/react/linear/box";
-import { CakeIcon } from "@solar-icons/react/linear/cake";
 import { ChefHatIcon } from "@solar-icons/react/linear/chef-hat";
-import { CookieIcon } from "@solar-icons/react/linear/cookie";
-import { CupHotIcon } from "@solar-icons/react/linear/cup-hot";
 import { CupPaperIcon } from "@solar-icons/react/linear/cup-paper";
 import { DocumentTextIcon } from "@solar-icons/react/linear/document-text";
 import { LeafIcon } from "@solar-icons/react/linear/leaf";
 import { TeaCupIcon } from "@solar-icons/react/linear/tea-cup";
-import { WaterIcon } from "@solar-icons/react/linear/water";
+import {
+  Apple,
+  CakeSlice,
+  Candy,
+  Citrus,
+  Coffee,
+  Cookie,
+  Croissant,
+  Egg,
+  GlassWater,
+  Milk,
+  Nut,
+  Wheat,
+} from "lucide-react";
+import type { ComponentType } from "react";
 
 function normalize(value: string) {
   return value
@@ -19,7 +28,12 @@ function normalize(value: string) {
     .toLocaleLowerCase("pt-PT");
 }
 
-function getIcon(name: string, category: string) {
+type ArticleIconComponent = ComponentType<{
+  size?: number | string;
+  strokeWidth?: number | string;
+}>;
+
+function getIcon(name: string, category: string): ArticleIconComponent {
   const article = normalize(name);
   const group = normalize(category);
 
@@ -31,27 +45,33 @@ function getIcon(name: string, category: string) {
   }
 
   if (group === "bebidas") {
-    if (article.includes("agua")) return WaterIcon;
+    if (article.includes("agua")) return GlassWater;
     if (article.includes("cha")) return TeaCupIcon;
-    if (article.includes("sumo")) return BottleIcon;
-    return CupHotIcon;
+    if (article.includes("sumo")) return Citrus;
+    return Coffee;
   }
 
-  if (group === "bolos") return CakeIcon;
-  if (group === "pasteis") return CookieIcon;
-  if (group === "pao") return ChefHatIcon;
-  if (article.includes("maca") || article.includes("laranja")) return AppleIcon;
-  if (article.includes("canela")) return LeafIcon;
-  if (article.includes("leite") || article.includes("natas")) return BottleIcon;
-  if (
-    article.includes("acucar") ||
-    article.includes("chocolate") ||
-    article.includes("manteiga") ||
-    article.includes("ovos") ||
-    article.includes("amendoa")
-  ) {
-    return CookieIcon;
+  if (group === "bolos") return CakeSlice;
+  if (group === "pasteis") return Cookie;
+  if (group === "pao") {
+    if (article.includes("croissant")) return Croissant;
+    return Wheat;
   }
+  if (article.includes("farinha")) return Wheat;
+  if (article.includes("acucar")) return Candy;
+  if (article.includes("chocolate")) return Cookie;
+  if (
+    article.includes("manteiga") ||
+    article.includes("natas") ||
+    article.includes("leite")
+  ) {
+    return Milk;
+  }
+  if (article.includes("ovos")) return Egg;
+  if (article.includes("canela")) return LeafIcon;
+  if (article.includes("amendoa")) return Nut;
+  if (article.includes("maca")) return Apple;
+  if (article.includes("laranja")) return Citrus;
   return ChefHatIcon;
 }
 
@@ -66,7 +86,7 @@ export function ArticleIcon({
 
   return (
     <span className="article-icon" aria-hidden="true">
-      <Icon size={16} />
+      <Icon size={16} strokeWidth={1.6} />
     </span>
   );
 }
