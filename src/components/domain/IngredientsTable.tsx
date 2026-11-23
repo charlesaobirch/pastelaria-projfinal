@@ -1,6 +1,7 @@
 "use client";
 
 import { type FormEvent, useMemo, useState } from "react";
+import { ArticleIcon } from "@/components/ui/ArticleIcon";
 import { SearchField } from "@/components/ui/SearchField";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus, stockValue } from "@/lib/stock";
@@ -276,7 +277,13 @@ export function IngredientsTable({
                       scope="row"
                       className={`cell-name${alerta ? ` cell-name--${alerta}` : ""}`}
                     >
-                      {item.name}
+                      <span className="article-name">
+                        <ArticleIcon
+                          name={item.name}
+                          category={item.category}
+                        />
+                        <span>{item.name}</span>
+                      </span>
                     </th>
                     <td className="cell-soft">{item.unit}</td>
                     <td

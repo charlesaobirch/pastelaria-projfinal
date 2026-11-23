@@ -987,6 +987,23 @@ body {
   font-weight: 700;
 }
 
+.dtable .article-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.article-icon {
+  display: inline-grid;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--surface-tint);
+  color: var(--indigo);
+}
+
 .dtable .cell-name--muted {
   font-weight: 400;
   color: var(--text-meta);

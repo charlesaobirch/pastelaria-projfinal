@@ -1,6 +1,7 @@
 "use client";
 
 import { type FormEvent, useMemo, useState } from "react";
+import { ArticleIcon } from "@/components/ui/ArticleIcon";
 import { SearchField } from "@/components/ui/SearchField";
 import { eur, int } from "@/lib/format";
 import { stockDisplayStatus } from "@/lib/stock";
@@ -250,7 +251,13 @@ export function ProductsTable({ produtos }: { produtos: Produto[] }) {
               return (
                 <tr key={produto.id}>
                   <th scope="row" className="cell-name">
-                    {produto.name}
+                    <span className="article-name">
+                      <ArticleIcon
+                        name={produto.name}
+                        category={produto.category}
+                      />
+                      <span>{produto.name}</span>
+                    </span>
                   </th>
                   <td className="cell-soft">{produto.category}</td>
                   <td className="num cell-bold">{eur(produto.unit_price)}</td>
