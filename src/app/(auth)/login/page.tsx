@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    router.push("/");
+    router.push("/visao-geral");
   }
 
   return (
