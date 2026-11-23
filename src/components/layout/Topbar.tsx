@@ -1,6 +1,7 @@
 "use client";
 
 import { BellIcon } from "@solar-icons/react/linear/bell";
+import { DangerCircleIcon } from "@solar-icons/react/linear/danger-circle";
 import { UserRoundedIcon } from "@solar-icons/react/linear/user-rounded";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -15,24 +16,6 @@ function countStockLevels(items: { stock: number; min_stock: number }[]) {
   }
 
   return counts;
-}
-
-function notificationMessage(
-  count: number,
-  singular: string,
-  plural: string,
-  status: "esgotado" | "baixo",
-) {
-  const verb = count === 1 ? "Existe um" : `Existem ${count}`;
-  const noun = count === 1 ? singular : plural;
-  const ending =
-    status === "esgotado"
-      ? count === 1
-        ? "esgotado."
-        : "esgotados."
-      : "com o stock baixo.";
-
-  return `${verb} ${noun} ${ending}`;
 }
 
 export function Topbar() {
@@ -53,45 +36,65 @@ export function Topbar() {
       id: "ingredientes-esgotados",
       count: estadoIngredientes.esgotado,
       href: "/stock",
-      message: notificationMessage(
-        estadoIngredientes.esgotado,
-        "artigo",
-        "artigos",
-        "esgotado",
-      ),
+      status: "esgotado",
+      title:
+        estadoIngredientes.esgotado === 1
+          ? "1 artigo esgotado"
+          : `${estadoIngredientes.esgotado} artigos esgotados`,
+      description:
+        ingredientes
+          .filter((item) => stockDisplayStatus(item) === "esgotado")
+          .map((item) => item.name)
+          .join(", ") || "Sem artigos esgotados",
+      action: "Ver stock",
     },
     {
       id: "ingredientes-baixos",
       count: estadoIngredientes.baixo,
       href: "/stock",
-      message: notificationMessage(
-        estadoIngredientes.baixo,
-        "artigo",
-        "artigos",
-        "baixo",
-      ),
+      status: "baixo",
+      title:
+        estadoIngredientes.baixo === 1
+          ? "1 artigo com stock baixo"
+          : `${estadoIngredientes.baixo} artigos com stock baixo`,
+      description:
+        ingredientes
+          .filter((item) => stockDisplayStatus(item) === "baixo")
+          .map((item) => item.name)
+          .join(", ") || "Stock dentro do mínimo",
+      action: "Ver stock",
     },
     {
       id: "produtos-esgotados",
       count: estadoProdutos.esgotado,
       href: "/produtos",
-      message: notificationMessage(
-        estadoProdutos.esgotado,
-        "produto",
-        "produtos",
-        "esgotado",
-      ),
+      status: "esgotado",
+      title:
+        estadoProdutos.esgotado === 1
+          ? "1 produto esgotado"
+          : `${estadoProdutos.esgotado} produtos esgotados`,
+      description:
+        produtos
+          .filter((item) => stockDisplayStatus(item) === "esgotado")
+          .map((item) => item.name)
+          .join(", ") || "Sem produtos esgotados",
+      action: "Ver produtos",
     },
     {
       id: "produtos-baixos",
       count: estadoProdutos.baixo,
       href: "/produtos",
-      message: notificationMessage(
-        estadoProdutos.baixo,
-        "produto",
-        "produtos",
-        "baixo",
-      ),
+      status: "baixo",
+      title:
+        estadoProdutos.baixo === 1
+          ? "1 produto com stock baixo"
+          : `${estadoProdutos.baixo} produtos com stock baixo`,
+      description:
+        produtos
+          .filter((item) => stockDisplayStatus(item) === "baixo")
+          .map((item) => item.name)
+          .join(", ") || "Stock dentro do mínimo",
+      action: "Ver produtos",
     },
   ].filter((notificacao) => notificacao.count > 0);
 
@@ -144,7 +147,14 @@ export function Topbar() {
             className="notification-popover"
             hidden={!notificacoesAbertas}
           >
-            <p className="notification-title">Notificações</p>
+            <div className="notification-heading">
+              <p className="notification-title">Alertas de stock</p>
+              {notificacoes.length > 0 && (
+                <span className="notification-count">
+                  {notificacoes.length} novos
+                </span>
+              )}
+            </div>
             {notificacoes.length === 0 ? (
               <p className="notification-empty">Não existem notificações.</p>
             ) : (
@@ -156,7 +166,20 @@ export function Topbar() {
                       href={notificacao.href}
                       onClick={() => setNotificacoesAbertas(false)}
                     >
-                      {notificacao.message}
+                      <span
+                        className={`notification-status notification-status--${notificacao.status}`}
+                      >
+                        <DangerCircleIcon size={18} aria-hidden="true" />
+                      </span>
+                      <span className="notification-content">
+                        <strong>{notificacao.title}</strong>
+                        <span className="notification-description">
+                          {notificacao.description}
+                        </span>
+                        <span className="notification-action">
+                          {notificacao.action}
+                        </span>
+                      </span>
                     </Link>
                   </li>
                 ))}
