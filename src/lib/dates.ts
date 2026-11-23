@@ -103,6 +103,25 @@ export function dataRange(dates: string[]): {
   };
 }
 
+/** Meses ISO consecutivos entre duas datas, inclusive: `"2025-11"` … `"2026-10"`. */
+export function monthKeysBetween(from: string, to: string): string[] {
+  if (from > to) return [];
+
+  const inicio = parseDate(`${from.slice(0, 7)}-01`);
+  const fim = parseDate(`${to.slice(0, 7)}-01`);
+  const meses: string[] = [];
+
+  for (
+    const atual = new Date(inicio);
+    atual <= fim;
+    atual.setMonth(atual.getMonth() + 1)
+  ) {
+    meses.push(monthKey(atual));
+  }
+
+  return meses;
+}
+
 /*
  * Intervalos para o selector de período.
  *

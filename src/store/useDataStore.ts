@@ -20,6 +20,9 @@ interface DataState {
   error: string | null;
   /** Lê os três JSON; repetir a chamada não repete o fetch. */
   load: () => Promise<void>;
+  /** Acrescenta registos criados nas tabelas; vivem apenas nesta sessão. */
+  addProduto: (produto: Omit<Produto, "id">) => void;
+  addIngrediente: (ingrediente: Omit<Ingrediente, "id">) => void;
 }
 
 export const useDataStore = create<DataState>()((set, get) => ({
@@ -50,4 +53,26 @@ export const useDataStore = create<DataState>()((set, get) => ({
       });
     }
   },
+
+  addProduto: (produto) =>
+    set((state) => ({
+      produtos: [
+        ...state.produtos,
+        {
+          ...produto,
+          id: Math.max(0, ...state.produtos.map((item) => item.id)) + 1,
+        },
+      ],
+    })),
+
+  addIngrediente: (ingrediente) =>
+    set((state) => ({
+      ingredientes: [
+        ...state.ingredientes,
+        {
+          ...ingrediente,
+          id: Math.max(0, ...state.ingredientes.map((item) => item.id)) + 1,
+        },
+      ],
+    })),
 }));
