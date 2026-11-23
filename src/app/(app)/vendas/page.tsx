@@ -5,9 +5,9 @@ import { Heatmap, RevenueLine, ValueBars } from "@/components/domain/Charts";
 import { PageFooter } from "@/components/ui/PageFooter";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useData } from "@/hooks/useData";
-import { parseDate, weekdayIndex, weekdayLabel } from "@/lib/dates";
+import { monthRange, parseDate, weekdayIndex, weekdayLabel } from "@/lib/dates";
 import { EMPTY_FILTERS, filterSales } from "@/lib/filters";
-import { FY2025, FY2026, fiscalRangeLabel } from "@/lib/fiscal";
+import { FY2025, FY2026, fiscalRangeLabel, monthYearLabel } from "@/lib/fiscal";
 import { eur, int, pct } from "@/lib/format";
 import {
   kpis,
@@ -21,7 +21,7 @@ import {
 import type { Produto, Venda } from "@/types";
 
 type Ano = "2026" | "2025";
-type Granularidade = "dia" | "semana" | "mes";
+type Granularidade = "ano" | "mes";
 
 const HORAS = Array.from({ length: 13 }, (_, index) => index + 7);
 const DIAS = Array.from({ length: 7 }, (_, index) => weekdayLabel(index));
@@ -42,11 +42,34 @@ function delta(atual: number, anterior: number): number {
 export default function VendasPage() {
   const { vendas, produtos, status, error } = useData();
   const [ano, setAno] = useState<Ano>("2026");
-  const [granularidade, setGranularidade] = useState<Granularidade>("mes");
+  const [granularidade, setGranularidade] = useState<Granularidade>("ano");
+  const [mes, setMes] = useState("");
   const [pagamento, setPagamento] = useState("todos");
   const [categoria, setCategoria] = useState("todas");
 
   const janela = ano === "2026" ? FY2026 : FY2025;
+  const meses = useMemo(
+    () =>
+      revenueByMonth(
+        filterSales(vendas, produtos, {
+          ...EMPTY_FILTERS,
+          from: janela.from,
+          to: janela.to,
+        }),
+        produtos,
+      ).map((ponto) => ponto.month),
+    [vendas, produtos, janela.from, janela.to],
+  );
+  const mesSelecionado = meses.includes(mes)
+    ? mes
+    : (meses[meses.length - 1] ?? "");
+  const mesLabel = mesSelecionado
+    ? monthYearLabel(`${mesSelecionado}-01`)
+    : "—";
+  const intervalo =
+    granularidade === "mes" && mesSelecionado
+      ? monthRange(mesSelecionado)
+      : janela;
   const metodos = useMemo(
     () => [...new Set(vendas.map((venda) => venda.payment_method))].sort(),
     [vendas],
@@ -63,12 +86,12 @@ export default function VendasPage() {
     () =>
       filterSales(vendas, produtos, {
         ...EMPTY_FILTERS,
-        from: janela.from,
-        to: janela.to,
+        from: intervalo.from,
+        to: intervalo.to,
         payment: pagamento === "todos" ? null : pagamento,
         category: categoria === "todas" ? null : categoria,
       }),
-    [vendas, produtos, janela.from, janela.to, pagamento, categoria],
+    [vendas, produtos, intervalo.from, intervalo.to, pagamento, categoria],
   );
 
   const fy26 = useMemo(
@@ -118,8 +141,14 @@ export default function VendasPage() {
 
   const metadeProdutos = Math.ceil(produtosStats.length / 2);
   const blocosProdutos = [
-    produtosStats.slice(0, metadeProdutos),
-    produtosStats.slice(metadeProdutos),
+    {
+      key: "principais",
+      linhas: produtosStats.slice(0, metadeProdutos),
+    },
+    {
+      key: "restantes",
+      linhas: produtosStats.slice(metadeProdutos),
+    },
   ];
 
   const k26 = useMemo(() => kpis(fy26, produtos), [fy26, produtos]);
@@ -174,27 +203,32 @@ export default function VendasPage() {
   }, [filtradas]);
 
   const dadosGrafico =
-    granularidade === "mes"
-      ? mensal.map((mes) => ({
-          label: mes.label.split("/")[0],
-          value: mes.revenue,
+    granularidade === "ano"
+      ? mensal.map((ponto) => ({
+          label: ponto.label.split("/")[0],
+          value: ponto.revenue,
         }))
-      : granularidade === "semana"
-        ? mensal.map((mes) => ({
-            label: mes.label.split("/")[0],
-            value: mes.revenue,
-          }))
-        : diario.slice(-31).map((dia) => ({
-            label: `${Number(dia.date.slice(8))}`,
-            value: dia.revenue,
-          }));
+      : diario.map((ponto) => ({
+          label: `${Number(ponto.date.slice(8))}`,
+          value: ponto.revenue,
+        }));
+  const tituloGrafico =
+    granularidade === "ano" ? "Receita por mês" : "Receita por dia";
+  const melhorValorGrafico =
+    granularidade === "ano"
+      ? Math.max(...mensal.map((ponto) => ponto.revenue), 0)
+      : Math.max(...diario.map((ponto) => ponto.revenue), 0);
 
   return (
     <main className="page">
       <PageHeader
         title="Vendas"
         description="Quando se vende e como evolui face ao ano fiscal anterior"
-        range={fiscalRangeLabel(janela.from, janela.to)}
+        range={
+          granularidade === "ano"
+            ? fiscalRangeLabel(janela.from, janela.to)
+            : mesLabel
+        }
       />
 
       {status === "error" && (
@@ -221,21 +255,31 @@ export default function VendasPage() {
             </fieldset>
             <fieldset className="segmented">
               <legend className="sr-only">Granularidade</legend>
-              {(["dia", "semana", "mes"] as Granularidade[]).map((opcao) => (
+              {(["ano", "mes"] as Granularidade[]).map((opcao) => (
                 <button
                   key={opcao}
                   type="button"
                   aria-pressed={granularidade === opcao}
                   onClick={() => setGranularidade(opcao)}
                 >
-                  {opcao === "dia"
-                    ? "Dia"
-                    : opcao === "semana"
-                      ? "Semana"
-                      : "Mês"}
+                  {opcao === "ano" ? "Ano" : "Mês"}
                 </button>
               ))}
             </fieldset>
+            {granularidade === "mes" && (
+              <select
+                className="select-pill"
+                aria-label="Filtrar por mês"
+                value={mesSelecionado}
+                onChange={(event) => setMes(event.target.value)}
+              >
+                {meses.map((valor) => (
+                  <option key={valor} value={valor}>
+                    {monthYearLabel(`${valor}-01`)}
+                  </option>
+                ))}
+              </select>
+            )}
             <select
               className="select-pill"
               aria-label="Filtrar por pagamento"
@@ -273,7 +317,6 @@ export default function VendasPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Receita do período</span>
-            <span className="stat-dot" />
           </div>
           <span className="stat-value">{eur(resumo.revenue)}</span>
           <span className="stat-sub">
@@ -283,10 +326,6 @@ export default function VendasPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Melhor dia</span>
-            <span
-              className="stat-dot"
-              style={{ background: "var(--verde)" }}
-            />
           </div>
           <span className="stat-value">
             {melhorDia ? eur(melhorDia.revenue) : "—"}
@@ -300,10 +339,6 @@ export default function VendasPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Fim de semana</span>
-            <span
-              className="stat-dot"
-              style={{ background: "var(--verde)" }}
-            />
           </div>
           <span className="stat-value" style={{ color: "var(--verde)" }}>
             +{pct(upliftFimDeSemana(filtradas, produtos), 1)}
@@ -313,7 +348,6 @@ export default function VendasPage() {
         <section className="panel">
           <div className="stat-top">
             <span className="stat-label">Pico horário</span>
-            <span className="stat-dot" />
           </div>
           <span className="stat-value">{picoHorasLabel || "—"}</span>
           <span className="stat-sub">{picoHorasShare} da receita</span>
@@ -325,35 +359,39 @@ export default function VendasPage() {
           <div className="panel-head">
             <div className="panel-title-block">
               <h2 className="panel-title" id="vendas-mensal-titulo">
-                Receita por mês
+                {tituloGrafico}
               </h2>
               <p className="panel-sub">
-                Ano fiscal {ano} · {janela.label.split(" · ")[1]} ·{" "}
-                {int(mensal.length)} meses
+                {granularidade === "ano"
+                  ? `Ano fiscal ${ano} · ${janela.label.split(" · ")[1]} · ${int(mensal.length)} meses`
+                  : `${mesLabel} · ${int(diario.length)} dias com vendas`}
               </p>
             </div>
             <div className="stat-block">
-              <span className="stat-label stat-label--caps">Melhor mês</span>
+              <span className="stat-label stat-label--caps">
+                {granularidade === "ano" ? "Melhor mês" : "Melhor dia"}
+              </span>
               <span className="stat-value stat-value--md">
-                {eur(Math.max(...mensal.map((mes) => mes.revenue), 0))}
+                {eur(melhorValorGrafico)}
               </span>
             </div>
           </div>
-          <RevenueLine data={dadosGrafico} label="Receita por mês" />
+          <RevenueLine data={dadosGrafico} label={tituloGrafico} />
           <p className="panel-note">
-            Média mensal {eur(resumo.revenue / Math.max(mensal.length, 1))} ·
-            pico em {picoMesNome ?? "—"}
+            {granularidade === "ano"
+              ? `Média mensal ${eur(resumo.revenue / Math.max(mensal.length, 1))} · pico em ${picoMesNome ?? "—"}`
+              : `Média diária ${eur(resumo.revenue / Math.max(diasFiltrados, 1))} · melhor dia ${melhorDia ? Number(melhorDia.date.slice(8)) : "—"}`}
           </p>
         </section>
 
-        <section className="panel panel--hero" aria-labelledby="comparacao-titulo">
+        <section
+          className="panel panel--hero"
+          aria-labelledby="comparacao-titulo"
+        >
           <h2 className="sr-only" id="comparacao-titulo">
             Comparação anual
           </h2>
           <div className="panel-head">
-            <span className="meta-pill meta-pill--alert">
-              <span className="meta-dot" /> Não homólogo
-            </span>
             <span className="meta-pill">FY2026 vs FY2025</span>
           </div>
 
@@ -469,10 +507,7 @@ export default function VendasPage() {
                 <div className="pay-row" key={metodo.method}>
                   <div className="pay-top">
                     <span className="pay-name">
-                      <span
-                        className="pay-dot"
-                        style={{ background: cor }}
-                      />
+                      <span className="pay-dot" style={{ background: cor }} />
                       {metodo.method}
                     </span>
                     <span className="pay-share">{pct(metodo.share)}</span>
@@ -595,8 +630,8 @@ export default function VendasPage() {
         </div>
 
         <div className="dtable-grid">
-          {blocosProdutos.map((linhas, bloco) => (
-            <div className="dtable-wrap" key={bloco}>
+          {blocosProdutos.map(({ key, linhas }) => (
+            <div className="dtable-wrap" key={key}>
               <table className="dtable">
                 <caption className="sr-only">
                   Produtos vendidos ordenados por lucro bruto.

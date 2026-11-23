@@ -43,7 +43,7 @@ export function RevenueLine({
           <CartesianGrid vertical={false} stroke="var(--grid-soft)" />
           <XAxis
             dataKey="label"
-            interval={0}
+            interval={data.length > 12 ? Math.ceil(data.length / 12) - 1 : 0}
             axisLine={false}
             tickLine={false}
             tick={{ fill: "var(--text-soft)", fontSize: 9 }}
