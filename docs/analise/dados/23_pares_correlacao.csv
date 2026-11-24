@@ -1,0 +1,211 @@
+﻿produto_a,produto_b,rho
+Chá,Travesseiro,0.2983243182183375
+Bolo de laranja,Broa,0.27838377529293434
+Pastel de Santa Clara,Pão de forma,0.2750598234373937
+Broa,Croissant simples,0.2439004750045204
+Croissant misto,Croissant simples,0.23361019291627702
+Queijada,Tarte de maçã,0.2213556405069853
+Bolo de cenoura,Croissant simples,0.21276917358837338
+Bolo de cenoura,Chá,0.20106031813187647
+Pastel de feijão,Pão de leite,0.19974190572439715
+Pastel de nata,Travesseiro,0.1728748768530592
+Sumo de laranja,Travesseiro,0.17267320294165805
+Croissant simples,Tarte de maçã,0.17148650298275
+Bolo de laranja,Água,0.16790138679746797
+Pastel de feijão,Tarte de maçã,0.1625968133896683
+Pastel de Santa Clara,Tarte de maçã,0.1603016792750426
+Pastel de Santa Clara,Travesseiro,0.15684454759572705
+Cheesecake,Pão de forma,0.15270457942231377
+Broa,Água,0.14792112141477856
+Chá,Água,0.1408707338811602
+Pão de forma,Tarte de maçã,0.13647058427536246
+Broa,Galão,0.1354114193434918
+Pastel de feijão,Travesseiro,0.13329030566361946
+Bolo de laranja,Queijada,0.12871718398501647
+Bolo de chocolate,Sumo de laranja,0.12624574642602374
+Pão de forma,Queijada,0.12162288810125314
+Sumo de laranja,Água,0.1211999033321244
+Bolo de chocolate,Tarte de maçã,0.1209554726432511
+Pastel de Santa Clara,Queijada,0.1199532223574987
+Café,Pastel de Santa Clara,0.11918687695575274
+Bolo de laranja,Pão de leite,0.1150110267273707
+Bolo de laranja,Sumo de laranja,0.11120161495122888
+Bolo de cenoura,Cappuccino,0.11107102996847315
+Cheesecake,Pão de leite,0.10534948259571986
+Bolo de cenoura,Bolo de chocolate,0.10310044878259443
+Galão,Pastel de feijão,0.10274608055927367
+Bolo de chocolate,Croissant simples,0.10157765462539664
+Bolo de laranja,Croissant misto,0.09837843854543057
+Broa,Sumo de laranja,0.09789096093814752
+Café,Croissant misto,0.09736725396121437
+Cappuccino,Croissant misto,0.09442596514367058
+Cappuccino,Chá,0.09392538372832795
+Bolo de laranja,Cappuccino,0.09370816081569708
+Bolo de laranja,Croissant simples,0.09354823683150094
+Pão de leite,Tarte de maçã,0.09290998566360566
+Travesseiro,Água,0.09289474896981621
+Croissant simples,Pão de leite,0.0919537912728964
+Broa,Cheesecake,0.0918140359350571
+Cappuccino,Pastel de nata,0.08853946176579872
+Bolo de chocolate,Pastel de nata,0.0885213063786181
+Café,Croissant simples,0.08305781798542124
+Broa,Croissant misto,0.08214372293759278
+Bolo de chocolate,Cappuccino,0.07676170486608835
+Bolo de chocolate,Queijada,0.07639703447033427
+Pastel de Santa Clara,Pastel de nata,0.07441617190638368
+Bolo de cenoura,Tarte de maçã,0.07348387563010979
+Bolo de laranja,Chá,0.06795327057217607
+Bolo de cenoura,Pastel de Santa Clara,0.06485670006581253
+Café,Cheesecake,0.06457885077087214
+Croissant simples,Água,0.06330389903632919
+Sumo de laranja,Tarte de maçã,0.06128213225966774
+Chá,Pastel de nata,0.05650747159170574
+Galão,Sumo de laranja,0.05132340194967041
+Pastel de Santa Clara,Sumo de laranja,0.05005445492456485
+Pastel de nata,Sumo de laranja,0.047574890134257954
+Pastel de nata,Pão de forma,0.04196120894477902
+Pão de forma,Água,0.03758082696749329
+Bolo de cenoura,Pão de leite,0.031002516396247033
+Broa,Cappuccino,0.029660248497247535
+Pão de forma,Travesseiro,0.025454051846546057
+Croissant simples,Queijada,0.02519958069946033
+Bolo de cenoura,Cheesecake,0.022127982525710167
+Croissant misto,Galão,0.02169048723403196
+Pastel de feijão,Pastel de nata,0.018065609104422547
+Bolo de chocolate,Croissant misto,0.017813198161422013
+Galão,Queijada,0.014514080677047406
+Galão,Travesseiro,0.014479894943488576
+Bolo de chocolate,Chá,0.012481067262405028
+Pão de leite,Água,0.012338460920634203
+Cappuccino,Cheesecake,0.011968287931520591
+Chá,Queijada,0.011584031676299676
+Cheesecake,Croissant misto,0.008849469359319889
+Pastel de nata,Água,0.003144907671292649
+Bolo de laranja,Tarte de maçã,0.0020303831553974056
+Cheesecake,Galão,0.0008910041250828822
+Cheesecake,Croissant simples,-0.0020858858023606397
+Galão,Pão de leite,-0.002378840423829792
+Bolo de cenoura,Café,-0.0036376241555068937
+Bolo de cenoura,Queijada,-0.00408222266340218
+Bolo de chocolate,Bolo de laranja,-0.005161333761107182
+Cappuccino,Sumo de laranja,-0.010603769783426713
+Bolo de cenoura,Pão de forma,-0.013340355176733269
+Bolo de chocolate,Água,-0.014222889078630513
+Croissant misto,Pastel de feijão,-0.01437586974492553
+Cappuccino,Queijada,-0.01558310654484572
+Bolo de cenoura,Sumo de laranja,-0.0170968335308824
+Galão,Tarte de maçã,-0.018069483948275174
+Pastel de Santa Clara,Pastel de feijão,-0.021501906655087877
+Bolo de chocolate,Pastel de Santa Clara,-0.023329970943837163
+Croissant misto,Pão de leite,-0.026066971803415197
+Pastel de nata,Queijada,-0.026166189573841873
+Pastel de Santa Clara,Pão de leite,-0.027549766659710657
+Pastel de nata,Tarte de maçã,-0.03170399837716633
+Pão de forma,Sumo de laranja,-0.031763706289767754
+Bolo de cenoura,Bolo de laranja,-0.033171811377316555
+Cheesecake,Queijada,-0.03327157473080681
+Croissant simples,Pão de forma,-0.03893381751387806
+Croissant misto,Queijada,-0.04027738580010483
+Bolo de chocolate,Galão,-0.04111275882480992
+Café,Cappuccino,-0.04358431610602387
+Bolo de cenoura,Croissant misto,-0.04423755153558105
+Café,Água,-0.044835093980479815
+Café,Pão de forma,-0.04616136845416979
+Chá,Sumo de laranja,-0.050170562277493023
+Chá,Pastel de feijão,-0.05312666292343737
+Galão,Pastel de Santa Clara,-0.05485309141341274
+Croissant simples,Sumo de laranja,-0.05568099351352754
+Café,Pastel de feijão,-0.056313890880192154
+Bolo de chocolate,Broa,-0.05827280866467965
+Café,Pão de leite,-0.05858516632693315
+Cappuccino,Pão de forma,-0.0600958013781531
+Broa,Travesseiro,-0.061361574884196086
+Pastel de feijão,Queijada,-0.0681089593244859
+Bolo de chocolate,Pão de forma,-0.06842342466254252
+Croissant misto,Sumo de laranja,-0.06858041365963795
+Chá,Pão de leite,-0.0689029199994321
+Cappuccino,Pão de leite,-0.06943268422240216
+Cappuccino,Água,-0.06985464590254899
+Pastel de feijão,Água,-0.07039016099955316
+Broa,Queijada,-0.0715178657976538
+Broa,Café,-0.07599403332149907
+Bolo de cenoura,Galão,-0.07747983262358
+Cheesecake,Pastel de nata,-0.07845044461786098
+Croissant simples,Galão,-0.07910492908328062
+Cheesecake,Chá,-0.0840518242269507
+Bolo de laranja,Pastel de feijão,-0.08650134566727445
+Bolo de cenoura,Travesseiro,-0.08693561002731395
+Pão de leite,Queijada,-0.08733342757339106
+Cappuccino,Travesseiro,-0.0874072352485131
+Tarte de maçã,Água,-0.08808384090507447
+Bolo de chocolate,Travesseiro,-0.09098064959070265
+Pastel de feijão,Sumo de laranja,-0.09698167387530407
+Cheesecake,Água,-0.0989479420420785
+Chá,Tarte de maçã,-0.10104978128196977
+Galão,Água,-0.10115915752800768
+Café,Travesseiro,-0.10253101655634075
+Bolo de laranja,Cheesecake,-0.10264544991566779
+Broa,Pão de forma,-0.10474240168503146
+Bolo de chocolate,Pastel de feijão,-0.11525192888821462
+Broa,Pão de leite,-0.11979513357089411
+Galão,Pão de forma,-0.12083292236482518
+Chá,Croissant misto,-0.12314592559021013
+Croissant simples,Pastel de feijão,-0.1254965230768315
+Cheesecake,Travesseiro,-0.13364915193556398
+Café,Galão,-0.13695647794425012
+Bolo de laranja,Galão,-0.13850369379956778
+Bolo de chocolate,Cheesecake,-0.13956652985738155
+Queijada,Sumo de laranja,-0.1404265613030682
+Bolo de laranja,Pastel de nata,-0.14166171537257313
+Pastel de feijão,Pão de forma,-0.14303330690451646
+Broa,Pastel de nata,-0.1444068099359449
+Cappuccino,Tarte de maçã,-0.14824115489495243
+Chá,Galão,-0.15410084106182448
+Pão de forma,Pão de leite,-0.1557384098478545
+Bolo de laranja,Travesseiro,-0.16432354659495302
+Pastel de nata,Pão de leite,-0.1646271397886222
+Bolo de cenoura,Água,-0.16669074313800378
+Cheesecake,Pastel de Santa Clara,-0.16737714347610355
+Café,Chá,-0.1685940777418249
+Bolo de laranja,Pão de forma,-0.17217089757016502
+Chá,Croissant simples,-0.17631041994066124
+Broa,Chá,-0.17827665254134462
+Cheesecake,Tarte de maçã,-0.1798567607660048
+Chá,Pastel de Santa Clara,-0.18299655292512523
+Pão de leite,Travesseiro,-0.18307048118569044
+Galão,Pastel de nata,-0.1930372730047305
+Bolo de laranja,Pastel de Santa Clara,-0.19546034164456036
+Cheesecake,Pastel de feijão,-0.19786305519489486
+Bolo de cenoura,Pastel de nata,-0.19998849246053454
+Bolo de chocolate,Pão de leite,-0.2004156435045976
+Pastel de Santa Clara,Água,-0.20111327559442338
+Chá,Pão de forma,-0.20733017491326486
+Cheesecake,Sumo de laranja,-0.20922818631691784
+Tarte de maçã,Travesseiro,-0.21275830078208183
+Broa,Tarte de maçã,-0.21489872647753946
+Café,Tarte de maçã,-0.21841213582206465
+Cappuccino,Pastel de Santa Clara,-0.22272866412786085
+Croissant misto,Travesseiro,-0.2270041546731258
+Broa,Pastel de feijão,-0.22963680001442907
+Café,Sumo de laranja,-0.230335040116115
+Bolo de cenoura,Broa,-0.2305101721629996
+Queijada,Água,-0.233751310568194
+Pão de leite,Sumo de laranja,-0.23760659680978463
+Bolo de laranja,Café,-0.24535954728507778
+Croissant misto,Água,-0.2494355295955381
+Croissant simples,Pastel de Santa Clara,-0.25605035569061363
+Café,Pastel de nata,-0.25799298471959037
+Croissant misto,Pão de forma,-0.2751104478650959
+Cappuccino,Pastel de feijão,-0.2753447894518939
+Croissant misto,Tarte de maçã,-0.27703693746340124
+Croissant misto,Pastel de nata,-0.285005846067008
+Cappuccino,Croissant simples,-0.28982118022945
+Café,Queijada,-0.2923436681046648
+Croissant misto,Pastel de Santa Clara,-0.29443797014449913
+Bolo de cenoura,Pastel de feijão,-0.30044143308698323
+Cappuccino,Galão,-0.3040358023678189
+Broa,Pastel de Santa Clara,-0.30704373708386595
+Queijada,Travesseiro,-0.31695071915803524
+Bolo de chocolate,Café,-0.34718588942024103
+Croissant simples,Travesseiro,-0.42183816097539645
+Croissant simples,Pastel de nata,-0.45480203246386003
