@@ -1,0 +1,8 @@
+﻿relação,rho,p_value
+Preço unitário vs quantidade por linha,0.0138,0.3504
+Hora vs quantidade por linha,0.0122,0.4077
+Receita diária vs tempo (tendência em 365 dias),0.0871,0.0967
+Receita diária vs dia da semana,0.3963,0.0
+Preço médio do produto vs unidades vendidas,-0.6928,0.0005
+Margem % do produto vs unidades vendidas,0.7319,0.0002
+Linhas por dia vs ticket médio por linha,0.092,0.0792

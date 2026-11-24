@@ -1,0 +1,17 @@
+﻿id,name,category,unit,unit_cost,stock,min_stock,supplier,abaixo_min,valor_stock,cobertura_%
+1,Farinha T55,Ingredientes,kg,0.85,12,20,Moagem do Vale,True,10.2,60.0
+2,Açúcar,Ingredientes,kg,0.95,30,15,Doce Norte,False,28.5,200.0
+3,Manteiga,Ingredientes,kg,6.8,25,10,Lacticínios Serra,False,170.0,250.0
+4,Ovos,Ingredientes,dúzia,2.6,18,12,Avícola Central,False,46.8,150.0
+5,Chocolate negro,Ingredientes,kg,9.5,0,5,Doce Norte,True,0.0,0.0
+6,Natas,Ingredientes,L,3.1,8,6,Lacticínios Serra,False,24.8,133.0
+7,Leite,Ingredientes,L,0.85,40,25,Lacticínios Serra,False,34.0,160.0
+8,Fermento,Ingredientes,kg,4.2,3,2,Moagem do Vale,False,12.6,150.0
+9,Canela,Ingredientes,kg,14.0,2,1,Especiarias do Sul,False,28.0,200.0
+10,Amêndoa,Ingredientes,kg,12.5,4,5,Especiarias do Sul,True,50.0,80.0
+11,Maçã,Ingredientes,kg,1.6,15,10,Fruta da Beira,False,24.0,150.0
+12,Laranja,Ingredientes,kg,1.1,35,20,Fruta da Beira,False,38.5,175.0
+13,Caixas de bolo,Embalagens,un,0.35,18,40,Embalagens Costa,True,6.3,45.0
+14,Sacos de papel,Embalagens,un,0.05,600,300,Embalagens Costa,False,30.0,200.0
+15,Copos take-away,Embalagens,un,0.08,150,200,Embalagens Costa,True,12.0,75.0
+16,Guardanapos,Embalagens,un,0.01,2500,1000,Embalagens Costa,False,25.0,250.0
